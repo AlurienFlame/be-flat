@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkjr6dmtm575w"]
+
+[ext_resource type="Script" uid="uid://b86ojyuwmwgip" path="res://scripts/character.gd" id="1_8o48g"]
+[ext_resource type="PackedScene" uid="uid://dhpxlvxbgne2x" path="res://scenes/obstacle.tscn" id="2_64ugs"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8cj0n"]
+bounce = 0.8
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8cj0n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8cj0n"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Character" type="RigidBody2D" parent="."]
+position = Vector2(415, 215)
+physics_material_override = SubResource("PhysicsMaterial_8cj0n")
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_8o48g")
+
+[node name="Sprite2D" type="Sprite2D" parent="Character"]
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_8cj0n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+shape = SubResource("CircleShape2D_8cj0n")
+
+[node name="Obstacle" parent="." instance=ExtResource("2_64ugs")]
+position = Vector2(423, 290)
+
+[node name="Obstacle2" parent="." instance=ExtResource("2_64ugs")]
+position = Vector2(511, 398)
+rotation = 2.39845
+
+[node name="Obstacle3" parent="." instance=ExtResource("2_64ugs")]
+position = Vector2(338, 446)
+rotation = 4.25246
+
+[connection signal="body_entered" from="Character" to="Character" method="_on_body_entered"]

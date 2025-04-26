@@ -16,7 +16,7 @@ func _on_puzzles_pressed() -> void:
 # Main Screen
 func _on_free_play_pressed() -> void:
 	# Load into an empty game board
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	get_tree().change_scene_to_file("res://scenes/free_play.tscn")
 
 func _on_options_pressed():
 	# Slide to options
