@@ -15,6 +15,11 @@ run/main_scene="uid://cgshkgi5sfd58"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+
 [dotnet]
 
 project/assembly_name="be-flat"
