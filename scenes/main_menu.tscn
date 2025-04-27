@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgshkgi5sfd58"]
+[gd_scene load_steps=5 format=3 uid="uid://cgshkgi5sfd58"]
 
 [ext_resource type="Script" uid="uid://3laxytqg0cr4" path="res://scripts/main_menu.gd" id="1_dmvif"]
 [ext_resource type="Texture2D" uid="uid://dvpd21gicv33h" path="res://images/title.svg" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://d4dqvlhs5k5l3" path="res://images/Blue_Nebula_08-1024x1024.png" id="2_wu84c"]
 [ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="3_bqqt6"]
 
 [node name="MainMenu" type="Control"]
@@ -12,6 +13,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dmvif")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wu84c")
+stretch_mode = 6
 
 [node name="MainScreen" type="Control" parent="."]
 layout_mode = 1
