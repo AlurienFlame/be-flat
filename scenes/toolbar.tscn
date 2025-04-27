@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dw7v33nwd2jte"]
+[gd_scene load_steps=0 format=3 uid="uid://dw7v33nwd2jte"]
 
 [node name="HBoxContainer" type="HBoxContainer"]
 offset_left = 394.0
