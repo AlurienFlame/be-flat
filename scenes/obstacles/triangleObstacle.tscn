@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_t0vgf"]
 [ext_resource type="AudioStream" uid="uid://bnihgq28miulh" path="res://audio/D4.wav" id="2_ujfji"]
-[ext_resource type="Texture2D" uid="uid://ctewtuqt32upt" path="res://images/blue_body_square.png" id="3_kj0kt"]
+[ext_resource type="Texture2D" uid="uid://yl2aj6t32j25" path="res://images/tile_ramp_left.png" id="3_k4fij"]
 
 [node name="Obstacle" type="StaticBody2D"]
 rotation = 0.295138
@@ -13,12 +13,7 @@ stream = ExtResource("2_ujfji")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-8.81758, -1.50007)
-polygon = PackedVector2Array(0, -50, 50, 50, -50, 50)
+polygon = PackedVector2Array(46.4752, -46.5302, 52.9367, 43.4823, -39.6095, 38.1718)
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(85.9403, -19.8562)
-texture = ExtResource("3_kj0kt")
-texture_offset = Vector2(50, 40)
-texture_scale = Vector2(0.8, 0.8)
-polygon = PackedVector2Array(-95, -31, -144.478, 67.9633, -45.1507, 68.0766)
-uv = PackedVector2Array(-95, -31, -148, 45, -73, 51)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_k4fij")
