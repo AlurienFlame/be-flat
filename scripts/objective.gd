@@ -1,6 +1,8 @@
-class_name Objective extends StaticBody2D
+class_name Objective extends Area2D
 
-
-func win_game() -> void:
-    # Called by player obj when they hit the win pipe
-    print("You win! Yay!")
+func _on_body_entered(body:Node2D) -> void:
+    if body is Character:
+        # We hit a character
+        print("You win!")
+    else:
+        print("Something unknown hit the objective")
