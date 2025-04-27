@@ -1,28 +1,51 @@
-[gd_scene load_steps=0 format=3 uid="uid://dw7v33nwd2jte"]
+[gd_scene load_steps=3 format=3 uid="uid://dw7v33nwd2jte"]
+
+[ext_resource type="Script" uid="uid://defx5ec7p4qg4" path="res://scripts/toolbar.gd" id="1_i3mxx"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wdy5x"]
 
 [node name="HBoxContainer" type="HBoxContainer"]
-offset_left = 394.0
-offset_top = 590.0
-offset_right = 756.0
-offset_bottom = 630.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = -72.0
+offset_right = 181.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
 alignment = 1
+script = ExtResource("1_i3mxx")
 
-[node name="Button" type="Button" parent="."]
+[node name="rectangle" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "Rectangle"
 
-[node name="Button3" type="Button" parent="."]
+[node name="triangle" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "Triangle"
 
-[node name="Button4" type="Button" parent="."]
+[node name="circle" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "Circle"
 
-[node name="Button5" type="Button" parent="."]
+[node name="trapezoid" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "Trapezoid"
 
-[node name="Button2" type="Button" parent="."]
+[node name="exit" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "Exit"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = SubResource("PlaceholderTexture2D_wdy5x")
+
+[connection signal="pressed" from="rectangle" to="." method="_on_rectangle_pressed"]
