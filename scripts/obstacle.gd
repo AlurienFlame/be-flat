@@ -2,6 +2,9 @@ class_name Obstacle extends StaticBody2D
 
 var draggable = false
 
+# make static cur object
+static var cur_object = null
+
 # put $PlayPauseButton in scene tree, directly ask its global variable for if something is paused
 
 func _process(delta: float) -> void:
@@ -9,11 +12,16 @@ func _process(delta: float) -> void:
 		# Check if the mouse is pressed
 		if Input.is_action_pressed("click"):
 			# Check if the mouse is over the obstacle
-			print("CLICK")
-			var mouse_pos = get_global_mouse_position()
-			position = mouse_pos
+			if not cur_object or cur_object == self:
+				# Cur object is the object that was clicked
+				cur_object = self
+				var mouse_pos = get_global_mouse_position()
+				global_position = mouse_pos
 
-		# Handle dragging logic here
+	# Check if the mouse is released
+	if Input.is_action_just_released("click"):
+		cur_object = null
+		print("RELEASE")
 		
 		print("HOVERING OVER OBSTACLE")
 
