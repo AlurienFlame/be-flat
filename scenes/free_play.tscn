@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b86ojyuwmwgip" path="res://scripts/character.gd" id="1_8o48g"]
 [ext_resource type="PackedScene" uid="uid://dhpxlvxbgne2x" path="res://scenes/obstacles/rectangleObstacle.tscn" id="2_64ugs"]
 [ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="4_wljob"]
+[ext_resource type="Texture2D" uid="uid://c306c45hjx1wg" path="res://images/UI_IconsWhiteIndividual_g778.png" id="5_ds2dd"]
+[ext_resource type="Texture2D" uid="uid://d2ah7eyangqat" path="res://images/UI_IconsWhiteIndividual_g774.png" id="6_1j401"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8cj0n"]
 bounce = 0.8
@@ -38,38 +40,79 @@ rotation = 2.39845
 position = Vector2(338, 446)
 rotation = 4.25246
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 394.0
-offset_top = 590.0
-offset_right = 756.0
-offset_bottom = 630.0
-alignment = 1
-
-[node name="Button" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button3" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button4" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button5" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button2" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="Objective" parent="." instance=ExtResource("4_wljob")]
 position = Vector2(461, 454)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ModalYouWin" type="PanelContainer" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -120.5
+offset_right = 215.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ModalYouWin"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/ModalYouWin/VBoxContainer"]
+layout_mode = 2
+text = "You Win!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ModalYouWin/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="Button" parent="UI/ModalYouWin/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_ds2dd")
+flat = true
+
+[node name="TextureButton2" type="Button" parent="UI/ModalYouWin/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("6_1j401")
+flat = true
+
+[node name="Toolbar" type="HBoxContainer" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = -40.0
+offset_right = 181.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Button" type="Button" parent="UI/Toolbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button3" type="Button" parent="UI/Toolbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button4" type="Button" parent="UI/Toolbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button5" type="Button" parent="UI/Toolbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="UI/Toolbar"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [connection signal="body_entered" from="Character" to="Character" method="_on_body_entered"]
