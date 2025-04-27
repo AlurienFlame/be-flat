@@ -6,6 +6,7 @@
 
 [node name="Obstacle" type="StaticBody2D"]
 rotation = 0.295138
+input_pickable = true
 script = ExtResource("1_t0vgf")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -17,3 +18,6 @@ polygon = PackedVector2Array(46.4752, -46.5302, 52.9367, 43.4823, -39.6095, 38.1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_k4fij")
+
+[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_obstacle_entered"]
+[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_obstacle_exited"]

@@ -11,30 +11,30 @@ func make_instance(obj: Resource) -> void:
 func _on_rectangle_pressed() -> void:
 	print("Instantiating rectangle")
 
-	var rectangle_scene = load("res://scenes/obstacle.tscn")
+	var rectangle_scene = load("res://scenes/obstacles/rectangleObstacle.tscn")
 	make_instance(rectangle_scene)
 
 func _on_circle_pressed() -> void:
 	print("Instantiating circle")
 
-	var circle_scene = load("res://scenes/circleObstacle.tscn")
+	var circle_scene = load("res://scenes/obstacles/circleObstacle.tscn")
 	make_instance(circle_scene)
 	
 
 func _on_triangle_pressed() -> void:
 	print("Instantiating triangle")
-	var triangle_scene = load("res://scenes/triangleObstacle.tscn")
+	var triangle_scene = load("res://scenes/obstacles/triangleObstacle.tscn")
 	make_instance(triangle_scene)
 
 
 func _on_rhombus_pressed() -> void:
 	print("Instantiating rhombus")
 
-	var rhombus_scene = load("res://scenes/rhombusObstacle.tscn")
+	var rhombus_scene = load("res://scenes/obstacles/rhombusObstacle.tscn")
 	make_instance(rhombus_scene)
 
 func _on_objective_pressed() -> void:
 	print("Instantiating objective")
 
-	var objective_scene = load("res://scenes/objective.tscn")
+	var objective_scene = load("res://scenes/obstacles/objective.tscn")
 	make_instance(objective_scene)
