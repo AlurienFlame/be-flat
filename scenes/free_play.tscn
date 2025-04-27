@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkjr6dmtm575w"]
+[gd_scene load_steps=6 format=3 uid="uid://bkjr6dmtm575w"]
 
 [ext_resource type="Script" uid="uid://b86ojyuwmwgip" path="res://scripts/character.gd" id="1_8o48g"]
-[ext_resource type="PackedScene" uid="uid://dhpxlvxbgne2x" path="res://scenes/obstacle.tscn" id="2_64ugs"]
-[ext_resource type="AudioStream" uid="uid://bjcivjragxx06" path="res://audio/C3.wav" id="3_64ugs"]
+[ext_resource type="PackedScene" uid="uid://dhpxlvxbgne2x" path="res://scenes/rectangleObstacle.tscn" id="2_64ugs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8cj0n"]
 bounce = 0.8
@@ -30,22 +29,13 @@ shape = SubResource("CircleShape2D_8cj0n")
 [node name="Obstacle" parent="." instance=ExtResource("2_64ugs")]
 position = Vector2(423, 290)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Obstacle"]
-stream = ExtResource("3_64ugs")
-
 [node name="Obstacle2" parent="." instance=ExtResource("2_64ugs")]
 position = Vector2(511, 398)
 rotation = 2.39845
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Obstacle2"]
-stream = ExtResource("3_64ugs")
-
 [node name="Obstacle3" parent="." instance=ExtResource("2_64ugs")]
 position = Vector2(338, 446)
 rotation = 4.25246
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Obstacle3"]
-stream = ExtResource("3_64ugs")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_left = 394.0
