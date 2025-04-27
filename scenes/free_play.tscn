@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkjr6dmtm575w"]
+[gd_scene load_steps=9 format=3 uid="uid://bkjr6dmtm575w"]
 
 [ext_resource type="Script" uid="uid://b86ojyuwmwgip" path="res://scripts/character.gd" id="1_8o48g"]
 [ext_resource type="PackedScene" uid="uid://dhpxlvxbgne2x" path="res://scenes/obstacles/rectangleObstacle.tscn" id="2_64ugs"]
@@ -44,6 +44,7 @@ rotation = 4.25246
 position = Vector2(461, 454)
 
 [node name="UI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 
 [node name="ModalYouWin" type="PanelContainer" parent="UI"]
 visible = false
