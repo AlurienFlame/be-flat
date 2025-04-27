@@ -8,7 +8,9 @@
 size = Vector2(80, 20)
 
 [node name="Obstacle" type="StaticBody2D"]
+position = Vector2(80, 51)
 rotation = 0.295138
+input_pickable = true
 script = ExtResource("1_7ukg5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,3 +19,6 @@ texture = SubResource("PlaceholderTexture2D_8cj0n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8cj0n")
+
+[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_obstacle_entered"]
+[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_obstacle_exited"]
