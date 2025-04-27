@@ -5,8 +5,5 @@ func _on_body_entered(body) -> void:
     if body is Obstacle:
         # We bonked an obstacle
         body.get_bonked()
-    elif body is Objective:
-        # We hit the win condition
-        body.win_game()
     else:
         print("Hit something unknown")

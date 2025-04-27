@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgshkgi5sfd58"]
+[gd_scene load_steps=5 format=3 uid="uid://cgshkgi5sfd58"]
 
 [ext_resource type="Script" uid="uid://3laxytqg0cr4" path="res://scripts/main_menu.gd" id="1_dmvif"]
 [ext_resource type="Texture2D" uid="uid://dvpd21gicv33h" path="res://images/title.svg" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://d4dqvlhs5k5l3" path="res://images/Blue_Nebula_08-1024x1024.png" id="2_wu84c"]
+[ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="3_bqqt6"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +13,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dmvif")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wu84c")
+stretch_mode = 6
 
 [node name="MainScreen" type="Control" parent="."]
 layout_mode = 1
@@ -41,10 +53,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.5
-offset_top = -50.5
-offset_right = 46.5
-offset_bottom = 50.5
+offset_left = -35.5
+offset_top = -52.0
+offset_right = 35.5
+offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -52,20 +64,24 @@ size_flags_vertical = 4
 
 [node name="Puzzles" type="Button" parent="MainScreen/Buttons"]
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
 disabled = true
 text = "Puzzles
 "
 
 [node name="Free Play" type="Button" parent="MainScreen/Buttons"]
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
 text = "Free Play"
 
 [node name="Options" type="Button" parent="MainScreen/Buttons"]
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
 text = "Options"
 
 [node name="Quit" type="Button" parent="MainScreen/Buttons"]
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
 text = "Quit"
 
 [node name="OptionsScreen" type="VBoxContainer" parent="."]
@@ -84,6 +100,7 @@ grow_vertical = 2
 
 [node name="Back" type="Button" parent="OptionsScreen"]
 layout_mode = 2
+theme = ExtResource("3_bqqt6")
 text = "Back
 "
 
