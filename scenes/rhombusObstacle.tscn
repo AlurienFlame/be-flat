@@ -1,23 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhrd0mi6pb1em"]
+[gd_scene load_steps=5 format=3 uid="uid://dfogow8vrminq"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_6j1sb"]
-[ext_resource type="AudioStream" uid="uid://bjcivjragxx06" path="res://audio/C3.wav" id="2_uumpw"]
+[ext_resource type="Texture2D" uid="uid://barnlimsfrc6u" path="res://images/purple_body_rhombus.png" id="2_q7ddo"]
+[ext_resource type="AudioStream" uid="uid://cny734kyfji7j" path="res://audio/B.wav" id="3_0cqy2"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8cj0n"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
-size = Vector2(80, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4d68"]
+size = Vector2(63.0831, 62.1464)
 
 [node name="Obstacle" type="StaticBody2D"]
 rotation = 0.295138
 script = ExtResource("1_6j1sb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(80, 20)
-texture = SubResource("PlaceholderTexture2D_8cj0n")
+texture = ExtResource("2_q7ddo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_8cj0n")
+position = Vector2(0.66589, -1.24763)
+rotation = -0.837758
+shape = SubResource("RectangleShape2D_l4d68")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_uumpw")
+stream = ExtResource("3_0cqy2")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://xsp8algd1rkv"]
+[gd_scene load_steps=4 format=3 uid="uid://dggaww4acrsq7"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_t0vgf"]
 [ext_resource type="AudioStream" uid="uid://bnihgq28miulh" path="res://audio/D4.wav" id="2_ujfji"]

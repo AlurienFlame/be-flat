@@ -1,23 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://ya6r3mwgvhrp"]
+[gd_scene load_steps=5 format=3 uid="uid://krvrg6wtqjpb"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_ldtab"]
-[ext_resource type="AudioStream" uid="uid://bjcivjragxx06" path="res://audio/C3.wav" id="2_3owic"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8cj0n"]
+[ext_resource type="Texture2D" uid="uid://xb5cn60gd3gk" path="res://images/yellow_body_square.png" id="2_3owic"]
+[ext_resource type="AudioStream" uid="uid://btnqw4pnhqqj5" path="res://audio/E.wav" id="3_a6vl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
-size = Vector2(80, 20)
+size = Vector2(80, 80.0699)
 
 [node name="Obstacle" type="StaticBody2D"]
 rotation = 0.295138
 script = ExtResource("1_ldtab")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(80, 20)
-texture = SubResource("PlaceholderTexture2D_8cj0n")
+texture = ExtResource("2_3owic")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.98023e-08, -0.478378)
 shape = SubResource("RectangleShape2D_8cj0n")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_3owic")
+stream = ExtResource("3_a6vl0")
