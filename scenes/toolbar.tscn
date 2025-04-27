@@ -49,3 +49,7 @@ layout_mode = 2
 texture_normal = SubResource("PlaceholderTexture2D_wdy5x")
 
 [connection signal="pressed" from="rectangle" to="." method="_on_rectangle_pressed"]
+[connection signal="pressed" from="triangle" to="." method="_on_triangle_pressed"]
+[connection signal="pressed" from="circle" to="." method="_on_circle_pressed"]
+[connection signal="pressed" from="trapezoid" to="." method="_on_trapezoid_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_objective_pressed"]
