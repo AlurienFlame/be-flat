@@ -37,4 +37,35 @@ rotation = 2.39845
 position = Vector2(338, 446)
 rotation = 4.25246
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 394.0
+offset_top = 590.0
+offset_right = 756.0
+offset_bottom = 630.0
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button4" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button5" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="body_entered" from="Character" to="Character" method="_on_body_entered"]
