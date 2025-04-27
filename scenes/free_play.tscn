@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkjr6dmtm575w"]
+[gd_scene load_steps=7 format=3 uid="uid://bkjr6dmtm575w"]
 
 [ext_resource type="Script" uid="uid://b86ojyuwmwgip" path="res://scripts/character.gd" id="1_8o48g"]
-[ext_resource type="PackedScene" uid="uid://dhpxlvxbgne2x" path="res://scenes/obstacle.tscn" id="2_64ugs"]
-[ext_resource type="AudioStream" uid="uid://bjcivjragxx06" path="res://audio/C3.wav" id="3_64ugs"]
+[ext_resource type="PackedScene" uid="uid://b8byhgopp80b3" path="res://scenes/rectangleObstacle.tscn" id="2_64ugs"]
 [ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="4_wljob"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8cj0n"]

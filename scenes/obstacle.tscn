@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8byhgopp80b3"]
+[gd_scene load_steps=4 format=3 uid="uid://dyisj6kvmoxh3"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_7ukg5"]
-[ext_resource type="AudioStream" uid="uid://bjcivjragxx06" path="res://audio/C3.wav" id="2_drdry"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8cj0n"]
 
@@ -20,9 +19,6 @@ texture = SubResource("PlaceholderTexture2D_8cj0n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8cj0n")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_drdry")
 
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_obstacle_entered"]
 [connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_obstacle_exited"]

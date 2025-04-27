@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 			# Check if the mouse is over the obstacle
 			print("CLICK")
 			var mouse_pos = get_global_mouse_position()
-			position = mouse_pos
+			global_position = mouse_pos
 
 		# Handle dragging logic here
 		

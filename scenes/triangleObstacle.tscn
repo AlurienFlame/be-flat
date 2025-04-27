@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dggaww4acrsq7"]
+[gd_scene load_steps=3 format=3 uid="uid://dtpix8xjlgjui"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_t0vgf"]
 [ext_resource type="AudioStream" uid="uid://bjcivjragxx06" path="res://audio/C3.wav" id="2_ujfji"]
 
 [node name="Obstacle" type="StaticBody2D"]
 rotation = 0.295138
+input_pickable = true
 script = ExtResource("1_t0vgf")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -18,3 +19,6 @@ polygon = PackedVector2Array(0, -50, 50, 50, -50, 50)
 position = Vector2(85.9403, -19.8562)
 polygon = PackedVector2Array(-95, -31, -144.478, 67.9633, -45.1507, 68.0766)
 uv = PackedVector2Array(-95, -31, -148, 45, -73, 51)
+
+[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_obstacle_entered"]
+[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_obstacle_exited"]
