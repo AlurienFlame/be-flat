@@ -1,12 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://djwya447iy8ah"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_s7e6m"]
-[ext_resource type="AudioStream" uid="uid://bjcivjragxx06" path="res://audio/C3.wav" id="2_euq55"]
+[ext_resource type="Texture2D" uid="uid://ebk42nekvobx" path="res://images/green_body_circle.png" id="2_vbhvj"]
+[ext_resource type="AudioStream" uid="uid://b771vfci3q6g" path="res://audio/G.wav" id="3_mimf4"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8cj0n"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
-size = Vector2(80, 20)
+[sub_resource type="CircleShape2D" id="CircleShape2D_rerlo"]
+radius = 41.2311
 
 [node name="Obstacle" type="StaticBody2D"]
 rotation = 0.295138
@@ -14,14 +13,13 @@ input_pickable = true
 script = ExtResource("1_s7e6m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(80, 20)
-texture = SubResource("PlaceholderTexture2D_8cj0n")
+texture = ExtResource("2_vbhvj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_8cj0n")
+shape = SubResource("CircleShape2D_rerlo")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_euq55")
+stream = ExtResource("3_mimf4")
 
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_obstacle_entered"]
 [connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_obstacle_exited"]
