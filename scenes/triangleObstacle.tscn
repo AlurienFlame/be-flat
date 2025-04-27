@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dggaww4acrsq7"]
+[gd_scene load_steps=4 format=3 uid="uid://dggaww4acrsq7"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_t0vgf"]
-[ext_resource type="AudioStream" uid="uid://bjcivjragxx06" path="res://audio/C3.wav" id="2_ujfji"]
+[ext_resource type="AudioStream" uid="uid://bnihgq28miulh" path="res://audio/D4.wav" id="2_ujfji"]
+[ext_resource type="Texture2D" uid="uid://ctewtuqt32upt" path="res://images/blue_body_square.png" id="3_kj0kt"]
 
 [node name="Obstacle" type="StaticBody2D"]
 rotation = 0.295138
@@ -16,5 +17,8 @@ polygon = PackedVector2Array(0, -50, 50, 50, -50, 50)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(85.9403, -19.8562)
+texture = ExtResource("3_kj0kt")
+texture_offset = Vector2(50, 40)
+texture_scale = Vector2(0.8, 0.8)
 polygon = PackedVector2Array(-95, -31, -144.478, 67.9633, -45.1507, 68.0766)
 uv = PackedVector2Array(-95, -31, -148, 45, -73, 51)
