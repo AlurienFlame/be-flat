@@ -10,7 +10,7 @@ static var cur_object = null
 
 
 func _process(delta: float) -> void:
-	if draggable and not play_pause_button.is_playing:
+	if (draggable or cur_object) and not play_pause_button.is_playing:
 		# Check if the mouse is pressed
 		if Input.is_action_pressed("click"):
 			# Check if the mouse is over the obstacle
