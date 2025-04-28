@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var play_pause_button: TextureButton = $"/root/Game/UI/MenuBar/PlayPauseButton"
+
 var draggable = false
 
 # make static cur object
@@ -7,7 +9,7 @@ static var cur_object = null
 
 
 func _process(delta: float) -> void:
-	if draggable:
+	if draggable and not play_pause_button.is_playing:
 		# Check if the mouse is pressed
 		if Input.is_action_pressed("click"):
 			# Check if the mouse is over the obstacle
