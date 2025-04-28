@@ -36,5 +36,5 @@ func _on_rhombus_pressed() -> void:
 func _on_objective_pressed() -> void:
 	print("Instantiating objective")
 
-	var objective_scene = load("res://scenes/obstacles/objective.tscn")
+	var objective_scene = load("res://scenes/objective.tscn")
 	make_instance(objective_scene)

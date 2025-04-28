@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw7v33nwd2jte"]
+[gd_scene load_steps=7 format=3 uid="uid://dw7v33nwd2jte"]
 
 [ext_resource type="Script" uid="uid://defx5ec7p4qg4" path="res://scripts/toolbar.gd" id="1_i3mxx"]
+[ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="2_ls1wr"]
+[ext_resource type="Texture2D" uid="uid://dwgmb2itso7ey" path="res://images/tile_ramp_right.png" id="3_xvh4g"]
+[ext_resource type="Texture2D" uid="uid://ebk42nekvobx" path="res://images/green_body_circle.png" id="4_vx4hf"]
+[ext_resource type="Texture2D" uid="uid://barnlimsfrc6u" path="res://images/purple_body_rhombus.png" id="5_erow0"]
+[ext_resource type="Texture2D" uid="uid://16pijl85giyu" path="res://images/black_hole.png" id="6_xvh4g"]
 
 [node name="HBoxContainer" type="HBoxContainer"]
 anchors_preset = 7
@@ -20,27 +25,36 @@ script = ExtResource("1_i3mxx")
 [node name="rectangle" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("2_ls1wr")
 text = "Rectangle"
 
 [node name="triangle" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Triangle"
+icon = ExtResource("3_xvh4g")
+icon_alignment = 1
 
 [node name="circle" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Circle"
+icon = ExtResource("4_vx4hf")
+icon_alignment = 1
 
 [node name="rhombus" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Rhombus"
+icon = ExtResource("5_erow0")
+icon_alignment = 1
 
 [node name="exit" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Exit"
+icon = ExtResource("6_xvh4g")
+icon_alignment = 1
 
 [connection signal="pressed" from="rectangle" to="." method="_on_rectangle_pressed"]
 [connection signal="pressed" from="triangle" to="." method="_on_triangle_pressed"]
