@@ -2,6 +2,8 @@ extends TextureButton
 
 var is_playing: bool = false
 
+@onready var modal_you_win: PanelContainer = $"/root/Game/UI/ModalYouWin"
+
 @export var texture_play: CompressedTexture2D
 @export var texture_pause: CompressedTexture2D
 
@@ -20,6 +22,7 @@ func _on_pressed() -> void:
 func _on_play() -> void:
 	is_playing = true
 	texture_normal = texture_pause
+	modal_you_win.emit_signal("reset")
 
 func _on_pause() -> void:
 	is_playing = false
