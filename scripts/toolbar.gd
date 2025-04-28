@@ -5,7 +5,7 @@ func make_instance(obj: Resource) -> void:
 	print("Instantiating object")
 
 	var instance = obj.instantiate()
-	instance.position = Vector2(0, 0) # Set the position as needed
+	instance.position = Vector2(50, 50) # Set the position as needed
 	get_parent().add_child(instance)
 
 func _on_rectangle_pressed() -> void:
