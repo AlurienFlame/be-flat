@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://colyiopisvoji"]
+[gd_scene load_steps=4 format=3 uid="uid://colyiopisvoji"]
 
 [ext_resource type="Texture2D" uid="uid://c306c45hjx1wg" path="res://images/UI_IconsWhiteIndividual_g778.png" id="1_beok6"]
+[ext_resource type="Script" uid="uid://blcefpumbtb0k" path="res://scripts/modal_you_win.gd" id="1_gmw2x"]
 [ext_resource type="Texture2D" uid="uid://d2ah7eyangqat" path="res://images/UI_IconsWhiteIndividual_g774.png" id="2_gmw2x"]
 
 [node name="ModalYouWin" type="PanelContainer"]
@@ -18,6 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_gmw2x")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -30,12 +32,15 @@ horizontal_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="ButtonReset" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 icon = ExtResource("1_beok6")
 flat = true
 
-[node name="TextureButton2" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="ButtonNextPuzzle" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+disabled = true
 icon = ExtResource("2_gmw2x")
 flat = true
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ButtonReset" to="." method="_on_button_reset_pressed"]
