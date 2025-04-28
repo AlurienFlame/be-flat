@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://iagwlbrlf4rh"]
+[gd_scene load_steps=5 format=3 uid="uid://iagwlbrlf4rh"]
 
 [ext_resource type="Script" uid="uid://btnd2jns1s362" path="res://scripts/objective.gd" id="1_0jo4f"]
 [ext_resource type="Texture2D" uid="uid://16pijl85giyu" path="res://images/black_hole.png" id="2_l3owv"]
+[ext_resource type="Script" uid="uid://cxdypmejw36qf" path="res://scripts/draggable.gd" id="3_qhv5o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhv5o"]
 radius = 14.0
@@ -17,4 +18,9 @@ texture = ExtResource("2_l3owv")
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_qhv5o")
 
+[node name="Draggable" type="Node2D" parent="."]
+script = ExtResource("3_qhv5o")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="mouse_shape_entered" from="." to="Draggable" method="_on_mouse_obstacle_entered"]
+[connection signal="mouse_shape_exited" from="." to="Draggable" method="_on_mouse_obstacle_exited"]

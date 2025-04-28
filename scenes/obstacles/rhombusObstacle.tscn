@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhrd0mi6pb1em"]
+[gd_scene load_steps=6 format=3 uid="uid://bhrd0mi6pb1em"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_6j1sb"]
 [ext_resource type="Texture2D" uid="uid://barnlimsfrc6u" path="res://images/purple_body_rhombus.png" id="2_2o4bh"]
 [ext_resource type="AudioStream" uid="uid://btnqw4pnhqqj5" path="res://audio/E.wav" id="3_hgnuj"]
+[ext_resource type="Script" uid="uid://cxdypmejw36qf" path="res://scripts/draggable.gd" id="4_hgnuj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2o4bh"]
 size = Vector2(67.766, 63.526)
@@ -19,12 +20,14 @@ texture = ExtResource("2_2o4bh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.90662, -1.13034)
 rotation = 0.548033
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2o4bh")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(6.56019, 38.7681)
 stream = ExtResource("3_hgnuj")
 
-[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_obstacle_entered"]
-[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_obstacle_exited"]
+[node name="Draggable" type="Node2D" parent="."]
+script = ExtResource("4_hgnuj")
+
+[connection signal="mouse_shape_entered" from="." to="Draggable" method="_on_mouse_obstacle_entered"]
+[connection signal="mouse_shape_exited" from="." to="Draggable" method="_on_mouse_obstacle_exited"]
