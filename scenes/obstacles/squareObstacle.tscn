@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ya6r3mwgvhrp"]
+[gd_scene load_steps=6 format=3 uid="uid://ya6r3mwgvhrp"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_ldtab"]
 [ext_resource type="Texture2D" uid="uid://ctewtuqt32upt" path="res://images/blue_body_square.png" id="2_ydgat"]
 [ext_resource type="AudioStream" uid="uid://cny734kyfji7j" path="res://audio/B.wav" id="3_c7bqr"]
+[ext_resource type="Script" uid="uid://cxdypmejw36qf" path="res://scripts/draggable.gd" id="4_c7bqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
 size = Vector2(80.1186, 79.2665)
@@ -24,5 +25,8 @@ shape = SubResource("RectangleShape2D_8cj0n")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_c7bqr")
 
-[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_obstacle_entered"]
-[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_obstacle_exited"]
+[node name="Draggable" type="Node2D" parent="."]
+script = ExtResource("4_c7bqr")
+
+[connection signal="mouse_shape_entered" from="." to="Draggable" method="_on_mouse_obstacle_entered"]
+[connection signal="mouse_shape_exited" from="." to="Draggable" method="_on_mouse_obstacle_exited"]
