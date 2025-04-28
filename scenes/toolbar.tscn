@@ -32,7 +32,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Circle"
 
-[node name="trapezoid" type="Button" parent="."]
+[node name="rhombus" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Rhombus"
@@ -45,5 +45,5 @@ text = "Exit"
 [connection signal="pressed" from="rectangle" to="." method="_on_rectangle_pressed"]
 [connection signal="pressed" from="triangle" to="." method="_on_triangle_pressed"]
 [connection signal="pressed" from="circle" to="." method="_on_circle_pressed"]
-[connection signal="pressed" from="trapezoid" to="." method="_on_trapezoid_pressed"]
+[connection signal="pressed" from="rhombus" to="." method="_on_rhombus_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_objective_pressed"]
