@@ -6,7 +6,22 @@ func make_instance(obj: Resource) -> void:
 
 	var instance = obj.instantiate()
 	instance.position = Vector2(50, 50) # Set the position as needed
-	get_parent().add_child(instance)
+	# make node called "Generated" in scene if it doesn't exist
+	
+	# get top of scene tree
+	var scene_tree = get_tree()
+	var root = scene_tree.root
+	# check if "Generated" node exists
+	var generated = root.get_node("Generated")
+	if not generated:
+		# create node called "Generated"
+		generated = Node2D.new()
+		generated.name = "Generated"
+		root.add_child(generated)
+	# add instance to "Generated" node
+	generated.add_child(instance)
+
+	
 
 func _on_rectangle_pressed() -> void:
 	print("Instantiating rectangle")

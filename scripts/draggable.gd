@@ -1,8 +1,10 @@
 extends Node2D
 
 @onready var play_pause_button: TextureButton = $"/root/Game/UI/MenuBar/PlayPauseButton"
+@onready var trashcan = $"/root/Game/UI/ToolBar/trashcan"
 
 var draggable = false
+var can_delete = false
 
 # make static cur object
 static var cur_object = null
@@ -16,15 +18,31 @@ func _process(delta: float) -> void:
 			if not cur_object or cur_object == get_parent():
 				# Cur object is the object that was clicked
 				cur_object = get_parent()
+				
+				# show trash
+				trashcan.visible = true
+
 				var mouse_pos = get_global_mouse_position()
 				cur_object.global_position = mouse_pos
 
 	# Check if the mouse is released
 	if Input.is_action_just_released("click"):
+		if cur_object == get_parent() and can_delete:
+			# Check if the mouse is over the trash
+			# Delete the object
+			print("Deleting object")
+			can_delete = false
+			cur_object.queue_free()
+			
+		
+
 		cur_object = null
+		
+		# hide trash
+		trashcan.visible = false
+		
 		print("RELEASE")
 		
-		print("HOVERING OVER OBJECT")
 
 func _on_mouse_obstacle_entered(shape_idx: int) -> void:
 	draggable = true
@@ -33,3 +51,20 @@ func _on_mouse_obstacle_entered(shape_idx: int) -> void:
 func _on_mouse_obstacle_exited(shape_idx: int) -> void:
 	draggable = false
 	print("Mouse exited object")
+
+
+func _on_mouse_trash_entered(shape_idx: int) -> void:
+	# Check if the mouse is over the trash
+	if cur_object:
+		can_delete = true
+		print("Mouse entered trash")
+	else:
+		print("Mouse entered trash but no object to delete")
+
+func _on_mouse_trash_exited(shape_idx: int) -> void:
+	# Check if the mouse is over the trash
+	if cur_object:
+		can_delete = false
+		print("Mouse exited trash")
+	else:
+		print("Mouse exited trash but no object to delete")

@@ -61,6 +61,6 @@ unique_name_in_owner = true
 
 [node name="ModalYouWin" parent="UI" instance=ExtResource("5_1j401")]
 
-[node name="HBoxContainer" parent="UI" instance=ExtResource("6_1j401")]
+[node name="ToolBar" parent="UI" instance=ExtResource("6_1j401")]
 
 [connection signal="body_entered" from="Character" to="Character" method="_on_body_entered"]

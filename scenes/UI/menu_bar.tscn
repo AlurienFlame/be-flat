@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvjo3oey6s8ha"]
+[gd_scene load_steps=8 format=3 uid="uid://bvjo3oey6s8ha"]
 
 [ext_resource type="Texture2D" uid="uid://da2og3im12tgj" path="res://images/UI_IconsWhiteIndividual_g708.png" id="1_lyrcj"]
 [ext_resource type="Script" uid="uid://4v36wnv0fb3h" path="res://scripts/play_pause_button.gd" id="2_uvnpd"]
 [ext_resource type="Texture2D" uid="uid://bn5w1ma1ylinm" path="res://images/UI_IconsWhiteIndividual_g700.png" id="3_gsc20"]
 [ext_resource type="Texture2D" uid="uid://c306c45hjx1wg" path="res://images/UI_IconsWhiteIndividual_g778.png" id="4_uvnpd"]
-[ext_resource type="Script" uid="uid://capjo23cfyf5y" path="res://scripts/button_reset.gd" id="5_gsc20"]
+[ext_resource type="Script" path="res://scripts/button_reset.gd" id="5_gsc20"]
+[ext_resource type="Texture2D" uid="uid://xb5cn60gd3gk" path="res://images/yellow_body_square.png" id="6_judh1"]
+[ext_resource type="Script" uid="uid://5tcadlaua4yr" path="res://scripts/clear_scene.gd" id="7_2xyw1"]
 
 [node name="MenuBar" type="HBoxContainer"]
 anchors_preset = 5
@@ -28,7 +30,15 @@ icon = ExtResource("4_uvnpd")
 flat = true
 script = ExtResource("5_gsc20")
 
+[node name="ClearScene" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+texture_normal = ExtResource("6_judh1")
+stretch_mode = 0
+script = ExtResource("7_2xyw1")
+
 [connection signal="pause" from="PlayPauseButton" to="PlayPauseButton" method="_on_pause"]
 [connection signal="play" from="PlayPauseButton" to="PlayPauseButton" method="_on_play"]
 [connection signal="pressed" from="PlayPauseButton" to="PlayPauseButton" method="_on_pressed"]
 [connection signal="pressed" from="ButtonReset" to="ButtonReset" method="_on_pressed"]
+[connection signal="pressed" from="ClearScene" to="ClearScene" method="clear_scene"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dw7v33nwd2jte"]
+[gd_scene load_steps=10 format=3 uid="uid://dw7v33nwd2jte"]
 
 [ext_resource type="Script" uid="uid://defx5ec7p4qg4" path="res://scripts/toolbar.gd" id="1_2wqxw"]
 [ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="2_m7g1w"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://ebk42nekvobx" path="res://images/green_body_circle.png" id="5_tjtjx"]
 [ext_resource type="Texture2D" uid="uid://barnlimsfrc6u" path="res://images/purple_body_rhombus.png" id="6_vulxu"]
 [ext_resource type="Texture2D" uid="uid://16pijl85giyu" path="res://images/black_hole.png" id="7_131s0"]
+[ext_resource type="Texture2D" uid="uid://ctewtuqt32upt" path="res://images/blue_body_square.png" id="8_m7g1w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wqxw"]
+size = Vector2(92, 102)
 
 [node name="HBoxContainer" type="HBoxContainer"]
 anchors_preset = 7
@@ -58,6 +62,19 @@ size_flags_horizontal = 3
 text = "Exit"
 icon = ExtResource("7_131s0")
 icon_alignment = 1
+
+[node name="trashcan" type="Area2D" parent="."]
+visible = false
+position = Vector2(740, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trashcan"]
+position = Vector2(36, 41)
+shape = SubResource("RectangleShape2D_2wqxw")
+
+[node name="TextureRect" type="TextureRect" parent="trashcan"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_m7g1w")
 
 [connection signal="pressed" from="rectangle" to="." method="_on_rectangle_pressed"]
 [connection signal="pressed" from="triangle" to="." method="_on_triangle_pressed"]
