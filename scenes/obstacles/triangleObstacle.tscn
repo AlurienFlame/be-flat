@@ -14,9 +14,10 @@ stream = ExtResource("2_ujfji")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-8.81758, -1.50007)
-polygon = PackedVector2Array(46.4752, -46.5302, 52.9367, 43.4823, -39.6095, 38.1718)
+polygon = PackedVector2Array(31.2968, -58.6388, 63.1317, 28.8857, -28.9242, 52.6915)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -0.279253
 texture = ExtResource("3_k4fij")
 
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_obstacle_entered"]
