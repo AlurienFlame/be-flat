@@ -1,10 +1,10 @@
 class_name Character extends RigidBody2D
 
+@onready var play_pause_button: TextureButton = $"/root/Game/UI/MenuBar/PlayPauseButton"
+
 func _ready() -> void:
-	var play_pause_button = $"/root/Game/UI/MenuBar/PlayPauseButton"
 	play_pause_button.connect("play", _on_play)
 	play_pause_button.connect("pause", _on_pause)
-	Engine.time_scale = 0.0
 
 func _on_play() -> void:
 	Engine.time_scale = 1.0

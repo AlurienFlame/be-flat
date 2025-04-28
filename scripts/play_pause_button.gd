@@ -8,6 +8,9 @@ var is_playing: bool = false
 signal play
 signal pause
 
+func _ready() -> void:
+	emit_signal("pause")
+
 func _on_pressed() -> void:
 	if is_playing:
 		emit_signal("pause")

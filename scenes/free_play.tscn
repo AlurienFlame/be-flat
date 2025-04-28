@@ -32,6 +32,7 @@ shape = SubResource("CircleShape2D_8cj0n")
 
 [node name="Obstacle" parent="." instance=ExtResource("2_64ugs")]
 position = Vector2(423, 290)
+rotation = 0.437888
 
 [node name="Obstacle2" parent="." instance=ExtResource("2_64ugs")]
 position = Vector2(511, 398)
