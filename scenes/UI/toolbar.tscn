@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dw7v33nwd2jte"]
+[gd_scene load_steps=11 format=3 uid="uid://dw7v33nwd2jte"]
 
 [ext_resource type="Script" uid="uid://defx5ec7p4qg4" path="res://scripts/toolbar.gd" id="1_2wqxw"]
 [ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="2_m7g1w"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://barnlimsfrc6u" path="res://images/purple_body_rhombus.png" id="6_vulxu"]
 [ext_resource type="Texture2D" uid="uid://16pijl85giyu" path="res://images/black_hole.png" id="7_131s0"]
 [ext_resource type="Texture2D" uid="uid://ctewtuqt32upt" path="res://images/blue_body_square.png" id="8_m7g1w"]
+[ext_resource type="Script" uid="uid://bg2wkypis60br" path="res://scripts/trashcan.gd" id="8_wwnrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wqxw"]
 size = Vector2(92, 102)
@@ -66,6 +67,7 @@ icon_alignment = 1
 [node name="trashcan" type="Area2D" parent="."]
 visible = false
 position = Vector2(740, 0)
+script = ExtResource("8_wwnrs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trashcan"]
 position = Vector2(36, 41)
@@ -81,3 +83,5 @@ texture = ExtResource("8_m7g1w")
 [connection signal="pressed" from="circle" to="." method="_on_circle_pressed"]
 [connection signal="pressed" from="rhombus" to="." method="_on_rhombus_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_objective_pressed"]
+[connection signal="mouse_shape_entered" from="trashcan" to="trashcan" method="_on_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="trashcan" to="trashcan" method="_on_mouse_shape_exited"]
