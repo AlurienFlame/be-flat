@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://btnqw4pnhqqj5" path="res://audio/E.wav" id="3_hgnuj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2o4bh"]
-size = Vector2(67.766, 60.4381)
+size = Vector2(67.766, 63.526)
 
 [node name="Obstacle" type="StaticBody2D"]
 rotation = 0.295138
@@ -13,11 +13,13 @@ input_pickable = true
 script = ExtResource("1_6j1sb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -0.23911
 texture = ExtResource("2_2o4bh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.1022, 0.187507)
-rotation = 0.787143
+position = Vector2(1.90662, -1.13034)
+rotation = 0.548033
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2o4bh")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

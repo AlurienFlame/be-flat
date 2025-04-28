@@ -8,6 +8,9 @@ var is_playing: bool = false
 signal play
 signal pause
 
+func _ready() -> void:
+	emit_signal("pause")
+
 func _on_pressed() -> void:
 	if is_playing:
 		emit_signal("pause")
@@ -16,8 +19,8 @@ func _on_pressed() -> void:
 
 func _on_play() -> void:
 	is_playing = true
-	texture_normal = texture_play
+	texture_normal = texture_pause
 
 func _on_pause() -> void:
 	is_playing = false
-	texture_normal = texture_pause
+	texture_normal = texture_play
