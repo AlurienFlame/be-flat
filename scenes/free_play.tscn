@@ -1,13 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkjr6dmtm575w"]
+[gd_scene load_steps=10 format=3 uid="uid://bkjr6dmtm575w"]
 
 [ext_resource type="Script" uid="uid://b86ojyuwmwgip" path="res://scripts/character.gd" id="1_8o48g"]
-[ext_resource type="PackedScene" uid="uid://dhpxlvxbgne2x" path="res://scenes/obstacles/rectangleObstacle.tscn" id="2_64ugs"]
-[ext_resource type="Texture2D" uid="uid://da2og3im12tgj" path="res://images/UI_IconsWhiteIndividual_g708.png" id="4_1j401"]
+[ext_resource type="PackedScene" uid="uid://b8byhgopp80b3" path="res://scenes/obstacles/rectangleObstacle.tscn" id="2_64ugs"]
+[ext_resource type="PackedScene" uid="uid://bvjo3oey6s8ha" path="res://scenes/UI/menu_bar.tscn" id="4_ds2dd"]
 [ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="4_wljob"]
-[ext_resource type="Texture2D" uid="uid://c306c45hjx1wg" path="res://images/UI_IconsWhiteIndividual_g778.png" id="5_ds2dd"]
-[ext_resource type="Script" uid="uid://4v36wnv0fb3h" path="res://scripts/play_pause_button.gd" id="5_r1cou"]
-[ext_resource type="Texture2D" uid="uid://d2ah7eyangqat" path="res://images/UI_IconsWhiteIndividual_g774.png" id="6_1j401"]
-[ext_resource type="Texture2D" uid="uid://bn5w1ma1ylinm" path="res://images/UI_IconsWhiteIndividual_g700.png" id="6_4glq4"]
+[ext_resource type="PackedScene" uid="uid://colyiopisvoji" path="res://scenes/UI/modal_you_win.tscn" id="5_1j401"]
+[ext_resource type="PackedScene" uid="uid://dw7v33nwd2jte" path="res://scenes/toolbar.tscn" id="6_1j401"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8cj0n"]
 bounce = 0.8
@@ -49,93 +47,10 @@ position = Vector2(461, 454)
 [node name="UI" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 
-[node name="MenuBar" type="VBoxContainer" parent="UI"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -102.5
-offset_right = 102.5
-offset_bottom = 206.0
-grow_horizontal = 2
+[node name="MenuBar" parent="UI" instance=ExtResource("4_ds2dd")]
 
-[node name="TextureButton" type="TextureButton" parent="UI/MenuBar"]
-layout_mode = 2
-texture_normal = ExtResource("4_1j401")
-script = ExtResource("5_r1cou")
-texture_play = ExtResource("4_1j401")
-texture_pause = ExtResource("6_4glq4")
+[node name="ModalYouWin" parent="UI" instance=ExtResource("5_1j401")]
 
-[node name="ModalYouWin" type="PanelContainer" parent="UI"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -215.0
-offset_top = -120.5
-offset_right = 215.0
-offset_bottom = 120.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/ModalYouWin"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UI/ModalYouWin/VBoxContainer"]
-layout_mode = 2
-text = "You Win!"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/ModalYouWin/VBoxContainer"]
-layout_mode = 2
-
-[node name="TextureButton" type="Button" parent="UI/ModalYouWin/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-icon = ExtResource("5_ds2dd")
-flat = true
-
-[node name="TextureButton2" type="Button" parent="UI/ModalYouWin/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-icon = ExtResource("6_1j401")
-flat = true
-
-[node name="Toolbar" type="HBoxContainer" parent="UI"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -181.0
-offset_top = -40.0
-offset_right = 181.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
-
-[node name="Button" type="Button" parent="UI/Toolbar"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button3" type="Button" parent="UI/Toolbar"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button4" type="Button" parent="UI/Toolbar"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button5" type="Button" parent="UI/Toolbar"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button2" type="Button" parent="UI/Toolbar"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="HBoxContainer" parent="UI" instance=ExtResource("6_1j401")]
 
 [connection signal="body_entered" from="Character" to="Character" method="_on_body_entered"]
-[connection signal="pause" from="UI/MenuBar/TextureButton" to="UI/MenuBar/TextureButton" method="_on_pause"]
-[connection signal="play" from="UI/MenuBar/TextureButton" to="UI/MenuBar/TextureButton" method="_on_play"]
-[connection signal="pressed" from="UI/MenuBar/TextureButton" to="UI/MenuBar/TextureButton" method="_on_pressed"]
