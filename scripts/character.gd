@@ -38,6 +38,8 @@ func _on_reset() -> void:
     should_reset = true
 
 func _on_body_entered(body) -> void:
+    if not play_pause_button.is_playing:
+        return
     # We just hit something
     if body is Obstacle:
         # We bonked an obstacle
