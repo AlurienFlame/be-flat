@@ -27,9 +27,11 @@ func _ready() -> void:
 
 func _on_play() -> void:
     Engine.time_scale = 1.0
+    collision_mask = 1 # bitmask
 
 func _on_pause() -> void:
     Engine.time_scale = 0.0
+    collision_mask = 0 # bitmask
 
 func _on_reset() -> void:
     # Move us back to the start
