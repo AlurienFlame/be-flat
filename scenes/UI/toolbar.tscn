@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ebk42nekvobx" path="res://images/green_body_circle.png" id="5_tjtjx"]
 [ext_resource type="Texture2D" uid="uid://barnlimsfrc6u" path="res://images/purple_body_rhombus.png" id="6_vulxu"]
 [ext_resource type="Texture2D" uid="uid://16pijl85giyu" path="res://images/black_hole.png" id="7_131s0"]
-[ext_resource type="Texture2D" uid="uid://ctewtuqt32upt" path="res://images/blue_body_square.png" id="8_m7g1w"]
 [ext_resource type="Script" uid="uid://bg2wkypis60br" path="res://scripts/trashcan.gd" id="8_wwnrs"]
+[ext_resource type="Texture2D" uid="uid://b85w21fl7slqi" path="res://images/UI_IconsWhiteIndividual_g735.png" id="9_wwnrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wqxw"]
 size = Vector2(92, 102)
@@ -66,7 +66,7 @@ icon_alignment = 1
 
 [node name="trashcan" type="Area2D" parent="."]
 visible = false
-position = Vector2(740, 0)
+position = Vector2(732, -5)
 script = ExtResource("8_wwnrs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trashcan"]
@@ -74,9 +74,12 @@ position = Vector2(36, 41)
 shape = SubResource("RectangleShape2D_2wqxw")
 
 [node name="TextureRect" type="TextureRect" parent="trashcan"]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("8_m7g1w")
+offset_left = -14.0
+offset_top = -9.0
+offset_right = 85.0
+offset_bottom = 90.0
+texture = ExtResource("9_wwnrs")
+expand_mode = 1
 
 [connection signal="pressed" from="rectangle" to="." method="_on_rectangle_pressed"]
 [connection signal="pressed" from="triangle" to="." method="_on_triangle_pressed"]

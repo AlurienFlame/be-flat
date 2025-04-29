@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://4v36wnv0fb3h" path="res://scripts/play_pause_button.gd" id="2_uvnpd"]
 [ext_resource type="Texture2D" uid="uid://bn5w1ma1ylinm" path="res://images/UI_IconsWhiteIndividual_g700.png" id="3_gsc20"]
 [ext_resource type="Texture2D" uid="uid://c306c45hjx1wg" path="res://images/UI_IconsWhiteIndividual_g778.png" id="4_uvnpd"]
-[ext_resource type="Script" uid="uid://capjo23cfyf5y" path="res://scripts/button_reset.gd" id="5_gsc20"]
-[ext_resource type="Texture2D" uid="uid://xb5cn60gd3gk" path="res://images/yellow_body_square.png" id="6_judh1"]
+[ext_resource type="Script" path="res://scripts/button_reset.gd" id="5_gsc20"]
+[ext_resource type="Texture2D" uid="uid://mrrfhklunge3" path="res://images/UI_IconsWhiteIndividual_g767.png" id="6_2xyw1"]
 [ext_resource type="Script" uid="uid://5tcadlaua4yr" path="res://scripts/clear_scene.gd" id="7_2xyw1"]
 
 [node name="MenuBar" type="HBoxContainer"]
@@ -33,7 +33,7 @@ script = ExtResource("5_gsc20")
 [node name="ClearScene" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-texture_normal = ExtResource("6_judh1")
+texture_normal = ExtResource("6_2xyw1")
 stretch_mode = 0
 script = ExtResource("7_2xyw1")
 
