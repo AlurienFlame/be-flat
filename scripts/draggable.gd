@@ -29,7 +29,6 @@ func _process(_delta: float) -> void:
 		if trashcan.can_delete:
 			# Check if the mouse is over the trash
 			# Delete the object
-			print("Deleting object")
 			trashcan.can_delete = false
 			cur_object.queue_free()
 			
@@ -42,8 +41,6 @@ func _process(_delta: float) -> void:
 
 func _on_mouse_obstacle_entered(_shape_idx: int) -> void:
 	draggable = true
-	print("Mouse entered object")
 
 func _on_mouse_obstacle_exited(_shape_idx: int) -> void:
 	draggable = false
-	print("Mouse exited object")
