@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkjr6dmtm575w"]
+[gd_scene load_steps=13 format=3 uid="uid://bkjr6dmtm575w"]
 
 [ext_resource type="Script" uid="uid://b86ojyuwmwgip" path="res://scripts/character.gd" id="1_8o48g"]
 [ext_resource type="Texture2D" uid="uid://dh5g6cfmpob3p" path="res://images/Starfield_03-1024x1024.png" id="1_r1cou"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="4_wljob"]
 [ext_resource type="PackedScene" uid="uid://colyiopisvoji" path="res://scenes/UI/modal_you_win.tscn" id="5_1j401"]
 [ext_resource type="PackedScene" uid="uid://dw7v33nwd2jte" path="res://scenes/UI/toolbar.tscn" id="6_1j401"]
+[ext_resource type="AudioStream" uid="uid://bk4r15cyccm3e" path="res://audio/Forward.wav" id="10_3p5rh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8cj0n"]
 bounce = 0.8
@@ -67,5 +68,9 @@ unique_name_in_owner = true
 [node name="ModalYouWin" parent="UI" instance=ExtResource("5_1j401")]
 
 [node name="ToolBar" parent="UI" instance=ExtResource("6_1j401")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_3p5rh")
+autoplay = true
 
 [connection signal="body_entered" from="Character" to="Character" method="_on_body_entered"]
