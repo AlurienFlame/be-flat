@@ -9,7 +9,7 @@ var draggable = false
 static var cur_object = null
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (draggable or cur_object) and not play_pause_button.is_playing:
 		# Check if the mouse is pressed
 		if Input.is_action_pressed("click"):
@@ -40,10 +40,10 @@ func _process(delta: float) -> void:
 		
 		
 
-func _on_mouse_obstacle_entered(shape_idx: int) -> void:
+func _on_mouse_obstacle_entered(_shape_idx: int) -> void:
 	draggable = true
 	print("Mouse entered object")
 
-func _on_mouse_obstacle_exited(shape_idx: int) -> void:
+func _on_mouse_obstacle_exited(_shape_idx: int) -> void:
 	draggable = false
 	print("Mouse exited object")
