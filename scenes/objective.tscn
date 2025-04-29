@@ -5,13 +5,13 @@
 [ext_resource type="Script" uid="uid://cxdypmejw36qf" path="res://scripts/draggable.gd" id="3_qhv5o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhv5o"]
-radius = 14.0
+radius = 33.14
 
 [node name="Objective" type="Area2D"]
 script = ExtResource("1_0jo4f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_l3owv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
