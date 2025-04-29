@@ -3,6 +3,9 @@ class_name Objective extends Area2D
 @onready var play_pause_button: TextureButton = $"/root/Game/UI/MenuBar/PlayPauseButton"
 
 func _on_body_entered(body:Node2D) -> void:
+	if not play_pause_button.is_playing:
+		return
+
 	if body is Character:
 		# We hit a character
 
