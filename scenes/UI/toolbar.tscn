@@ -39,6 +39,7 @@ icon_alignment = 1
 [node name="triangle" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("2_m7g1w")
 text = "Triangle"
 icon = ExtResource("4_kll8o")
 icon_alignment = 1
@@ -46,6 +47,7 @@ icon_alignment = 1
 [node name="circle" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("2_m7g1w")
 text = "Circle"
 icon = ExtResource("5_tjtjx")
 icon_alignment = 1
@@ -53,6 +55,7 @@ icon_alignment = 1
 [node name="rhombus" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("2_m7g1w")
 text = "Rhombus"
 icon = ExtResource("6_vulxu")
 icon_alignment = 1
@@ -60,6 +63,7 @@ icon_alignment = 1
 [node name="exit" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("2_m7g1w")
 text = "Exit"
 icon = ExtResource("7_131s0")
 icon_alignment = 1

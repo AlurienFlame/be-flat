@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://colyiopisvoji"]
+[gd_scene load_steps=6 format=3 uid="uid://colyiopisvoji"]
 
 [ext_resource type="Texture2D" uid="uid://c306c45hjx1wg" path="res://images/UI_IconsWhiteIndividual_g778.png" id="1_beok6"]
 [ext_resource type="Script" uid="uid://blcefpumbtb0k" path="res://scripts/modal_you_win.gd" id="1_gmw2x"]
+[ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="2_7rfx3"]
 [ext_resource type="Texture2D" uid="uid://d2ah7eyangqat" path="res://images/UI_IconsWhiteIndividual_g774.png" id="2_gmw2x"]
 [ext_resource type="Script" uid="uid://capjo23cfyf5y" path="res://scripts/button_reset.gd" id="2_t58j6"]
 
@@ -27,6 +28,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_7rfx3")
 text = "You Win!"
 horizontal_alignment = 1
 
