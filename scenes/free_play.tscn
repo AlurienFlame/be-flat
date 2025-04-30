@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bkjr6dmtm575w"]
+[gd_scene load_steps=12 format=3 uid="uid://bkjr6dmtm575w"]
 
 [ext_resource type="Script" uid="uid://b86ojyuwmwgip" path="res://scripts/character.gd" id="1_8o48g"]
 [ext_resource type="Texture2D" uid="uid://dh5g6cfmpob3p" path="res://images/Starfield_03-1024x1024.png" id="1_r1cou"]
-[ext_resource type="PackedScene" uid="uid://b8byhgopp80b3" path="res://scenes/obstacles/rectangleObstacle.tscn" id="2_64ugs"]
 [ext_resource type="Texture2D" uid="uid://bvq27aeflgsgg" path="res://images/blue_body_squircle.png" id="3_uouff"]
 [ext_resource type="Texture2D" uid="uid://4fl2wlvj0alj" path="res://images/face_e.png" id="4_3p5rh"]
 [ext_resource type="PackedScene" uid="uid://bvjo3oey6s8ha" path="res://scenes/UI/menu_bar.tscn" id="4_ds2dd"]
@@ -28,7 +27,7 @@ texture = ExtResource("1_r1cou")
 stretch_mode = 6
 
 [node name="Character" type="RigidBody2D" parent="."]
-position = Vector2(415, 215)
+position = Vector2(540, 250)
 physics_material_override = SubResource("PhysicsMaterial_8cj0n")
 contact_monitor = true
 max_contacts_reported = 1
@@ -45,20 +44,8 @@ shape = SubResource("CircleShape2D_8cj0n")
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_3p5rh")
 
-[node name="Obstacle" parent="." instance=ExtResource("2_64ugs")]
-position = Vector2(326, 286)
-rotation = 0.437888
-
-[node name="Obstacle2" parent="." instance=ExtResource("2_64ugs")]
-position = Vector2(565, 356)
-rotation = 2.39845
-
-[node name="Obstacle3" parent="." instance=ExtResource("2_64ugs")]
-position = Vector2(338, 446)
-rotation = 4.25246
-
 [node name="Objective" parent="." instance=ExtResource("4_wljob")]
-position = Vector2(493, 482)
+position = Vector2(540, 1000)
 
 [node name="UI" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
