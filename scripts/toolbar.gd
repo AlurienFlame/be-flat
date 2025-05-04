@@ -1,8 +1,15 @@
 extends Control
 
+# Haven note: I do like having this as an export because we can vary per puzzle?
+@export var maxObjects = -1 # No limit by default
+var curObjects = 0
+
 func make_instance(obj: Resource) -> void:
+	if curObjects >= maxObjects && maxObjects > 0:
+		print("Max objects reached")
+		return
 	# Called when the button is pressed
-	print("Instantiating object")
+	# print("Instantiating object")
 
 	var instance = obj.instantiate()
 	instance.position = Vector2(50, 50) # Set the position as needed
@@ -21,6 +28,11 @@ func make_instance(obj: Resource) -> void:
 	# add instance to "Generated" node
 	generated.add_child(instance)
 
+	curObjects += 1
+
+func remove_instance() -> void:
+	# Called from draggable.gd when the object is deleted
+	curObjects -= 1
 	
 
 func _on_rectangle_pressed() -> void:

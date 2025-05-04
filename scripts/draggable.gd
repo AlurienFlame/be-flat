@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var play_pause_button: TextureButton = $"/root/Game/UI/MenuBar/PlayPauseButton"
 @onready var trashcan = $"/root/Game/UI/ToolBar/trashcan"
+@onready var toolbar = $"/root/Game/UI/ToolBar"
 
 var draggable = false
 
@@ -31,6 +32,7 @@ func _process(_delta: float) -> void:
 			# Delete the object
 			trashcan.can_delete = false
 			cur_object.queue_free()
+			toolbar.remove_instance()
 			
 		cur_object = null
 		
