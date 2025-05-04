@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bvjo3oey6s8ha"]
 
-[ext_resource type="Texture2D" uid="uid://da2og3im12tgj" path="res://images/UI_IconsWhiteIndividual_g708.png" id="1_lyrcj"]
+[ext_resource type="Texture2D" uid="uid://8w2hn2k6iiup" path="res://images/play_button_resized.png" id="1_2xyw1"]
 [ext_resource type="Script" uid="uid://4v36wnv0fb3h" path="res://scripts/play_pause_button.gd" id="2_uvnpd"]
-[ext_resource type="Texture2D" uid="uid://bn5w1ma1ylinm" path="res://images/UI_IconsWhiteIndividual_g700.png" id="3_gsc20"]
-[ext_resource type="Texture2D" uid="uid://c306c45hjx1wg" path="res://images/UI_IconsWhiteIndividual_g778.png" id="4_uvnpd"]
+[ext_resource type="Texture2D" uid="uid://t83t4ptqwulu" path="res://images/pause_button_resized.png" id="3_ir3oa"]
+[ext_resource type="Texture2D" uid="uid://c17bnu8ppqukh" path="res://images/reset_button_resized.png" id="4_binrv"]
 [ext_resource type="Script" path="res://scripts/button_reset.gd" id="5_gsc20"]
-[ext_resource type="Texture2D" uid="uid://mrrfhklunge3" path="res://images/UI_IconsWhiteIndividual_g767.png" id="6_2xyw1"]
+[ext_resource type="Texture2D" uid="uid://c88okgd830dl7" path="res://images/clear_button_resized.png" id="6_q8v0o"]
 [ext_resource type="Script" uid="uid://5tcadlaua4yr" path="res://scripts/clear_scene.gd" id="7_2xyw1"]
 
 [node name="MenuBar" type="HBoxContainer"]
@@ -19,22 +19,23 @@ grow_horizontal = 2
 
 [node name="PlayPauseButton" type="TextureButton" parent="."]
 layout_mode = 2
-texture_normal = ExtResource("1_lyrcj")
+texture_normal = ExtResource("1_2xyw1")
 script = ExtResource("2_uvnpd")
-texture_play = ExtResource("1_lyrcj")
-texture_pause = ExtResource("3_gsc20")
+texture_play = ExtResource("1_2xyw1")
+texture_pause = ExtResource("3_ir3oa")
 
 [node name="ButtonReset" type="Button" parent="."]
 layout_mode = 2
-icon = ExtResource("4_uvnpd")
+icon = ExtResource("4_binrv")
 flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+vertical_icon_alignment = 0
 script = ExtResource("5_gsc20")
 
 [node name="ClearScene" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-texture_normal = ExtResource("6_2xyw1")
-stretch_mode = 0
+texture_normal = ExtResource("6_q8v0o")
 script = ExtResource("7_2xyw1")
 
 [connection signal="pause" from="PlayPauseButton" to="PlayPauseButton" method="_on_pause"]
