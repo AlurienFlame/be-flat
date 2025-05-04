@@ -43,6 +43,10 @@ func _on_body_entered(body) -> void:
     # We just hit something
     if body is Obstacle:
         # We bonked an obstacle
-        body.get_bonked()
+        var isDead = body.get_bonked()
+        if isDead:
+            # We died
+            print("You died")
+            should_reset = true
     else:
         print("Hit something unknown")

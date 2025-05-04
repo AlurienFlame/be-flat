@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://1ccahy7ekja1"]
+
+[ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_cdi5q"]
+[ext_resource type="PackedScene" uid="uid://b8byhgopp80b3" path="res://scenes/obstacles/rectangleObstacle.tscn" id="2_ngp56"]
+
+[node name="Obstacle" type="StaticBody2D"]
+script = ExtResource("1_cdi5q")
+metadata/_custom_type_script = "uid://b7bsw2vm81dgw"
+
+[node name="Obstacle" parent="." instance=ExtResource("2_ngp56")]
+position = Vector2(217, 148)
+isMoving = true
+speed = 500

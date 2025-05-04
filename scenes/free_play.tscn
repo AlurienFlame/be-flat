@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkjr6dmtm575w"]
+[gd_scene load_steps=13 format=3 uid="uid://bkjr6dmtm575w"]
 
 [ext_resource type="Script" uid="uid://b86ojyuwmwgip" path="res://scripts/character.gd" id="1_8o48g"]
 [ext_resource type="Texture2D" uid="uid://dh5g6cfmpob3p" path="res://images/Starfield_03-1024x1024.png" id="1_r1cou"]
+[ext_resource type="PackedScene" uid="uid://b8byhgopp80b3" path="res://scenes/obstacles/rectangleObstacle.tscn" id="2_64ugs"]
 [ext_resource type="Texture2D" uid="uid://bvq27aeflgsgg" path="res://images/blue_body_squircle.png" id="3_uouff"]
 [ext_resource type="Texture2D" uid="uid://4fl2wlvj0alj" path="res://images/face_e.png" id="4_3p5rh"]
 [ext_resource type="PackedScene" uid="uid://bvjo3oey6s8ha" path="res://scenes/UI/menu_bar.tscn" id="4_ds2dd"]
@@ -59,5 +60,10 @@ unique_name_in_owner = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_3p5rh")
 autoplay = true
+
+[node name="Obstacle" parent="." instance=ExtResource("2_64ugs")]
+position = Vector2(536, 669)
+isDeadly = true
+isMoving = true
 
 [connection signal="body_entered" from="Character" to="Character" method="_on_body_entered"]
