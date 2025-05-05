@@ -4,9 +4,18 @@ class_name Obstacle extends StaticBody2D
 @export var isDeadly = false
 @export var isMoving = false
 @export var speed = 100
-# vector of the direction the object is moving
-var move_vector = Vector2.ZERO
 
+enum Direction {
+	NONE,
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN
+}
+
+@export var direction: Direction
+
+var move_vector: Vector2
 var original_position: Vector2
 
 
@@ -15,8 +24,18 @@ func _ready():
 	# set speed if isMoving
 	if isMoving:
 		print("Obstacle is moving")
-		# set the speed to the right
-		move_vector = Vector2.RIGHT
+		# set direction
+		match direction:
+			Direction.LEFT:
+				move_vector = Vector2.LEFT
+			Direction.RIGHT:
+				move_vector = Vector2.RIGHT
+			Direction.UP:
+				move_vector = Vector2.UP
+			Direction.DOWN:
+				move_vector = Vector2.DOWN
+			_:
+				move_vector = Vector2.ZERO
 
 func _process(delta: float) -> void:
 	if isMoving:
@@ -33,6 +52,15 @@ func get_bonked() -> bool:
 	if isDeadly:
 		# kill player
 		position = original_position
+		match direction:
+			Direction.LEFT:
+				move_vector = Vector2.RIGHT
+			Direction.RIGHT:
+				move_vector = Vector2.LEFT
+			Direction.UP:
+				move_vector = Vector2.DOWN
+			Direction.DOWN:
+				move_vector = Vector2.UP
 		return true
 	return false
 

@@ -65,5 +65,7 @@ autoplay = true
 position = Vector2(536, 669)
 isDeadly = true
 isMoving = true
+speed = 500
+direction = 4
 
 [connection signal="body_entered" from="Character" to="Character" method="_on_body_entered"]
