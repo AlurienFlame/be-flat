@@ -6,6 +6,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_bqqt6"]
 font_names = PackedStringArray("Rubik Glitch")
+subpixel_positioning = 0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -108,24 +109,34 @@ anchor_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="LevelSelect"]
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelSelect"]
 layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("3_bqqt6")
-theme_override_font_sizes/font_size = 40
-text = "Level Select"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Back" type="Button" parent="LevelSelect"]
+[node name="Back" type="Button" parent="LevelSelect/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_bqqt6")
 text = "Back
 "
+
+[node name="MarginContainer" type="MarginContainer" parent="LevelSelect/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Label" type="Label" parent="LevelSelect/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 40
+text = "Level Select"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="LevelSelect"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="LevelSelect/HFlowContainer"]
+layout_mode = 2
 
 [connection signal="pressed" from="MainScreen/Buttons/Puzzles" to="." method="_on_puzzles_pressed"]
 [connection signal="pressed" from="MainScreen/Buttons/Free Play" to="." method="_on_free_play_pressed"]
 [connection signal="pressed" from="MainScreen/Buttons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MainScreen/Buttons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="OptionsScreen/Back" to="." method="_on_back_pressed_from_options"]
-[connection signal="pressed" from="LevelSelect/Back" to="." method="_on_back_pressed_from_level_select"]
+[connection signal="pressed" from="LevelSelect/HBoxContainer/Back" to="." method="_on_back_pressed_from_level_select"]
