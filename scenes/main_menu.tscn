@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d4dqvlhs5k5l3" path="res://images/Blue_Nebula_08-1024x1024.png" id="2_wu84c"]
 [ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="3_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://dhx3x10jpio8y" path="res://scenes/UI/puzzle_button.tscn" id="4_wu84c"]
-[ext_resource type="PackedScene" path="res://scenes/levels/lvl1.tscn" id="5_8ln24"]
-[ext_resource type="PackedScene" path="res://scenes/levels/lvl2.tscn" id="6_rtw2f"]
+[ext_resource type="PackedScene" uid="uid://bddvg6tntup43" path="res://scenes/levels/lvl1.tscn" id="5_8ln24"]
+[ext_resource type="PackedScene" uid="uid://c1dt0sw8ynaw2" path="res://scenes/levels/lvl2.tscn" id="6_rtw2f"]
 
 [sub_resource type="SystemFont" id="SystemFont_bqqt6"]
 font_names = PackedStringArray("Rubik Glitch")

@@ -38,8 +38,6 @@ layout_mode = 2
 texture_normal = ExtResource("6_q8v0o")
 script = ExtResource("7_2xyw1")
 
-[connection signal="pause" from="PlayPauseButton" to="PlayPauseButton" method="_on_pause"]
-[connection signal="play" from="PlayPauseButton" to="PlayPauseButton" method="_on_play"]
 [connection signal="pressed" from="PlayPauseButton" to="PlayPauseButton" method="_on_pressed"]
 [connection signal="pressed" from="ButtonReset" to="ButtonReset" method="_on_pressed"]
 [connection signal="pressed" from="ClearScene" to="ClearScene" method="clear_scene"]

@@ -1,7 +1,6 @@
 class_name Character extends RigidBody2D
 
-@onready var play_pause_button: TextureButton = $"/root/Game/UI/MenuBar/PlayPauseButton"
-@onready var modal_you_win: PanelContainer = $"/root/Game/UI/ModalYouWin"
+@onready var play_pause_button: TextureButton = $"../UI/MenuBar/PlayPauseButton"
 
 @onready var start_position: Vector2 = position
 
@@ -21,9 +20,9 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
         should_reset = false
 
 func _ready() -> void:
-    play_pause_button.connect("play", _on_play)
-    play_pause_button.connect("pause", _on_pause)
-    modal_you_win.connect("reset", _on_reset)
+    EventBus.connect("play", _on_play)
+    EventBus.connect("pause", _on_pause)
+    EventBus.connect("reset", _on_reset)
 
 func _on_play() -> void:
     Engine.time_scale = 1.0

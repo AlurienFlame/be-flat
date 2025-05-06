@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://capjo23cfyf5y" path="res://scripts/button_reset.gd" id="2_t58j6"]
 
 [node name="ModalYouWin" type="PanelContainer"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

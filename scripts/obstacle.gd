@@ -66,7 +66,7 @@ func get_bonked() -> bool:
 
 
 # if it hits the border, reverse the direction
-func _on_body_entered(body) -> void:
+func _on_body_entered(_body) -> void:
 	if isMoving:
 		# reverse the direction
 		move_vector = -move_vector

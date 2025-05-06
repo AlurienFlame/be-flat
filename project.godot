@@ -15,6 +15,10 @@ run/main_scene="uid://cgshkgi5sfd58"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://bbp7rup467u1i"
 
+[autoload]
+
+EventBus="*res://scripts/event_bus.gd"
+
 [display]
 
 window/size/viewport_width=1080

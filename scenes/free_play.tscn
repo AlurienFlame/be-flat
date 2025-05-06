@@ -1,65 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://bkjr6dmtm575w"]
+[gd_scene load_steps=4 format=3 uid="uid://bkjr6dmtm575w"]
 
-[ext_resource type="Script" uid="uid://b86ojyuwmwgip" path="res://scripts/character.gd" id="1_8o48g"]
-[ext_resource type="Texture2D" uid="uid://dh5g6cfmpob3p" path="res://images/Starfield_03-1024x1024.png" id="1_r1cou"]
+[ext_resource type="PackedScene" uid="uid://bpxjna5l6nvm7" path="res://scenes/base_level.tscn" id="1_vdyjo"]
 [ext_resource type="PackedScene" uid="uid://b8byhgopp80b3" path="res://scenes/obstacles/rectangleObstacle.tscn" id="2_64ugs"]
-[ext_resource type="Texture2D" uid="uid://bvq27aeflgsgg" path="res://images/blue_body_squircle.png" id="3_uouff"]
-[ext_resource type="Texture2D" uid="uid://4fl2wlvj0alj" path="res://images/face_e.png" id="4_3p5rh"]
-[ext_resource type="PackedScene" uid="uid://bvjo3oey6s8ha" path="res://scenes/UI/menu_bar.tscn" id="4_ds2dd"]
 [ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="4_wljob"]
-[ext_resource type="PackedScene" uid="uid://colyiopisvoji" path="res://scenes/UI/modal_you_win.tscn" id="5_1j401"]
-[ext_resource type="PackedScene" uid="uid://dw7v33nwd2jte" path="res://scenes/UI/toolbar.tscn" id="6_1j401"]
-[ext_resource type="AudioStream" uid="uid://bk4r15cyccm3e" path="res://audio/Forward.wav" id="10_3p5rh"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8cj0n"]
-bounce = 0.8
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_8cj0n"]
-radius = 20.0998
 
 [node name="Game" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 9.0
-offset_top = 3.0
-offset_right = 1078.0
-offset_bottom = 1920.0
-texture = ExtResource("1_r1cou")
-stretch_mode = 6
-
-[node name="Character" type="RigidBody2D" parent="."]
-position = Vector2(540, 250)
-physics_material_override = SubResource("PhysicsMaterial_8cj0n")
-contact_monitor = true
-max_contacts_reported = 1
-script = ExtResource("1_8o48g")
-
-[node name="Sprite2D" type="Sprite2D" parent="Character"]
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_uouff")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-shape = SubResource("CircleShape2D_8cj0n")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Character"]
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("4_3p5rh")
+[node name="BaseLevel" parent="." instance=ExtResource("1_vdyjo")]
 
 [node name="Objective" parent="." instance=ExtResource("4_wljob")]
 position = Vector2(540, 1000)
-
-[node name="UI" type="CanvasLayer" parent="."]
-unique_name_in_owner = true
-
-[node name="MenuBar" parent="UI" instance=ExtResource("4_ds2dd")]
-
-[node name="ModalYouWin" parent="UI" instance=ExtResource("5_1j401")]
-
-[node name="ToolBar" parent="UI" instance=ExtResource("6_1j401")]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_3p5rh")
-autoplay = true
 
 [node name="Obstacle" parent="." instance=ExtResource("2_64ugs")]
 position = Vector2(536, 669)
@@ -67,5 +17,3 @@ isDeadly = true
 isMoving = true
 speed = 500
 direction = 4
-
-[connection signal="body_entered" from="Character" to="Character" method="_on_body_entered"]

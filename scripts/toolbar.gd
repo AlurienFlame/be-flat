@@ -19,6 +19,7 @@ func make_instance(obj: Resource) -> void:
 	var scene_tree = get_tree()
 	var root = scene_tree.root
 	# check if "Generated" node exists
+	
 	var generated = root.get_node("Generated")
 	if not generated:
 		# create node called "Generated"
