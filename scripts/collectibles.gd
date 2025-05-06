@@ -1,11 +1,12 @@
 extends Area2D
-class_name Collectibles
+class_name Collectible
 
 signal collected
 
-func _on_body_entered(body: Node2D) -> void:
-    if not play_pause_button.is_playing:
-		return
+func _ready():
+	connect("body_entered", _on_body_entered)
+
+func _on_body_entered(body: Node) -> void:
 	if body is Character:
 		emit_signal("collected")
 		queue_free()
