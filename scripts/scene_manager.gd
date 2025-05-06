@@ -3,7 +3,7 @@ extends Node2D
 @onready var menu = $MainMenu
 @onready var game_ui = $UI
 
-var current_level: int
+var current_level: int = -1
 var level_node: Node2D
 
 func load_free_play():
@@ -11,6 +11,7 @@ func load_free_play():
     game_ui.show()
     if level_node:
         level_node.queue_free()
+    current_level = -1 # Free play mode
 
     var scene = load("res://scenes/free_play.tscn")
     level_node = scene.instantiate()
@@ -30,3 +31,10 @@ func load_level(level: int):
 func increment_level():
     current_level += 1
     load_level(current_level)
+
+func does_next_level_exist() -> bool:
+    print(current_level)
+    if current_level == -1:
+        return false
+    var next_level_path = "res://scenes/levels/lvl" + str(current_level + 1) + ".tscn"
+    return ResourceLoader.exists(next_level_path)
