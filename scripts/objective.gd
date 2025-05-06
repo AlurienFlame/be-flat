@@ -1,6 +1,6 @@
 class_name Objective extends Area2D
 
-@onready var play_pause_button: TextureButton = $"../BaseLevel/UI/MenuBar/PlayPauseButton"
+@onready var play_pause_button: TextureButton = $"/root/SceneManager/UI/MenuBar/PlayPauseButton"
 
 func _on_body_entered(body:Node2D) -> void:
     if not play_pause_button.is_playing:

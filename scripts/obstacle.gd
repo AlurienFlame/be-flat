@@ -23,7 +23,6 @@ func _ready():
 	original_position = position
 	# set speed if isMoving
 	if isMoving:
-		print("Obstacle is moving")
 		# set direction
 		match direction:
 			Direction.LEFT:

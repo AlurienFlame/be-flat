@@ -1,6 +1,6 @@
 class_name Character extends RigidBody2D
 
-@onready var play_pause_button: TextureButton = $"../UI/MenuBar/PlayPauseButton"
+@onready var play_pause_button: TextureButton = $"/root/SceneManager/UI/MenuBar/PlayPauseButton"
 
 @onready var start_position: Vector2 = position
 
@@ -23,6 +23,12 @@ func _ready() -> void:
     EventBus.connect("play", _on_play)
     EventBus.connect("pause", _on_pause)
     EventBus.connect("reset", _on_reset)
+
+    # set initial play/pause state
+    if play_pause_button.is_playing:
+        _on_play()
+    else:
+        _on_pause()
 
 func _on_play() -> void:
     Engine.time_scale = 1.0

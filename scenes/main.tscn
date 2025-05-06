@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdlravf0b8i05"]
+
+[ext_resource type="PackedScene" uid="uid://cgshkgi5sfd58" path="res://scenes/main_menu.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://cpfhl0kgousf0" path="res://scripts/scene_manager.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://0ywc8gr0xq54" path="res://scenes/UI/ui.tscn" id="2_0wfyh"]
+
+[node name="SceneManager" type="Node2D"]
+script = ExtResource("1_sugp2")
+
+[node name="MainMenu" parent="." instance=ExtResource("1_o5qli")]
+
+[node name="UI" parent="." instance=ExtResource("2_0wfyh")]
+visible = false

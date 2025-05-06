@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var play_pause_button: TextureButton = $"../../../Game/BaseLevel/UI/MenuBar/PlayPauseButton"
-@onready var trashcan = $"../../../Game/BaseLevel/UI/ToolBar/trashcan"
-@onready var toolbar = $"../../../Game/BaseLevel/UI/ToolBar"
+@onready var play_pause_button: TextureButton = $"/root/SceneManager/UI/MenuBar/PlayPauseButton"
+@onready var trashcan = $"/root/SceneManager/UI/ToolBar/trashcan"
+@onready var toolbar = $"/root/SceneManager/UI/ToolBar"
 
 var draggable = false
 

@@ -7,5 +7,5 @@ func _ready() -> void:
     for filename in levels:
         var button: AspectRatioContainer = puzzle_button.instantiate()
         button.get_node("Button").text = filename
-        button.scene = load("res://scenes/levels/" + filename)
+        button.index = filename.to_int()
         add_child(button)

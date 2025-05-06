@@ -2,7 +2,8 @@ extends AspectRatioContainer
 
 @onready var button = $Button
 @onready var subviewport = $SubViewport
-@export var scene: PackedScene
+@export var index: int
+@onready var scene_manager = $"/root/SceneManager"
 
 func _ready() -> void:
     # Thumbnails don't work because the instantiated scene UI breaks the menu UI
@@ -15,4 +16,4 @@ func _ready() -> void:
     pass
 
 func _on_button_pressed() -> void:
-    get_tree().change_scene_to_file(scene.resource_path)
+    scene_manager.load_level(index)

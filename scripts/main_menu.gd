@@ -1,8 +1,9 @@
-extends Control
+extends CanvasLayer
 
 @onready var options_screen = $OptionsScreen
 @onready var main_screen = $MainScreen
 @onready var level_select = $LevelSelect
+@onready var scene_manager = $"/root/SceneManager"
 
 # Animation Settings
 const duration = 0.2
@@ -17,7 +18,7 @@ func _on_puzzles_pressed() -> void:
 
 func _on_free_play_pressed() -> void:
     # Load into an empty game board
-    get_tree().change_scene_to_file("res://scenes/free_play.tscn")
+    scene_manager.load_free_play()
 
 func _on_options_pressed():
     # Slide to options
