@@ -43,8 +43,9 @@ script = ExtResource("2_t58j6")
 
 [node name="ButtonNextPuzzle" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-disabled = true
+text = "Next Level"
 icon = ExtResource("2_gmw2x")
 flat = true
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/ButtonReset" to="VBoxContainer/HBoxContainer/ButtonReset" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ButtonNextPuzzle" to="." method="_on_button_next_puzzle_pressed"]

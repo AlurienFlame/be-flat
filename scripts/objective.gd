@@ -9,8 +9,20 @@ func _on_body_entered(body:Node2D) -> void:
 	if body is Character:
 		# We hit a character
 
+		# get current scene filepath
+		var current_scene = get_tree().current_scene
+		var current_scene_file = ""
+		if current_scene != null:
+			current_scene_file = current_scene.scene_file_path
+		#calculate next level
+		var next_level_number = current_scene_file.to_int() + 1
+		#next level path 
+		var next_level_path = "res://scenes/levels/lvl" + str(next_level_number) + ".tscn"
+		
+
 		# Show the win modal
 		var modal = %UI/ModalYouWin
+		modal.next_level_path = next_level_path
 		modal.show()
 
 		# Pause the game
