@@ -5,7 +5,8 @@ extends AspectRatioContainer
 @export var scene: PackedScene
 
 func _ready() -> void:
-    # TODO: Figure out why these lines break the puzzle button
+    # Thumbnails don't work because the instantiated scene UI breaks the menu UI
+    # And we can't create the scene without UI because too much depends on it
     # var instantiated = scene.instantiate()
     # subviewport.add_child(instantiated)
     # await RenderingServer.frame_post_draw
