@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgshkgi5sfd58"]
+[gd_scene load_steps=8 format=3 uid="uid://cgshkgi5sfd58"]
 
 [ext_resource type="Script" uid="uid://3laxytqg0cr4" path="res://scripts/main_menu.gd" id="1_dmvif"]
 [ext_resource type="Texture2D" uid="uid://d4dqvlhs5k5l3" path="res://images/Blue_Nebula_08-1024x1024.png" id="2_wu84c"]
 [ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="3_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://dhx3x10jpio8y" path="res://scenes/UI/puzzle_button.tscn" id="4_wu84c"]
+[ext_resource type="PackedScene" path="res://scenes/levels/lvl1.tscn" id="5_8ln24"]
+[ext_resource type="PackedScene" path="res://scenes/levels/lvl2.tscn" id="6_rtw2f"]
 
 [sub_resource type="SystemFont" id="SystemFont_bqqt6"]
 font_names = PackedStringArray("Rubik Glitch")
@@ -131,8 +134,13 @@ text = "Level Select"
 [node name="HFlowContainer" type="HFlowContainer" parent="LevelSelect"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="LevelSelect/HFlowContainer"]
+[node name="PuzzleButton" parent="LevelSelect/HFlowContainer" instance=ExtResource("4_wu84c")]
 layout_mode = 2
+scene = ExtResource("5_8ln24")
+
+[node name="PuzzleButton2" parent="LevelSelect/HFlowContainer" instance=ExtResource("4_wu84c")]
+layout_mode = 2
+scene = ExtResource("6_rtw2f")
 
 [connection signal="pressed" from="MainScreen/Buttons/Puzzles" to="." method="_on_puzzles_pressed"]
 [connection signal="pressed" from="MainScreen/Buttons/Free Play" to="." method="_on_free_play_pressed"]

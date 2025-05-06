@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhx3x10jpio8y"]
+
+[ext_resource type="Script" uid="uid://c8kb4s1j3ipgj" path="res://scripts/puzzle_button.gd" id="1_32l5l"]
+[ext_resource type="PackedScene" uid="uid://bkjr6dmtm575w" path="res://scenes/free_play.tscn" id="2_8prpi"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8ln24"]
+viewport_path = NodePath("LevelSelect/HFlowContainer/PuzzleButton/SubViewport")
+
+[node name="PuzzleButton" type="AspectRatioContainer"]
+script = ExtResource("1_32l5l")
+scene = ExtResource("2_8prpi")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(256, 256)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+icon = SubResource("ViewportTexture_8ln24")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
