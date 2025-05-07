@@ -21,3 +21,9 @@ direction = 4
 
 [node name="Collectible" parent="." instance=ExtResource("4_t6krm")]
 position = Vector2(524, 577)
+
+[node name="Collectible2" parent="." instance=ExtResource("4_t6krm")]
+position = Vector2(529, 481)
+
+[node name="Collectible3" parent="." instance=ExtResource("4_t6krm")]
+position = Vector2(538, 390)

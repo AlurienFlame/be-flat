@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhrd0mi6pb1em"]
+[gd_scene load_steps=7 format=3 uid="uid://bhrd0mi6pb1em"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_6j1sb"]
 [ext_resource type="Texture2D" uid="uid://barnlimsfrc6u" path="res://images/purple_body_rhombus.png" id="2_2o4bh"]
+[ext_resource type="Texture2D" uid="uid://bvn0ayuvd7giu" path="res://images/Parts/noise03.png" id="3_fclwu"]
 [ext_resource type="AudioStream" uid="uid://btnqw4pnhqqj5" path="res://audio/E.wav" id="3_hgnuj"]
 [ext_resource type="Script" uid="uid://cxdypmejw36qf" path="res://scripts/draggable.gd" id="4_hgnuj"]
 
@@ -14,8 +15,13 @@ input_pickable = true
 script = ExtResource("1_6j1sb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+clip_children = 2
 rotation = -0.23911
 texture = ExtResource("2_2o4bh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_fclwu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.90662, -1.13034)

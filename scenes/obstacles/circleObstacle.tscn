@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://djwya447iy8ah"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_s7e6m"]
-[ext_resource type="Texture2D" uid="uid://ebk42nekvobx" path="res://images/green_body_circle.png" id="2_vbhvj"]
+[ext_resource type="Texture2D" uid="uid://by6ulf7dgmxe" path="res://images/Planets/planet09.png" id="2_mimf4"]
 [ext_resource type="AudioStream" uid="uid://b771vfci3q6g" path="res://audio/G.wav" id="3_mimf4"]
 [ext_resource type="Script" uid="uid://cxdypmejw36qf" path="res://scripts/draggable.gd" id="4_mimf4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rerlo"]
-radius = 41.2311
+radius = 49.6488
 
 [node name="Obstacle" type="StaticBody2D"]
 rotation = 0.295138
@@ -14,7 +14,8 @@ input_pickable = true
 script = ExtResource("1_s7e6m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_vbhvj")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_mimf4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rerlo")
