@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c17bnu8ppqukh" path="res://images/reset_button_resized.png" id="4_binrv"]
 [ext_resource type="Script" uid="uid://capjo23cfyf5y" path="res://scripts/button_reset.gd" id="5_gsc20"]
 [ext_resource type="Texture2D" uid="uid://c88okgd830dl7" path="res://images/clear_button_resized.png" id="6_q8v0o"]
-[ext_resource type="Script" uid="uid://5tcadlaua4yr" path="res://scripts/clear_scene.gd" id="7_2xyw1"]
+[ext_resource type="Script" path="res://scripts/clear_scene.gd" id="7_2xyw1"]
 
 [node name="MenuBar" type="HBoxContainer"]
 anchors_preset = 5
