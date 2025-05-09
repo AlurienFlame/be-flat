@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_7ukg5"]
 [ext_resource type="Texture2D" uid="uid://c7nxsu7uq4kqa" path="res://images/rectangle.png" id="2_020cn"]
 [ext_resource type="AudioStream" uid="uid://bjcivjragxx06" path="res://audio/C3.wav" id="2_drdry"]
-[ext_resource type="Texture2D" uid="uid://cprrgpd81bfa" path="res://images/Parts/noise04.png" id="3_0meuu"]
+[ext_resource type="Texture2D" uid="uid://cmcijdvk4ulw8" path="res://images/Parts/noise01.png" id="3_0meuu"]
 [ext_resource type="Script" uid="uid://cxdypmejw36qf" path="res://scripts/draggable.gd" id="4_0it7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
@@ -21,8 +21,9 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_020cn")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(1.24, 0.5)
-scale = Vector2(0.0913281, 0.03)
+modulate = Color(0.639216, 0.152941, 0.537255, 1)
+position = Vector2(1.24999, 36.91)
+scale = Vector2(0.11084, 0.151543)
 texture = ExtResource("3_0meuu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
