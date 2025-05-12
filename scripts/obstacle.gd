@@ -20,6 +20,7 @@ var original_position: Vector2
 
 
 func _ready():
+	EventBus.connect("reset", reset_obstacle)
 	original_position = position
 	# set speed if isMoving
 	if isMoving:
@@ -50,16 +51,7 @@ func get_bonked() -> bool:
 	$AudioStreamPlayer2D.play()
 	if isDeadly:
 		# kill player
-		position = original_position
-		match direction:
-			Direction.LEFT:
-				move_vector = Vector2.RIGHT
-			Direction.RIGHT:
-				move_vector = Vector2.LEFT
-			Direction.UP:
-				move_vector = Vector2.DOWN
-			Direction.DOWN:
-				move_vector = Vector2.UP
+		reset_obstacle()
 		return true
 	return false
 
@@ -69,3 +61,16 @@ func _on_body_entered(_body) -> void:
 	if isMoving:
 		# reverse the direction
 		move_vector = -move_vector
+
+func reset_obstacle() -> void:
+	
+		position = original_position
+		match direction:
+			Direction.LEFT:
+				move_vector = Vector2.LEFT
+			Direction.RIGHT:
+				move_vector = Vector2.RIGHT
+			Direction.UP:
+				move_vector = Vector2.UP
+			Direction.DOWN:
+				move_vector = Vector2.DOWN

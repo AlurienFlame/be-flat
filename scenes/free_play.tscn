@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bpxjna5l6nvm7" path="res://scenes/base_level.tscn" id="1_vdyjo"]
 [ext_resource type="PackedScene" uid="uid://b8byhgopp80b3" path="res://scenes/obstacles/rectangleObstacle.tscn" id="2_64ugs"]
-[ext_resource type="PackedScene" path="res://scenes/collectible.tscn" id="4_ds2dd"]
+[ext_resource type="PackedScene" uid="uid://brmbc57gu8bcl" path="res://scenes/collectible.tscn" id="4_ds2dd"]
 [ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="4_wljob"]
 
 [node name="Game" type="Node2D"]

@@ -1,5 +1,8 @@
 extends TextureButton
 
+func _ready() -> void:
+	EventBus.connect("clear_scene", clear_scene)
+
 func clear_scene() -> void:
 	# Get "Generated" node
 	var generated = get_tree().root.get_node("Generated")
