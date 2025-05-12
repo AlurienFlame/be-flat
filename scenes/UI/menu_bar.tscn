@@ -9,22 +9,28 @@
 [ext_resource type="Script" uid="uid://5tcadlaua4yr" path="res://scripts/clear_scene.gd" id="7_2xyw1"]
 
 [node name="MenuBar" type="HBoxContainer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -211.0
-offset_right = 211.0
-offset_bottom = 214.0
+anchors_preset = -1
+anchor_left = 0.398
+anchor_top = 0.028
+anchor_right = 0.398
+anchor_bottom = 0.028
+offset_left = 18.16
+offset_top = -22.76
+offset_right = 218.16
+offset_bottom = 41.24
 grow_horizontal = 2
 
 [node name="PlayPauseButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = ExtResource("1_2xyw1")
+stretch_mode = 5
 script = ExtResource("2_uvnpd")
 texture_play = ExtResource("1_2xyw1")
 texture_pause = ExtResource("3_ir3oa")
 
 [node name="ButtonReset" type="Button" parent="."]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 icon = ExtResource("4_binrv")
 flat = true
@@ -34,8 +40,10 @@ vertical_icon_alignment = 0
 script = ExtResource("5_gsc20")
 
 [node name="ClearScene" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = ExtResource("6_q8v0o")
+stretch_mode = 5
 script = ExtResource("7_2xyw1")
 
 [connection signal="pressed" from="PlayPauseButton" to="PlayPauseButton" method="_on_pressed"]

@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhrd0mi6pb1em"]
+[gd_scene load_steps=5 format=3 uid="uid://bhrd0mi6pb1em"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_6j1sb"]
-[ext_resource type="Texture2D" uid="uid://barnlimsfrc6u" path="res://images/purple_body_rhombus.png" id="2_2o4bh"]
-[ext_resource type="Texture2D" uid="uid://bvn0ayuvd7giu" path="res://images/Parts/noise03.png" id="3_fclwu"]
+[ext_resource type="Texture2D" uid="uid://bt1dtu2ecfp55" path="res://images/Pixel Art Space Update 2.0/Pixel Art Space Update 2.0/Planet9.png" id="2_hgnuj"]
 [ext_resource type="AudioStream" uid="uid://btnqw4pnhqqj5" path="res://audio/E.wav" id="3_hgnuj"]
 [ext_resource type="Script" uid="uid://cxdypmejw36qf" path="res://scripts/draggable.gd" id="4_hgnuj"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o4bh"]
-size = Vector2(67.766, 63.526)
 
 [node name="Obstacle" type="StaticBody2D"]
 rotation = 0.295138
@@ -16,17 +12,13 @@ script = ExtResource("1_6j1sb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 clip_children = 2
-rotation = -0.23911
-texture = ExtResource("2_2o4bh")
+rotation = 0.521853
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("2_hgnuj")
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-scale = Vector2(0.08, 0.08)
-texture = ExtResource("3_fclwu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.90662, -1.13034)
-rotation = 0.548033
-shape = SubResource("RectangleShape2D_2o4bh")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(27.7461, -8.43528, 32.9818, 8.78643, 44.6239, 23.0153, 22.1208, 24.6307, 13.8008, 28.2053, -8.0364, 28.573, -25.2508, 9.76707, -29.9048, -5.54113, -38.1791, -15.5679, -40.2152, -22.2652, -33.1428, -26.5057, -26.2387, -24.4239, -18.3779, -22.633, -8.72616, -28.7029, 3.04586, -31.2366, 15.2313, -25.5344, 21.7604, -21.2482)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(6.56019, 38.7681)
