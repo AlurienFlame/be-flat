@@ -3,11 +3,23 @@ class_name Collectible
 
 signal collected
 
+var parent : Node
+
 func _ready():
+	parent = get_parent()
+	if not parent:
+		parent = get_tree().root
 	connect("body_entered", _on_body_entered)
+	EventBus.connect("reset", _on_reset)
 
 func _on_body_entered(body: Node) -> void:
-	if body is Character:
+	if is_inside_tree() and body is Character:
 		emit_signal("collected")
 		print("collectible")
-		queue_free()
+		parent.remove_child(self)
+
+
+
+func _on_reset() -> void:
+	# Put all freed collectibles back into the scene
+	parent.add_child(self)

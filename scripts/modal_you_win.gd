@@ -12,6 +12,7 @@ func _ready() -> void:
 func _on_button_next_puzzle_pressed() -> void:
 	scene_manager.increment_level()
 	EventBus.emit_signal("reset")
+	EventBus.emit_signal("clear_scene")
 
 func _on_reset():
 	hide()
