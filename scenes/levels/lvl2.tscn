@@ -17,3 +17,8 @@ isDeadly = true
 isMoving = true
 speed = 500
 direction = 4
+
+[node name="Draggable" parent="Obstacle" index="3"]
+script = null
+
+[editable path="Obstacle"]

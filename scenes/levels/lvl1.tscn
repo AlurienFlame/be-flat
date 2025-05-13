@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bddvg6tntup43"]
 
 [ext_resource type="PackedScene" uid="uid://bpxjna5l6nvm7" path="res://scenes/base_level.tscn" id="1_0b2i4"]
-[ext_resource type="PackedScene" path="res://scenes/collectible.tscn" id="4_t6krm"]
+[ext_resource type="PackedScene" uid="uid://brmbc57gu8bcl" path="res://scenes/collectible.tscn" id="4_t6krm"]
 [ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="5_2tpkn"]
 [ext_resource type="PackedScene" uid="uid://b8byhgopp80b3" path="res://scenes/obstacles/rectangleObstacle.tscn" id="10_cpkqi"]
 
@@ -18,6 +18,9 @@ isMoving = true
 speed = 500
 direction = 1
 
+[node name="Draggable" parent="Obstacle" index="3"]
+script = null
+
 [node name="Collectible" parent="." instance=ExtResource("4_t6krm")]
 position = Vector2(540, 728)
 
@@ -26,3 +29,5 @@ position = Vector2(529, 481)
 
 [node name="Collectible3" parent="." instance=ExtResource("4_t6krm")]
 position = Vector2(538, 390)
+
+[editable path="Obstacle"]
