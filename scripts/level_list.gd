@@ -13,3 +13,7 @@ func _ready() -> void:
         else:
             button.init(filename, true)
             unlocked_first_level = true
+
+func unlock_level(level: int) -> void:
+    var button = get_child(level - 1) # convert to 0-based index
+    button.unlock()

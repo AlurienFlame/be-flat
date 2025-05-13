@@ -22,3 +22,6 @@ func init(filename, enabled) -> void:
 
 func _on_button_pressed() -> void:
     scene_manager.load_level(index)
+
+func unlock() -> void:
+    button.disabled = false
