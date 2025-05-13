@@ -22,8 +22,8 @@ texture = ExtResource("2_020cn")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
 modulate = Color(0.639216, 0.152941, 0.537255, 1)
-position = Vector2(-1.5, 0.5)
-scale = Vector2(2.17969, 0.609375)
+position = Vector2(-2.5, 1.5)
+scale = Vector2(2.75586, 1.55469)
 texture = ExtResource("3_0meuu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
