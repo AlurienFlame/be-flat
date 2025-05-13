@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dggaww4acrsq7"]
+[gd_scene load_steps=5 format=3 uid="uid://dggaww4acrsq7"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_t0vgf"]
 [ext_resource type="AudioStream" uid="uid://bnihgq28miulh" path="res://audio/D4.wav" id="2_ujfji"]
 [ext_resource type="Texture2D" uid="uid://yl2aj6t32j25" path="res://images/tile_ramp_left.png" id="3_k4fij"]
-[ext_resource type="Script" uid="uid://cxdypmejw36qf" path="res://scripts/draggable.gd" id="4_6h4fo"]
 [ext_resource type="Texture2D" uid="uid://d0ev1tvnhjpun" path="res://images/Parts/noise15.png" id="4_fk1jv"]
 
 [node name="Obstacle" type="StaticBody2D"]
@@ -27,9 +26,3 @@ texture = ExtResource("3_k4fij")
 position = Vector2(7.11031, 6.88793)
 scale = Vector2(0.104981, 0.104237)
 texture = ExtResource("4_fk1jv")
-
-[node name="Draggable" type="Node2D" parent="."]
-script = ExtResource("4_6h4fo")
-
-[connection signal="mouse_shape_entered" from="." to="Draggable" method="_on_mouse_obstacle_entered"]
-[connection signal="mouse_shape_exited" from="." to="Draggable" method="_on_mouse_obstacle_exited"]

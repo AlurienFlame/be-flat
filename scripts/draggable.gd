@@ -1,4 +1,4 @@
-extends Node2D
+class_name Draggable extends Node2D
 
 @onready var play_pause_button: TextureButton = $"/root/SceneManager/UI/MenuBar/PlayPauseButton"
 @onready var trashcan = $"/root/SceneManager/UI/ToolBar/trashcan"

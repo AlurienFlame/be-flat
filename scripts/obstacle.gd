@@ -63,13 +63,9 @@ func _on_body_entered(_body) -> void:
 		move_vector = -move_vector
 
 func reset_obstacle() -> void:
-	print("CHILDREN")
-	print(get_children())
-
-		# check if this node has a child Draggable
-	if !get_node("Draggable").get_script():
+	# check if this node has a child Draggable
+	if !get_node("Draggable"):
 		position = original_position
-		print("NOT DRAGGABLE, RESETTING")
 
 	match direction:
 		Direction.LEFT:

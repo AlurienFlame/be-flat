@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8byhgopp80b3"]
+[gd_scene load_steps=6 format=3 uid="uid://b8byhgopp80b3"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_7ukg5"]
 [ext_resource type="Texture2D" uid="uid://c7nxsu7uq4kqa" path="res://images/rectangle.png" id="2_020cn"]
 [ext_resource type="AudioStream" uid="uid://bjcivjragxx06" path="res://audio/C3.wav" id="2_drdry"]
 [ext_resource type="Texture2D" uid="uid://cprrgpd81bfa" path="res://images/Parts/noise04.png" id="3_0meuu"]
-[ext_resource type="Script" uid="uid://cxdypmejw36qf" path="res://scripts/draggable.gd" id="4_0it7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
 size = Vector2(160, 40)
@@ -31,9 +30,3 @@ shape = SubResource("RectangleShape2D_8cj0n")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_drdry")
-
-[node name="Draggable" type="Node2D" parent="."]
-script = ExtResource("4_0it7q")
-
-[connection signal="mouse_shape_entered" from="." to="Draggable" method="_on_mouse_obstacle_entered"]
-[connection signal="mouse_shape_exited" from="." to="Draggable" method="_on_mouse_obstacle_exited"]

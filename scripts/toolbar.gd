@@ -3,6 +3,7 @@ extends Control
 # Haven note: I do like having this as an export because we can vary per puzzle?
 @export var maxObjects = -1 # No limit by default
 var curObjects = 0
+@onready var draggable_script = preload("res://scripts/draggable.gd")
 
 func make_instance(obj: Resource) -> void:
 	if curObjects >= maxObjects && maxObjects > 0:
@@ -12,14 +13,23 @@ func make_instance(obj: Resource) -> void:
 	# print("Instantiating object")
 
 	var instance = obj.instantiate()
+
+	# Make the object draggable
+	var drag = Node2D.new()
+	drag.name = "Draggable"
+	drag.set_script(draggable_script)
+	instance.connect("mouse_shape_entered", drag._on_mouse_obstacle_entered)
+	instance.connect("mouse_shape_exited", drag._on_mouse_obstacle_exited)
+	instance.add_child(drag)
+
 	instance.position = Vector2(50, 50) # Set the position as needed
 	# make node called "Generated" in scene if it doesn't exist
-	
+
 	# get top of scene tree
 	var scene_tree = get_tree()
 	var root = scene_tree.root
 	# check if "Generated" node exists
-	
+
 	var generated = root.get_node("Generated")
 	if not generated:
 		# create node called "Generated"
