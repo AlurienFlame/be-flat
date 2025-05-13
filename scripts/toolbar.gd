@@ -22,7 +22,11 @@ func make_instance(obj: Resource) -> void:
 	instance.connect("mouse_shape_exited", drag._on_mouse_obstacle_exited)
 	instance.add_child(drag)
 
-	instance.position = Vector2(50, 50) # Set the position as needed
+	# Spawn in the center of the viewport
+	var viewport = get_viewport()
+	var center = viewport.get_visible_rect().size / 2
+	instance.position = center
+
 	# make node called "Generated" in scene if it doesn't exist
 
 	# get top of scene tree
