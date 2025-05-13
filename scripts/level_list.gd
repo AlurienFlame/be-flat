@@ -25,6 +25,7 @@ func unlock_level(level: int) -> void:
     save_progress()
 
 func save_progress():
+    print("Saving progress in %s" % OS.get_data_dir())
     # Collect information about which levels are unlocked
     var which_levels_are_unlocked = {}
     for i in range(get_child_count()):
