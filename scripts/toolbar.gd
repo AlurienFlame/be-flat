@@ -5,6 +5,24 @@ extends Control
 var curObjects = 0
 @onready var draggable_script = preload("res://scripts/draggable.gd")
 
+func _ready() -> void:
+	EventBus.connect("pause", _on_pause)
+	EventBus.connect("play", _on_play)
+
+func _on_pause():
+	$rectangle.disabled = false
+	$circle.disabled = false
+	$triangle.disabled = false
+	$rhombus.disabled = false
+	$exit.disabled = false
+
+func _on_play():
+	$rectangle.disabled = true
+	$circle.disabled = true
+	$triangle.disabled = true
+	$rhombus.disabled = true
+	$exit.disabled = true
+
 func make_instance(obj: Resource) -> void:
 	if curObjects >= maxObjects && maxObjects > 0:
 		print("Max objects reached")
