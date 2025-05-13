@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
-uniform float fps = 6.0;
-uniform int frame_count = 4;
+uniform float fps = 4.0;
+uniform int frame_count = 2;
 
 void fragment() {
     int frame = int(mod(floor(TIME * fps), float(frame_count)));

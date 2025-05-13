@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://0ywc8gr0xq54"]
+[gd_scene load_steps=6 format=3 uid="uid://0ywc8gr0xq54"]
 
 [ext_resource type="PackedScene" uid="uid://bvjo3oey6s8ha" path="res://scenes/UI/menu_bar.tscn" id="1_41gti"]
 [ext_resource type="PackedScene" uid="uid://colyiopisvoji" path="res://scenes/UI/modal_youlose.tscn" id="2_f54a5"]
 [ext_resource type="PackedScene" uid="uid://dw7v33nwd2jte" path="res://scenes/UI/toolbar.tscn" id="3_7e3k0"]
+[ext_resource type="Script" uid="uid://bownwfsk3xrxh" path="res://scripts/modal_youlose.gd" id="3_m41qk"]
+[ext_resource type="PackedScene" uid="uid://cextd8651pp7j" path="res://scenes/UI/modal_you_win.tscn" id="5_35jxk"]
 
 [node name="UI" type="CanvasLayer"]
 
 [node name="MenuBar" parent="." instance=ExtResource("1_41gti")]
 
-[node name="ModalYouWin" parent="." instance=ExtResource("2_f54a5")]
+[node name="ModalYoulose" parent="." instance=ExtResource("2_f54a5")]
+script = ExtResource("3_m41qk")
 
 [node name="ToolBar" parent="." instance=ExtResource("3_7e3k0")]
+
+[node name="ModalYouWin" parent="." instance=ExtResource("5_35jxk")]

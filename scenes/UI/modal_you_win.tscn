@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cextd8651pp7j"]
+[gd_scene load_steps=9 format=3 uid="uid://cextd8651pp7j"]
 
-[ext_resource type="Script" uid="uid://blcefpumbtb0k" path="res://scripts/modal_you_win.gd" id="1_bk10i"]
-[ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="2_g35xc"]
-[ext_resource type="Script" uid="uid://4l6ougfw2cyv" path="res://scripts/counter_label.gd" id="3_qom28"]
-[ext_resource type="Script" uid="uid://b4b20cb6r5qp8" path="res://scripts/collectedtracker.gd" id="4_abkge"]
-[ext_resource type="Texture2D" uid="uid://k77vi3loqop8" path="res://images/Icon/Restart/A_Restart1.png" id="5_37mnk"]
-[ext_resource type="Script" uid="uid://capjo23cfyf5y" path="res://scripts/button_reset.gd" id="6_qt7l1"]
-[ext_resource type="Texture2D" uid="uid://5x3etln6yx6k" path="res://images/Icon/Right/A_Right1.png" id="7_b01vd"]
+[ext_resource type="Script" uid="uid://blcefpumbtb0k" path="res://scripts/modal_you_win.gd" id="1_gmw2x"]
+[ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="2_7rfx3"]
+[ext_resource type="Script" uid="uid://capjo23cfyf5y" path="res://scripts/button_reset.gd" id="2_t58j6"]
+[ext_resource type="Texture2D" uid="uid://k77vi3loqop8" path="res://images/Icon/Restart/A_Restart1.png" id="3_7rfx3"]
+[ext_resource type="Script" uid="uid://4l6ougfw2cyv" path="res://scripts/counter_label.gd" id="3_m0kr0"]
+[ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="3_mnc4o"]
+[ext_resource type="Script" uid="uid://b4b20cb6r5qp8" path="res://scripts/collectedtracker.gd" id="4_mnc4o"]
+[ext_resource type="Texture2D" uid="uid://5x3etln6yx6k" path="res://images/Icon/Right/A_Right1.png" id="5_f5btr"]
 
 [node name="ModalYouWin" type="PanelContainer"]
 anchors_preset = 8
@@ -22,43 +23,75 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_bk10i")
+script = ExtResource("1_gmw2x")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_g35xc")
+theme = ExtResource("2_7rfx3")
+theme_override_fonts/font = ExtResource("3_mnc4o")
+theme_override_font_sizes/font_size = 38
 text = "You Win!"
 horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
-script = ExtResource("3_qom28")
+script = ExtResource("3_m0kr0")
 
 [node name="CollectedTracker" type="Node" parent="VBoxContainer/RichTextLabel"]
-script = ExtResource("4_abkge")
+script = ExtResource("4_mnc4o")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_stretch_ratio = 0.0
+alignment = 1
 
-[node name="ButtonReset" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Reset" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-icon = ExtResource("5_37mnk")
-flat = true
-script = ExtResource("6_qt7l1")
+texture_normal = ExtResource("3_7rfx3")
+stretch_mode = 5
+script = ExtResource("2_t58j6")
 
-[node name="ButtonNextPuzzle" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Reset"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 57.5
+offset_right = 67.0
+offset_bottom = 80.5
+theme_override_fonts/font = ExtResource("3_mnc4o")
+theme_override_font_sizes/font_size = 12
+text = "Replay"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
+
+[node name="Next" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("5_f5btr")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Next"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 58.5
+offset_right = 86.0
+offset_bottom = 81.5
+theme_override_fonts/font = ExtResource("3_mnc4o")
+theme_override_font_sizes/font_size = 12
 text = "Next Level"
-icon = ExtResource("7_b01vd")
-flat = true
-
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/ButtonReset" to="VBoxContainer/HBoxContainer/ButtonReset" method="_on_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/ButtonNextPuzzle" to="." method="_on_button_next_puzzle_pressed"]
+horizontal_alignment = 1
+vertical_alignment = 2

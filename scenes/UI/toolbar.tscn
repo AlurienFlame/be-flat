@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://dw7v33nwd2jte"]
+[gd_scene load_steps=12 format=3 uid="uid://dw7v33nwd2jte"]
 
 [ext_resource type="Script" uid="uid://defx5ec7p4qg4" path="res://scripts/toolbar.gd" id="1_2wqxw"]
 [ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="2_m7g1w"]
+[ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="3_kll8o"]
 [ext_resource type="Texture2D" uid="uid://c7nxsu7uq4kqa" path="res://images/rectangle.png" id="3_wwnrs"]
-[ext_resource type="Texture2D" uid="uid://dwgmb2itso7ey" path="res://images/tile_ramp_right.png" id="4_kll8o"]
-[ext_resource type="Texture2D" uid="uid://ebk42nekvobx" path="res://images/green_body_circle.png" id="5_tjtjx"]
-[ext_resource type="Texture2D" uid="uid://barnlimsfrc6u" path="res://images/purple_body_rhombus.png" id="6_vulxu"]
-[ext_resource type="Texture2D" uid="uid://16pijl85giyu" path="res://images/black_hole.png" id="7_131s0"]
+[ext_resource type="Texture2D" uid="uid://bbty5vfmercp" path="res://images/Pixel Art Space/Planet1.png" id="5_tjtjx"]
+[ext_resource type="Texture2D" uid="uid://5tqllhu0erjb" path="res://images/Pixel Art Space/Moon.png" id="6_vulxu"]
+[ext_resource type="Texture2D" uid="uid://bt1dtu2ecfp55" path="res://images/Pixel Art Space Update 2.0/Pixel Art Space Update 2.0/Planet9.png" id="7_131s0"]
+[ext_resource type="Texture2D" uid="uid://mfwld108sfu4" path="res://images/Pixel Art Space Update 2.2/Black Hole2.png" id="8_hyisa"]
 [ext_resource type="Script" uid="uid://bg2wkypis60br" path="res://scripts/trashcan.gd" id="8_wwnrs"]
 [ext_resource type="Texture2D" uid="uid://b85w21fl7slqi" path="res://images/UI_IconsWhiteIndividual_g735.png" id="9_wwnrs"]
 
@@ -32,41 +33,57 @@ script = ExtResource("1_2wqxw")
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_m7g1w")
+theme_override_fonts/font = ExtResource("3_kll8o")
+theme_override_font_sizes/font_size = 18
 text = "Rectangle"
 icon = ExtResource("3_wwnrs")
 icon_alignment = 1
+vertical_icon_alignment = 0
 
 [node name="triangle" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_m7g1w")
+theme_override_fonts/font = ExtResource("3_kll8o")
+theme_override_font_sizes/font_size = 18
 text = "Triangle"
-icon = ExtResource("4_kll8o")
+icon = ExtResource("5_tjtjx")
 icon_alignment = 1
+vertical_icon_alignment = 0
 
 [node name="circle" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_m7g1w")
+theme_override_fonts/font = ExtResource("3_kll8o")
+theme_override_font_sizes/font_size = 18
 text = "Circle"
-icon = ExtResource("5_tjtjx")
+icon = ExtResource("6_vulxu")
 icon_alignment = 1
+vertical_icon_alignment = 0
 
 [node name="rhombus" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_m7g1w")
+theme_override_fonts/font = ExtResource("3_kll8o")
+theme_override_font_sizes/font_size = 18
 text = "Rhombus"
-icon = ExtResource("6_vulxu")
+icon = ExtResource("7_131s0")
 icon_alignment = 1
+vertical_icon_alignment = 0
 
 [node name="exit" type="Button" parent="."]
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_m7g1w")
+theme_override_fonts/font = ExtResource("3_kll8o")
+theme_override_font_sizes/font_size = 18
 text = "Exit"
-icon = ExtResource("7_131s0")
+icon = ExtResource("8_hyisa")
 icon_alignment = 1
+vertical_icon_alignment = 0
 
 [node name="trashcan" type="Area2D" parent="."]
 visible = false

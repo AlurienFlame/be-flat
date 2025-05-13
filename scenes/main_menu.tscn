@@ -1,25 +1,123 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgshkgi5sfd58"]
+[gd_scene load_steps=22 format=3 uid="uid://cgshkgi5sfd58"]
 
 [ext_resource type="Script" uid="uid://3laxytqg0cr4" path="res://scripts/main_menu.gd" id="1_dmvif"]
-[ext_resource type="Texture2D" uid="uid://d4dqvlhs5k5l3" path="res://images/Blue_Nebula_08-1024x1024.png" id="2_wu84c"]
+[ext_resource type="Shader" uid="uid://1p7ttbkpnuvx" path="res://scripts/base_level.gdshader" id="2_rtw2f"]
 [ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://cb8p4jjodwbf8" path="res://images/Parts/Strip And GIF/space6_4-frames.png" id="3_oa1go"]
 [ext_resource type="Script" uid="uid://bbkmd7n2gwmf" path="res://scripts/level_list.gd" id="4_oa1go"]
+[ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="5_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://camvbujmxvgyw" path="res://images/momo_idle_shadow.png" id="7_oa1go"]
 
-[sub_resource type="SystemFont" id="SystemFont_bqqt6"]
-font_names = PackedStringArray("Rubik Glitch")
-subpixel_positioning = 0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jk1qb"]
+shader = ExtResource("2_rtw2f")
+shader_parameter/fps = 6.0
+shader_parameter/frame_count = 4
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbmy8"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk1qb"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dd4i"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgwnu"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flqon"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcqid"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ajci"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b55j"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pajh"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7ex8"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8gd2"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hstxw"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8egab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbmy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk1qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dd4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgwnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flqon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcqid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ajci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b55j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pajh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7ex8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8gd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hstxw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_dmvif")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_jk1qb")
+custom_minimum_size = Vector2(64, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_wu84c")
-stretch_mode = 6
+texture = ExtResource("3_oa1go")
+stretch_mode = 1
 
 [node name="MainScreen" type="VBoxContainer" parent="."]
 anchors_preset = 15
@@ -32,7 +130,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_bqqt6")
-theme_override_fonts/font = SubResource("SystemFont_bqqt6")
+theme_override_fonts/font = ExtResource("5_tbmy8")
 theme_override_font_sizes/font_size = 120
 text = "Be Flat"
 horizontal_alignment = 1
@@ -49,6 +147,7 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("5_tbmy8")
 text = "Puzzles
 "
 
@@ -56,18 +155,21 @@ text = "Puzzles
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("5_tbmy8")
 text = "Free Play"
 
 [node name="Options" type="Button" parent="MainScreen/Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("5_tbmy8")
 text = "Options"
 
 [node name="Quit" type="Button" parent="MainScreen/Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("5_tbmy8")
 text = "Quit"
 
 [node name="Control" type="Control" parent="MainScreen"]
@@ -122,6 +224,12 @@ text = "Level Select"
 [node name="LevelList" type="HFlowContainer" parent="LevelSelect"]
 layout_mode = 2
 script = ExtResource("4_oa1go")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(525, 514)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_8egab")
+frame_progress = 0.9202
 
 [connection signal="pressed" from="MainScreen/Buttons/Puzzles" to="." method="_on_puzzles_pressed"]
 [connection signal="pressed" from="MainScreen/Buttons/Free Play" to="." method="_on_free_play_pressed"]

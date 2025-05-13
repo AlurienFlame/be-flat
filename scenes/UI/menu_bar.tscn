@@ -29,14 +29,11 @@ script = ExtResource("2_uvnpd")
 texture_play = ExtResource("1_2xyw1")
 texture_pause = ExtResource("3_ir3oa")
 
-[node name="ButtonReset" type="Button" parent="."]
+[node name="Reset" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-icon = ExtResource("4_binrv")
-flat = true
-text_overrun_behavior = 2
-icon_alignment = 1
-vertical_icon_alignment = 0
+texture_normal = ExtResource("4_binrv")
+stretch_mode = 5
 script = ExtResource("5_gsc20")
 
 [node name="ClearScene" type="TextureButton" parent="."]
@@ -47,5 +44,4 @@ stretch_mode = 5
 script = ExtResource("7_2xyw1")
 
 [connection signal="pressed" from="PlayPauseButton" to="PlayPauseButton" method="_on_pressed"]
-[connection signal="pressed" from="ButtonReset" to="ButtonReset" method="_on_pressed"]
 [connection signal="pressed" from="ClearScene" to="ClearScene" method="clear_scene"]
