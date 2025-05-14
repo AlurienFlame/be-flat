@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://blcefpumbtb0k" path="res://scripts/modal_you_win.gd" id="1_gmw2x"]
 [ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="2_7rfx3"]
 [ext_resource type="Script" uid="uid://capjo23cfyf5y" path="res://scripts/button_reset.gd" id="2_t58j6"]
-[ext_resource type="Texture2D" uid="uid://k77vi3loqop8" path="res://images/Icon/Restart/A_Restart1.png" id="3_7rfx3"]
 [ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="3_27c6p"]
+[ext_resource type="Texture2D" uid="uid://c74gr8xpnhftt" path="res://images/Icon/Restart/B_Button70.png" id="4_27c6p"]
 
 [node name="ModalYouLose" type="PanelContainer"]
 anchors_preset = 8
@@ -47,7 +47,7 @@ alignment = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 action_mode = 0
-texture_normal = ExtResource("3_7rfx3")
+texture_normal = ExtResource("4_27c6p")
 stretch_mode = 5
 script = ExtResource("2_t58j6")
 

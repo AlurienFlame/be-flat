@@ -16,7 +16,7 @@ func _on_body_entered(body: Node) -> void:
 	if is_inside_tree() and body is Character:
 		emit_signal("collected")
 		print("collectible")
-		parent.remove_child(self)
+		parent.remove_child.call_deferred(self)
 
 
 

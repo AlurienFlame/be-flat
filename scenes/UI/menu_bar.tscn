@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvjo3oey6s8ha"]
+[gd_scene load_steps=9 format=3 uid="uid://bvjo3oey6s8ha"]
 
 [ext_resource type="Texture2D" uid="uid://kopgthyvod35" path="res://images/Icon/Play/A_Play1.png" id="1_2xyw1"]
+[ext_resource type="Texture2D" uid="uid://s74b56j83hg6" path="res://images/Icon/Play/B_Button4.png" id="1_ir3oa"]
 [ext_resource type="Script" uid="uid://4v36wnv0fb3h" path="res://scripts/play_pause_button.gd" id="2_uvnpd"]
 [ext_resource type="Texture2D" uid="uid://11q281smosrk" path="res://images/Icon/Pause/A_Pause1.png" id="3_ir3oa"]
-[ext_resource type="Texture2D" uid="uid://k77vi3loqop8" path="res://images/Icon/Restart/A_Restart1.png" id="4_binrv"]
+[ext_resource type="Texture2D" uid="uid://c74gr8xpnhftt" path="res://images/Icon/Restart/B_Button70.png" id="5_binrv"]
 [ext_resource type="Script" uid="uid://capjo23cfyf5y" path="res://scripts/button_reset.gd" id="5_gsc20"]
-[ext_resource type="Texture2D" uid="uid://dwd8scy52v5m8" path="res://images/Icon/Close/A_Close1.png" id="6_q8v0o"]
 [ext_resource type="Script" uid="uid://5tcadlaua4yr" path="res://scripts/clear_scene.gd" id="7_2xyw1"]
+[ext_resource type="Texture2D" uid="uid://cf8f5gj1tbmli" path="res://images/Icon/Close/B_Button40.png" id="7_q8v0o"]
 
 [node name="MenuBar" type="HBoxContainer"]
 anchors_preset = -1
@@ -23,7 +24,7 @@ grow_horizontal = 2
 [node name="PlayPauseButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture_normal = ExtResource("1_2xyw1")
+texture_normal = ExtResource("1_ir3oa")
 stretch_mode = 5
 script = ExtResource("2_uvnpd")
 texture_play = ExtResource("1_2xyw1")
@@ -32,14 +33,14 @@ texture_pause = ExtResource("3_ir3oa")
 [node name="Reset" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture_normal = ExtResource("4_binrv")
+texture_normal = ExtResource("5_binrv")
 stretch_mode = 5
 script = ExtResource("5_gsc20")
 
 [node name="ClearScene" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture_normal = ExtResource("6_q8v0o")
+texture_normal = ExtResource("7_q8v0o")
 stretch_mode = 5
 script = ExtResource("7_2xyw1")
 
