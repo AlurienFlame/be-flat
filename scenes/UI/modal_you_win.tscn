@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cextd8651pp7j"]
+[gd_scene load_steps=10 format=3 uid="uid://cextd8651pp7j"]
 
 [ext_resource type="Script" uid="uid://blcefpumbtb0k" path="res://scripts/modal_you_win.gd" id="1_gmw2x"]
 [ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="2_7rfx3"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="3_mnc4o"]
 [ext_resource type="Script" uid="uid://b4b20cb6r5qp8" path="res://scripts/collectedtracker.gd" id="4_mnc4o"]
 [ext_resource type="Texture2D" uid="uid://c74gr8xpnhftt" path="res://images/Icon/Restart/B_Button70.png" id="6_mnc4o"]
+[ext_resource type="Texture2D" uid="uid://ceuhdlfj3i0g0" path="res://images/Icon/Restart/B_Button72.png" id="7_chu31"]
 [ext_resource type="Texture2D" uid="uid://1c44qcpcfbxc" path="res://images/Icon/Right/B_Button64.png" id="8_chu31"]
 
 [node name="ModalYouWin" type="PanelContainer"]
@@ -59,6 +60,8 @@ alignment = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = ExtResource("6_mnc4o")
+texture_pressed = ExtResource("7_chu31")
+texture_hover = ExtResource("7_chu31")
 stretch_mode = 5
 script = ExtResource("2_t58j6")
 

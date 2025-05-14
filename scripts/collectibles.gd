@@ -21,5 +21,5 @@ func _on_body_entered(body: Node) -> void:
 
 
 func _on_reset() -> void:
-	# Put all freed collectibles back into the scene
-	parent.add_child(self)
+	var new_collectible = self.duplicate()
+	parent.add_child(new_collectible)
