@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bbkmd7n2gwmf" path="res://scripts/level_list.gd" id="4_oa1go"]
 [ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="5_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://camvbujmxvgyw" path="res://images/momo_idle_shadow.png" id="7_oa1go"]
-[ext_resource type="Shader" uid="uid://dogwikcymnh52" path="res://scripts/bebe.gdshader" id="8_tbmy8"]
+[ext_resource type="Shader" path="res://scripts/bebe.gdshader" id="8_tbmy8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jk1qb"]
 shader = ExtResource("2_rtw2f")
