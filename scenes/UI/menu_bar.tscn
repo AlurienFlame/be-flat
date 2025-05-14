@@ -26,7 +26,6 @@ grow_horizontal = 2
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = ExtResource("1_ir3oa")
-texture_hover = ExtResource("3_binrv")
 stretch_mode = 5
 script = ExtResource("2_uvnpd")
 texture_play = ExtResource("1_ir3oa")
