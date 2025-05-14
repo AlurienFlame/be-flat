@@ -24,12 +24,12 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={}
+directories/dtl_directory={
+"tutorial": "res://dialogue/timelines/tutorial.dtl"
+}
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=1920
 window/handheld/orientation=1
 
 [dotnet]
