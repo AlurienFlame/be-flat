@@ -4,13 +4,12 @@ extends CanvasLayer
 @onready var main_screen = $MainScreen
 @onready var level_select = $LevelSelect
 @onready var scene_manager = $"/root/SceneManager"
-@onready var sprite = $AnimatedSprite2D
+
 
 # Animation Settings
 const duration = 0.2
 
-func _ready():
-	sprite.play("default") 
+
 # Main Screen
 func _on_puzzles_pressed() -> void:
 	var tween = get_tree().create_tween().set_parallel(true)

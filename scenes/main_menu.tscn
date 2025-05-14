@@ -144,11 +144,10 @@ script = ExtResource("4_oa1go")
 
 [node name="beanimated" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_5dd4i")
-offset_left = 411.0
-offset_top = 390.0
-offset_right = 539.0
-offset_bottom = 486.0
-scale = Vector2(2, 2)
+offset_left = 470.0
+offset_top = 421.0
+offset_right = 598.0
+offset_bottom = 517.0
 texture = ExtResource("7_oa1go")
 
 [connection signal="pressed" from="MainScreen/Buttons/Puzzles" to="." method="_on_puzzles_pressed"]
