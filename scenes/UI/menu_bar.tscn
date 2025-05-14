@@ -44,4 +44,5 @@ stretch_mode = 5
 script = ExtResource("7_2xyw1")
 
 [connection signal="pressed" from="PlayPauseButton" to="PlayPauseButton" method="_on_pressed"]
+[connection signal="pressed" from="Reset" to="Reset" method="_on_pressed"]
 [connection signal="pressed" from="ClearScene" to="ClearScene" method="clear_scene"]

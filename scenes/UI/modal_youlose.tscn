@@ -43,9 +43,12 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+[node name="Reset" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+action_mode = 0
 texture_normal = ExtResource("3_7rfx3")
 stretch_mode = 5
 script = ExtResource("2_t58j6")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Reset" to="VBoxContainer/HBoxContainer/Reset" method="_on_pressed"]

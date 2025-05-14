@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://brmbc57gu8bcl"]
+[gd_scene load_steps=5 format=3 uid="uid://brmbc57gu8bcl"]
 
 [ext_resource type="Script" uid="uid://tq2mcm451ggb" path="res://scripts/collectibles.gd" id="1_1pg6c"]
 [ext_resource type="Texture2D" uid="uid://dmppws1xagm0k" path="res://images/Pixel Art Space/Sun1.png" id="2_1pg6c"]
+[ext_resource type="AudioStream" uid="uid://bnihgq28miulh" path="res://audio/D4.wav" id="3_61c27"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_61c27"]
 radius = 19.6469
@@ -15,3 +16,8 @@ texture = ExtResource("2_1pg6c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_61c27")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, 0)
+stream = ExtResource("3_61c27")
+attenuation = 1.23114

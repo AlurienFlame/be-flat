@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhrd0mi6pb1em"]
+[gd_scene load_steps=4 format=3 uid="uid://bhrd0mi6pb1em"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_6j1sb"]
 [ext_resource type="Texture2D" uid="uid://bt1dtu2ecfp55" path="res://images/Pixel Art Space Update 2.0/Pixel Art Space Update 2.0/Planet9.png" id="2_hgnuj"]

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://btnd2jns1s362" path="res://scripts/objective.gd" id="1_0jo4f"]
 [ext_resource type="Texture2D" uid="uid://mfwld108sfu4" path="res://images/Pixel Art Space Update 2.2/Black Hole2.png" id="2_qhv5o"]
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhv5o"]
 radius = 44.1022
 

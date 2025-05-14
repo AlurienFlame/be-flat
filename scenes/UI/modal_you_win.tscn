@@ -95,3 +95,5 @@ theme_override_font_sizes/font_size = 12
 text = "Next Level"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Reset" to="VBoxContainer/HBoxContainer/Reset" method="_on_pressed"]
