@@ -31,11 +31,11 @@ func _ready() -> void:
 		_on_pause()
 
 func _on_play() -> void:
-	Engine.time_scale = 1.0
+	get_tree().paused = false
 	collision_mask = 1 # bitmask
 
 func _on_pause() -> void:
-	Engine.time_scale = 0.0
+	get_tree().paused = true
 	collision_mask = 0 # bitmask
 
 func _on_reset() -> void:
