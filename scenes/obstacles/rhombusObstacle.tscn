@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bt1dtu2ecfp55" path="res://images/Pixel Art Space Update 2.0/Pixel Art Space Update 2.0/Planet9.png" id="2_hgnuj"]
 [ext_resource type="AudioStream" uid="uid://btnqw4pnhqqj5" path="res://audio/E.wav" id="3_hgnuj"]
 
-[node name="Obstacle" type="StaticBody2D"]
+[node name="Obstacle2" type="StaticBody2D"]
 rotation = 0.295138
 input_pickable = true
 script = ExtResource("1_6j1sb")
