@@ -16,7 +16,6 @@ scale = Vector2(1.7, 1.7)
 texture = ExtResource("2_hgnuj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-build_mode = 1
 polygon = PackedVector2Array(27.7461, -8.43528, 32.9818, 8.78643, 44.6239, 23.0153, 22.1208, 24.6307, 13.8008, 28.2053, -8.0364, 28.573, -25.2508, 9.76707, -29.9048, -5.54113, -38.1791, -15.5679, -40.2152, -22.2652, -33.1428, -26.5057, -26.2387, -24.4239, -18.3779, -22.633, -8.72616, -28.7029, 3.04586, -31.2366, 15.2313, -25.5344, 21.7604, -21.2482)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

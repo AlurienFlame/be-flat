@@ -28,5 +28,4 @@ skew = 0.0226055
 texture = ExtResource("3_6h4fo")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-build_mode = 1
 polygon = PackedVector2Array(-28.7943, 35.9289, 30.0181, -93.7866, 79.2741, 16.6618, -22.3951, 56.9777)
