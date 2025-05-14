@@ -20,7 +20,13 @@ rotation = -0.366519
 scale = Vector2(1.28347, 1.32757)
 texture = ExtResource("3_k4fij")
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(7.11031, 6.88793)
-scale = Vector2(0.104981, 0.104237)
-texture = ExtResource("4_fk1jv")
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2"]
+position = Vector2(21.2872, 18.463)
+rotation = 2.06472
+scale = Vector2(3, 3)
+skew = 0.0226055
+texture = ExtResource("3_6h4fo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(-28.7943, 35.9289, 30.0181, -93.7866, 79.2741, 16.6618, -22.3951, 56.9777)
