@@ -12,6 +12,8 @@
 shader = ExtResource("2_rtw2f")
 shader_parameter/fps = 6.0
 shader_parameter/frame_count = 4
+shader_parameter/columns = 4
+shader_parameter/rows = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tbmy8"]
 atlas = ExtResource("7_oa1go")
