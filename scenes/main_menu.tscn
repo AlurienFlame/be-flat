@@ -229,7 +229,7 @@ script = ExtResource("4_oa1go")
 position = Vector2(525, 514)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_8egab")
-frame_progress = 0.615144
+frame_progress = 0.751962
 
 [connection signal="pressed" from="MainScreen/Buttons/Puzzles" to="." method="_on_puzzles_pressed"]
 [connection signal="pressed" from="MainScreen/Buttons/Free Play" to="." method="_on_free_play_pressed"]
