@@ -1,11 +1,13 @@
 extends Node2D
 
-@onready var character = $Character  # Update path if it's nested deeper
+@onready var character = $Character  
+@onready var sprite = $Character/AnimatedSprite2D
 @onready var screen_size = get_viewport_rect().size
 var has_lost = false
 
 func _ready():
 	EventBus.connect("reset", _on_reset)
+	sprite.play("bebe") 
 
 func _process(delta):
 	if has_lost:
