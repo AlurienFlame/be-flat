@@ -3,6 +3,25 @@ extends Control
 # Haven note: I do like having this as an export because we can vary per puzzle?
 @export var maxObjects = -1 # No limit by default
 var curObjects = 0
+@onready var draggable_script = preload("res://scripts/draggable.gd")
+
+func _ready() -> void:
+	EventBus.connect("pause", _on_pause)
+	EventBus.connect("play", _on_play)
+
+func _on_pause():
+	$rectangle.disabled = false
+	$circle.disabled = false
+	$triangle.disabled = false
+	$rhombus.disabled = false
+	$exit.disabled = false
+
+func _on_play():
+	$rectangle.disabled = true
+	$circle.disabled = true
+	$triangle.disabled = true
+	$rhombus.disabled = true
+	$exit.disabled = true
 
 func make_instance(obj: Resource) -> void:
 	if curObjects >= maxObjects && maxObjects > 0:
@@ -12,14 +31,27 @@ func make_instance(obj: Resource) -> void:
 	# print("Instantiating object")
 
 	var instance = obj.instantiate()
-	instance.position = Vector2(50, 50) # Set the position as needed
+
+	# Make the object draggable
+	var drag = Node2D.new()
+	drag.name = "Draggable"
+	drag.set_script(draggable_script)
+	instance.connect("mouse_shape_entered", drag._on_mouse_obstacle_entered)
+	instance.connect("mouse_shape_exited", drag._on_mouse_obstacle_exited)
+	instance.add_child(drag)
+
+	# Spawn in the center of the viewport
+	var viewport = get_viewport()
+	var center = viewport.get_visible_rect().size / 2
+	instance.position = center
+
 	# make node called "Generated" in scene if it doesn't exist
-	
+
 	# get top of scene tree
 	var scene_tree = get_tree()
 	var root = scene_tree.root
 	# check if "Generated" node exists
-	
+
 	var generated = root.get_node("Generated")
 	if not generated:
 		# create node called "Generated"

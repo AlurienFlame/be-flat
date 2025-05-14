@@ -1,4 +1,4 @@
 extends Button
 
 func _on_pressed() -> void:
-	EventBus.emit_signal("reset")
+    EventBus.emit_signal("reset")

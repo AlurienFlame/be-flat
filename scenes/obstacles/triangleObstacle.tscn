@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dggaww4acrsq7"]
+[gd_scene load_steps=5 format=3 uid="uid://dggaww4acrsq7"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_t0vgf"]
 [ext_resource type="AudioStream" uid="uid://bnihgq28miulh" path="res://audio/D4.wav" id="2_ujfji"]
 [ext_resource type="Texture2D" uid="uid://bbty5vfmercp" path="res://images/Pixel Art Space/Planet1.png" id="3_6h4fo"]
 [ext_resource type="Texture2D" uid="uid://yl2aj6t32j25" path="res://images/tile_ramp_left.png" id="3_k4fij"]
-[ext_resource type="Script" uid="uid://cxdypmejw36qf" path="res://scripts/draggable.gd" id="4_6h4fo"]
 
 [node name="Obstacle" type="StaticBody2D"]
 rotation = 0.295138
@@ -21,20 +20,7 @@ rotation = -0.366519
 scale = Vector2(1.28347, 1.32757)
 texture = ExtResource("3_k4fij")
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2"]
-clip_children = 2
-position = Vector2(17.0405, 17.7919)
-rotation = 1.87099
-scale = Vector2(2.98736, 2.77321)
-skew = -0.0329334
-texture = ExtResource("3_6h4fo")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-8.81758, -1.50007)
-polygon = PackedVector2Array(38.6289, -96.4044, -32.5445, 57.9729, 33.388, 41.0639, 89.546, 22.9457)
-
-[node name="Draggable" type="Node2D" parent="."]
-script = ExtResource("4_6h4fo")
-
-[connection signal="mouse_shape_entered" from="." to="Draggable" method="_on_mouse_obstacle_entered"]
-[connection signal="mouse_shape_exited" from="." to="Draggable" method="_on_mouse_obstacle_exited"]
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(7.11031, 6.88793)
+scale = Vector2(0.104981, 0.104237)
+texture = ExtResource("4_fk1jv")
