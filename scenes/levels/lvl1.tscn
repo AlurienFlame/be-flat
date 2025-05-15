@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bddvg6tntup43"]
+[gd_scene load_steps=6 format=3 uid="uid://bddvg6tntup43"]
 
 [ext_resource type="PackedScene" uid="uid://bpxjna5l6nvm7" path="res://scenes/base_level.tscn" id="1_0b2i4"]
 [ext_resource type="Script" uid="uid://dw55p6lfpr1op" path="res://scripts/tutorial.gd" id="4_sw1tr"]
 [ext_resource type="PackedScene" uid="uid://brmbc57gu8bcl" path="res://scenes/collectible.tscn" id="4_t6krm"]
 [ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="5_2tpkn"]
+[ext_resource type="Resource" uid="uid://brtg4y3y6esuv" path="res://dialogue/timelines/tutorial.dtl" id="5_sw1tr"]
 
 [node name="Game2" type="Node2D"]
 
@@ -23,3 +24,4 @@ position = Vector2(538, 390)
 
 [node name="TutorialTrigger" type="Node2D" parent="."]
 script = ExtResource("4_sw1tr")
+timeline = ExtResource("5_sw1tr")
