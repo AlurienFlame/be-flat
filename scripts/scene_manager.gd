@@ -9,6 +9,7 @@ var level_node: Node2D
 
 func _ready():
 	EventBus.connect("win", _on_win)
+	process_mode = PROCESS_MODE_ALWAYS
 
 func _on_win():
 	# Unlock the next level
@@ -22,9 +23,10 @@ func load_free_play():
 		# print("FREEING LEVEL NODE", level_node)
 		level_node.queue_free()
 	current_level = -1 # Free play mode
-
+	Analytics.add_event("Free play", {})
 	var scene = load("res://scenes/free_play.tscn")
 	level_node = scene.instantiate()
+	level_node.process_mode = PROCESS_MODE_PAUSABLE
 	add_child(level_node)
 
 func load_level(level: int):
@@ -38,6 +40,7 @@ func load_level(level: int):
 
 	var scene = load("res://scenes/levels/lvl" + str(level) + ".tscn")
 	level_node = scene.instantiate()
+	level_node.process_mode = PROCESS_MODE_PAUSABLE
 	add_child(level_node)
 
 func increment_level():

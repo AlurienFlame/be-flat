@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="5_2tpkn"]
 [ext_resource type="Resource" uid="uid://brtg4y3y6esuv" path="res://dialogue/timelines/tutorial.dtl" id="5_sw1tr"]
 
-[node name="Game2" type="Node2D"]
+[node name="Game3" type="Node2D"]
 
 [node name="BaseLevel" parent="." instance=ExtResource("1_0b2i4")]
 

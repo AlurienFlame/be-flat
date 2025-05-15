@@ -8,7 +8,7 @@
 [ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="5_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://dob457h3ln5tk" path="res://images/GBA Jam smallvert.png" id="7_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://camvbujmxvgyw" path="res://images/momo_idle_shadow.png" id="7_oa1go"]
-[ext_resource type="Shader" path="res://scripts/bebe.gdshader" id="8_tbmy8"]
+[ext_resource type="Shader" uid="uid://dogwikcymnh52" path="res://scripts/bebe.gdshader" id="8_tbmy8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jk1qb"]
 shader = ExtResource("2_rtw2f")
