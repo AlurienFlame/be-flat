@@ -19,6 +19,7 @@ func load_free_play():
 	menu.hide()
 	game_ui.show()
 	if level_node:
+		# print("FREEING LEVEL NODE", level_node)
 		level_node.queue_free()
 	current_level = -1 # Free play mode
 
