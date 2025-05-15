@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs8ijxskvktkg"]
+
+[ext_resource type="PackedScene" uid="uid://bpxjna5l6nvm7" path="res://scenes/base_level.tscn" id="1_tf3eq"]
+[ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="2_6pcyv"]
+[ext_resource type="PackedScene" uid="uid://brmbc57gu8bcl" path="res://scenes/collectible.tscn" id="6_24hxy"]
+[ext_resource type="PackedScene" uid="uid://d4gmlimjv07li" path="res://scenes/obstacles/minePlanet.tscn" id="6_tf3eq"]
+
+[node name="Game" type="Node2D"]
+
+[node name="BaseLevel" parent="." instance=ExtResource("1_tf3eq")]
+
+[node name="Objective" parent="." instance=ExtResource("2_6pcyv")]
+position = Vector2(835, 1007)
+
+[node name="Collectible" parent="." instance=ExtResource("6_24hxy")]
+position = Vector2(542, 388)
+
+[node name="Collectible2" parent="." instance=ExtResource("6_24hxy")]
+position = Vector2(300, 733)
+
+[node name="Collectible3" parent="." instance=ExtResource("6_24hxy")]
+position = Vector2(593, 891)
+
+[node name="MinePlanet" parent="." instance=ExtResource("6_tf3eq")]
+position = Vector2(684, 553)
+
+[node name="MinePlanet2" parent="." instance=ExtResource("6_tf3eq")]
+position = Vector2(536, 733)

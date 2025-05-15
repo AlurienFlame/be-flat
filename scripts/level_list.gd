@@ -5,6 +5,7 @@ extends HFlowContainer
 func _ready() -> void:
 	var levels = DirAccess.get_files_at("res://scenes/levels")
 	var unlocked_first_level = false
+	# Create buttons for each level
 	for filename in levels:
 		var button: PuzzleButton = puzzle_button.instantiate()
 		add_child(button)
@@ -16,8 +17,8 @@ func _ready() -> void:
 			button.init(filename, true)
 			unlocked_first_level = true
 
-		# Override with saved progress if applicable
-		load_progress()
+	# Override with saved progress if applicable
+	load_progress()
 
 func unlock_level(level: int) -> void:
 	var button: PuzzleButton = get_child(level - 1) # convert to 0-based index
@@ -43,12 +44,14 @@ func load_progress():
 
 	# Load progress from file
 	var save_file = FileAccess.open("user://progress.save", FileAccess.READ)
-	var which_levels_are_unlocked = save_file.get_var()
+	var saved_unlocking_data = save_file.get_var() # might not include new levels
 
 	# Apply data to buttons
-	for i in range(get_child_count()):
+	for i in saved_unlocking_data.keys():
 		var button: PuzzleButton = get_child(i)
-		if which_levels_are_unlocked[i]:
+		if button == null:
+			print("Error while unlocking level %d: button not found" % i)
+		if saved_unlocking_data[i]:
 			button.unlock()
 		else:
 			button.disabled = true
