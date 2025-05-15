@@ -17,3 +17,5 @@ func _on_reset():
 
 func _on_lose():
 	show()
+	# Pause the game
+	EventBus.emit_signal("pause")

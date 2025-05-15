@@ -41,6 +41,7 @@ func _on_pause() -> void:
 func _on_reset() -> void:
 	# Move us back to the start
 	should_reset = true
+	position = start_position # This will only work for one frame before the physics engine takes over
 
 func _on_body_entered(body) -> void:
 	if not play_pause_button.is_playing:
