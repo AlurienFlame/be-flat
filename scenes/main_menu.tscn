@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgshkgi5sfd58"]
+[gd_scene load_steps=12 format=3 uid="uid://cgshkgi5sfd58"]
 
 [ext_resource type="Script" uid="uid://3laxytqg0cr4" path="res://scripts/main_menu.gd" id="1_dmvif"]
 [ext_resource type="Shader" uid="uid://1p7ttbkpnuvx" path="res://scripts/base_level.gdshader" id="2_rtw2f"]
@@ -6,15 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://cb8p4jjodwbf8" path="res://images/Parts/Strip And GIF/space6_4-frames.png" id="3_oa1go"]
 [ext_resource type="Script" uid="uid://bbkmd7n2gwmf" path="res://scripts/level_list.gd" id="4_oa1go"]
 [ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="5_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://dob457h3ln5tk" path="res://images/GBA Jam smallvert.png" id="7_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://camvbujmxvgyw" path="res://images/momo_idle_shadow.png" id="7_oa1go"]
-[ext_resource type="Shader" uid="uid://dogwikcymnh52" path="res://scripts/bebe.gdshader" id="8_tbmy8"]
+[ext_resource type="Shader" path="res://scripts/bebe.gdshader" id="8_tbmy8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jk1qb"]
 shader = ExtResource("2_rtw2f")
 shader_parameter/fps = 6.0
 shader_parameter/frame_count = 4
 shader_parameter/columns = 4
-shader_parameter/rows = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5dd4i"]
 shader = ExtResource("8_tbmy8")
@@ -33,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3, 3)
 texture = ExtResource("3_oa1go")
 stretch_mode = 1
 
@@ -143,6 +144,14 @@ text = "Level Select"
 [node name="LevelList" type="HFlowContainer" parent="LevelSelect"]
 layout_mode = 2
 script = ExtResource("4_oa1go")
+
+[node name="TextureRect" type="TextureRect" parent="LevelSelect"]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(1080, 1920)
+layout_mode = 2
+texture = ExtResource("7_jk1qb")
+stretch_mode = 6
 
 [node name="beanimated" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_5dd4i")
