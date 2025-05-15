@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cb8p4jjodwbf8" path="res://images/Parts/Strip And GIF/space6_4-frames.png" id="3_oa1go"]
 [ext_resource type="Script" uid="uid://bbkmd7n2gwmf" path="res://scripts/level_list.gd" id="4_oa1go"]
 [ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="5_tbmy8"]
-[ext_resource type="Texture2D" uid="uid://dob457h3ln5tk" path="res://images/GBA Jam smallvert.png" id="7_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://c3anbd0ajraq1" path="res://images/galaxybg.png" id="7_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://camvbujmxvgyw" path="res://images/momo_idle_shadow.png" id="7_oa1go"]
-[ext_resource type="Shader" path="res://scripts/bebe.gdshader" id="8_tbmy8"]
+[ext_resource type="Shader" uid="uid://dogwikcymnh52" path="res://scripts/bebe.gdshader" id="8_tbmy8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jk1qb"]
 shader = ExtResource("2_rtw2f")
@@ -146,12 +146,11 @@ layout_mode = 2
 script = ExtResource("4_oa1go")
 
 [node name="TextureRect" type="TextureRect" parent="LevelSelect"]
-visible = false
 clip_contents = true
-custom_minimum_size = Vector2(1080, 1920)
+custom_minimum_size = Vector2(1080, 1850)
 layout_mode = 2
 texture = ExtResource("7_jk1qb")
-stretch_mode = 6
+stretch_mode = 5
 
 [node name="beanimated" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_5dd4i")
