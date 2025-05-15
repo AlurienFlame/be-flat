@@ -23,7 +23,11 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"be": "res://dialogue/characters/be.dch",
+"soldier_slime": "res://dialogue/characters/soldier_slime.dch",
+"tutorial": "res://dialogue/characters/tutorial.dch"
+}
 directories/dtl_directory={
 "tutorial": "res://dialogue/timelines/tutorial.dtl"
 }
@@ -38,7 +42,7 @@ project/assembly_name="be-flat"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/quiver_analytics/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [input]
 
