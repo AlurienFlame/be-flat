@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://defx5ec7p4qg4" path="res://scripts/toolbar.gd" id="1_2wqxw"]
 [ext_resource type="Theme" uid="uid://mtjn7ey765jq" path="res://themes/menu_theme.tres" id="2_m7g1w"]
 [ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="3_kll8o"]
-[ext_resource type="Texture2D" uid="uid://c7nxsu7uq4kqa" path="res://images/rectangle.png" id="3_wwnrs"]
+[ext_resource type="Texture2D" uid="uid://bq0lgqixyp184" path="res://images/1.png" id="4_kll8o"]
 [ext_resource type="Texture2D" uid="uid://bbty5vfmercp" path="res://images/Pixel Art Space/Planet1.png" id="5_tjtjx"]
 [ext_resource type="Texture2D" uid="uid://5tqllhu0erjb" path="res://images/Pixel Art Space/Moon.png" id="6_vulxu"]
 [ext_resource type="Texture2D" uid="uid://bt1dtu2ecfp55" path="res://images/Pixel Art Space Update 2.0/Pixel Art Space Update 2.0/Planet9.png" id="7_131s0"]
@@ -36,9 +36,10 @@ theme = ExtResource("2_m7g1w")
 theme_override_fonts/font = ExtResource("3_kll8o")
 theme_override_font_sizes/font_size = 18
 text = "Rectangle"
-icon = ExtResource("3_wwnrs")
+icon = ExtResource("4_kll8o")
 icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
 
 [node name="triangle" type="Button" parent="."]
 layout_mode = 2
