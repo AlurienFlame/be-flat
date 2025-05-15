@@ -12,16 +12,10 @@
 [node name="Objective" parent="." instance=ExtResource("5_8yxcp")]
 position = Vector2(835, 1007)
 
-[node name="Collectible" parent="." instance=ExtResource("3_hcdpe")]
-position = Vector2(726, 857)
-
-[node name="Collectible2" parent="." instance=ExtResource("3_hcdpe")]
-position = Vector2(544, 743)
-
-[node name="Collectible3" parent="." instance=ExtResource("3_hcdpe")]
-position = Vector2(538, 390)
-
 [node name="Obstacle" parent="." instance=ExtResource("10_y266n")]
 position = Vector2(386, 570)
 isMoving = true
 direction = 2
+
+[node name="Collectible" parent="." instance=ExtResource("3_hcdpe")]
+position = Vector2(542, 388)
