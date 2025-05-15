@@ -29,7 +29,8 @@ directories/dch_directory={
 "tutorial": "res://dialogue/characters/tutorial.dch"
 }
 directories/dtl_directory={
-"tutorial": "res://dialogue/timelines/tutorial.dtl"
+"tutorial": "res://dialogue/timelines/tutorial.dtl",
+"tutorial-you-lost": "res://dialogue/characters/tutorial-you-lost.dtl"
 }
 
 [display]
