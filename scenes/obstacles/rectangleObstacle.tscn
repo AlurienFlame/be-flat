@@ -1,33 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8byhgopp80b3"]
+[gd_scene load_steps=4 format=3 uid="uid://b8byhgopp80b3"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_7ukg5"]
-[ext_resource type="Texture2D" uid="uid://c7nxsu7uq4kqa" path="res://images/rectangle.png" id="2_020cn"]
+[ext_resource type="Texture2D" uid="uid://bq0lgqixyp184" path="res://images/1.png" id="2_020cn"]
 [ext_resource type="AudioStream" uid="uid://bjcivjragxx06" path="res://audio/C3.wav" id="2_drdry"]
-[ext_resource type="Texture2D" uid="uid://bsw4sestiut3l" path="res://images/Pixel Art Space/Planet.png" id="3_0meuu"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
-size = Vector2(160, 40)
 
 [node name="Obstacle" type="StaticBody2D"]
-position = Vector2(-7, 2)
 input_pickable = true
 script = ExtResource("1_7ukg5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-clip_children = 2
-position = Vector2(7, -2)
-scale = Vector2(2, 2)
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-42, 4)
+scale = Vector2(5.51172, 3.10938)
 texture = ExtResource("2_020cn")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
-modulate = Color(0.639216, 0.152941, 0.537255, 1)
-position = Vector2(-2.5, 1.5)
-scale = Vector2(2.75586, 1.55469)
-texture = ExtResource("3_0meuu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7, -1)
-shape = SubResource("RectangleShape2D_8cj0n")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_drdry")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(201, 7)
+polygon = PackedVector2Array(-396, -33, -346, -34, -324, -44, -296, -46, -267, -46, -245, -30, -204, -30, -165, -30, -122, -30, -86, -25, -66, -3, -68, 17, -86, 29, -124, 41, -165, 39, -198, 22, -235, 11, -260, 13, -289, 22, -321, 26, -346, 30, -346, -3, -368, -8)

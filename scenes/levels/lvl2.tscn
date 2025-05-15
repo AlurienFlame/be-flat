@@ -7,7 +7,7 @@
 [ext_resource type="Resource" path="res://dialogue/timelines/tutorial-2.dtl" id="5_s5sil"]
 [ext_resource type="PackedScene" uid="uid://b8byhgopp80b3" path="res://scenes/obstacles/rectangleObstacle.tscn" id="10_y266n"]
 
-[node name="Game2" type="Node2D"]
+[node name="Game3" type="Node2D"]
 
 [node name="BaseLevel" parent="." instance=ExtResource("1_hcdpe")]
 

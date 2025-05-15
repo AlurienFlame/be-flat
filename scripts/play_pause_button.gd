@@ -8,21 +8,21 @@ var is_playing: bool = false
 @export var texture_pause: CompressedTexture2D
 
 func _ready() -> void:
-	EventBus.connect("play", _on_play)
-	EventBus.connect("pause", _on_pause)
-	EventBus.emit_signal("pause")
+    EventBus.connect("play", _on_play)
+    EventBus.connect("pause", _on_pause)
+    EventBus.emit_signal("pause")
 
 func _on_pressed() -> void:
-	if is_playing:
-		EventBus.emit_signal("pause")
-	else:
-		EventBus.emit_signal("play")
+    if is_playing:
+        EventBus.emit_signal("pause")
+    else:
+        EventBus.emit_signal("play")
 
 func _on_play() -> void:
-	is_playing = true
-	texture_normal = texture_pause
-	EventBus.emit_signal("reset")
+    is_playing = true
+    texture_normal = texture_pause
+    EventBus.emit_signal("reset")
 
 func _on_pause() -> void:
-	is_playing = false
-	texture_normal = texture_play
+    is_playing = false
+    texture_normal = texture_play

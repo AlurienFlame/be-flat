@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4gmlimjv07li"]
+
+[ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_4tbaq"]
+[ext_resource type="Texture2D" uid="uid://b2g1svqkyd4kn" path="res://images/Pixel Art Space Update 2.0/Pixel Art Space Update 2.0/Planet7.png" id="2_skdc8"]
+[ext_resource type="AudioStream" uid="uid://b771vfci3q6g" path="res://audio/G.wav" id="3_rbjb4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rerlo"]
+radius = 44.911
+
+[node name="MinePlanet" type="StaticBody2D"]
+rotation = 0.295138
+input_pickable = true
+script = ExtResource("1_4tbaq")
+isDeadly = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5184, 1.5184)
+texture = ExtResource("2_skdc8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.2044, 0.375018)
+shape = SubResource("CircleShape2D_rerlo")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rbjb4")
