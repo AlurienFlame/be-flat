@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float fps = 6.0;
+uniform float fps = 4.0;
 uniform int columns = 4;
 uniform int rows = 3;
 
