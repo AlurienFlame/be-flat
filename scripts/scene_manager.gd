@@ -30,7 +30,9 @@ func load_level(level: int):
 	menu.hide()
 	game_ui.show()
 	if level_node:
+		print("FREEING LEVEL NODE", level_node)
 		level_node.queue_free()
+		
 	current_level = level
 
 	var scene = load("res://scenes/levels/lvl" + str(level) + ".tscn")
@@ -38,7 +40,11 @@ func load_level(level: int):
 	add_child(level_node)
 
 func increment_level():
+	Analytics.add_event("Completed level", {"level": current_level})
+	print("Added analytic")
+	# await Analytics.handle_exit()
 	current_level += 1
+	
 	load_level(current_level)
 
 func does_next_level_exist() -> bool:

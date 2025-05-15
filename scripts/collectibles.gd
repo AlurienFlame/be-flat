@@ -7,6 +7,7 @@ var parent : Node
 
 func _ready():
 	parent = get_parent()
+	print("READY AND PARENT IS: ", parent)
 	if not parent:
 		parent = get_tree().root
 	connect("body_entered", _on_body_entered)
@@ -22,4 +23,5 @@ func _on_body_entered(body: Node) -> void:
 
 func _on_reset() -> void:
 	var new_collectible = self.duplicate()
+	print("Parent: ", parent)
 	parent.add_child(new_collectible)

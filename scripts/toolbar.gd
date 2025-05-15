@@ -38,6 +38,10 @@ func make_instance(obj: Resource) -> void:
 	drag.set_script(draggable_script)
 	instance.connect("mouse_shape_entered", drag._on_mouse_obstacle_entered)
 	instance.connect("mouse_shape_exited", drag._on_mouse_obstacle_exited)
+	# Make node not pausable
+	instance.process_mode = PROCESS_MODE_ALWAYS
+	drag.process_mode = PROCESS_MODE_ALWAYS
+	
 	instance.add_child(drag)
 
 	# Spawn in the center of the viewport

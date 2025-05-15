@@ -30,6 +30,8 @@ directories/dtl_directory={
 
 [display]
 
+window/size/viewport_width=1080
+window/size/viewport_height=1920
 window/handheld/orientation=1
 
 [dotnet]
