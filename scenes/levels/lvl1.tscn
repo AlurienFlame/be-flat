@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bddvg6tntup43"]
+[gd_scene load_steps=5 format=3 uid="uid://bddvg6tntup43"]
 
 [ext_resource type="PackedScene" uid="uid://bpxjna5l6nvm7" path="res://scenes/base_level.tscn" id="1_0b2i4"]
+[ext_resource type="Script" uid="uid://dw55p6lfpr1op" path="res://scripts/tutorial.gd" id="4_sw1tr"]
 [ext_resource type="PackedScene" uid="uid://brmbc57gu8bcl" path="res://scenes/collectible.tscn" id="4_t6krm"]
 [ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="5_2tpkn"]
 
@@ -19,3 +20,6 @@ position = Vector2(544, 743)
 
 [node name="Collectible3" parent="." instance=ExtResource("4_t6krm")]
 position = Vector2(538, 390)
+
+[node name="TutorialTrigger" type="Node2D" parent="."]
+script = ExtResource("4_sw1tr")
