@@ -8,14 +8,13 @@
 [ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="5_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://dob457h3ln5tk" path="res://images/GBA Jam smallvert.png" id="7_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://camvbujmxvgyw" path="res://images/momo_idle_shadow.png" id="7_oa1go"]
-[ext_resource type="Shader" uid="uid://dogwikcymnh52" path="res://scripts/bebe.gdshader" id="8_tbmy8"]
+[ext_resource type="Shader" path="res://scripts/bebe.gdshader" id="8_tbmy8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jk1qb"]
 shader = ExtResource("2_rtw2f")
 shader_parameter/fps = 6.0
 shader_parameter/frame_count = 4
 shader_parameter/columns = 4
-shader_parameter/rows = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5dd4i"]
 shader = ExtResource("8_tbmy8")
@@ -34,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3, 3)
 texture = ExtResource("3_oa1go")
 stretch_mode = 1
 
