@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dhx3x10jpio8y" path="res://scenes/UI/puzzle_button.tscn" id="7_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://c3anbd0ajraq1" path="res://images/galaxybg.png" id="7_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://camvbujmxvgyw" path="res://images/momo_idle_shadow.png" id="7_oa1go"]
-[ext_resource type="Shader" uid="uid://dogwikcymnh52" path="res://scripts/bebe.gdshader" id="8_tbmy8"]
+[ext_resource type="Shader" path="res://scripts/bebe.gdshader" id="8_tbmy8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jk1qb"]
 shader = ExtResource("2_rtw2f")

@@ -14,13 +14,13 @@ script = ExtResource("1_t0vgf")
 stream = ExtResource("2_ujfji")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-93.664, -22.739)
 rotation = 1.68423
 scale = Vector2(3.95336, 3.88309)
 skew = 0.0512066
 texture = ExtResource("3_6h4fo")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(97.2001, 20.6187)
 polygon = PackedVector2Array(-122.177, -92.46, -87.6491, -106.093, -63.9441, -93.4407, -51.5134, -73.1804, -40.2079, -46.3069, -34.6886, -4.08677, -52.6676, 29.5993, -84.6999, 44.5637, -122.136, 48.6286, -152.041, 43.0875, -167.296, 10.0984, -172.073, -12.4889, -168.154, -40.8551, -153.88, -66.0987)
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
