@@ -38,9 +38,10 @@ func make_instance(obj: Resource) -> void:
     drag.set_script(draggable_script)
     instance.connect("mouse_shape_entered", drag._on_mouse_obstacle_entered)
     instance.connect("mouse_shape_exited", drag._on_mouse_obstacle_exited)
+    print("Connected mouse shape entered and exited signals")
     # Make node not pausable
     instance.process_mode = PROCESS_MODE_ALWAYS
-    drag.process_mode = PROCESS_MODE_ALWAYS
+    drag.process_mode = PROCESS_MODE_WHEN_PAUSED
     
     instance.add_child(drag)
 
