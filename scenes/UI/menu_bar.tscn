@@ -1,8 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvjo3oey6s8ha"]
+[gd_scene load_steps=15 format=3 uid="uid://bvjo3oey6s8ha"]
 
+[ext_resource type="Texture2D" uid="uid://bvtycy5k0xgg" path="res://images/Icon/Sellect/B_Button61.png" id="1_4wm4j"]
 [ext_resource type="Texture2D" uid="uid://s74b56j83hg6" path="res://images/Icon/Play/B_Button4.png" id="1_ir3oa"]
+[ext_resource type="Texture2D" uid="uid://cg683tpt3hwi7" path="res://images/Icon/Sellect/B_Button63.png" id="2_imgbw"]
 [ext_resource type="Script" uid="uid://4v36wnv0fb3h" path="res://scripts/play_pause_button.gd" id="2_uvnpd"]
 [ext_resource type="Texture2D" uid="uid://b7y2vqub10t2x" path="res://images/Icon/Pause/B_Button15.png" id="3_binrv"]
+[ext_resource type="Script" uid="uid://ckpduxfa2rw5v" path="res://scripts/quit_to_menu_button.gd" id="3_e6q6b"]
+[ext_resource type="Texture2D" uid="uid://cgee3hg6ou4yv" path="res://images/Icon/Sellect/B_Button62.png" id="3_sl1k0"]
 [ext_resource type="AudioStream" uid="uid://di3tkp1qgkq51" path="res://audio/wav/close1.wav" id="4_q8v0o"]
 [ext_resource type="Texture2D" uid="uid://c74gr8xpnhftt" path="res://images/Icon/Restart/B_Button70.png" id="5_binrv"]
 [ext_resource type="Script" uid="uid://capjo23cfyf5y" path="res://scripts/button_reset.gd" id="5_gsc20"]
@@ -22,6 +26,18 @@ offset_top = -22.76
 offset_right = 218.16
 offset_bottom = 41.24
 grow_horizontal = 2
+
+[node name="QuitToMenuButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("1_4wm4j")
+texture_pressed = ExtResource("2_imgbw")
+texture_hover = ExtResource("3_sl1k0")
+stretch_mode = 5
+script = ExtResource("3_e6q6b")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="QuitToMenuButton"]
+stream = ExtResource("4_q8v0o")
 
 [node name="PlayPauseButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)
@@ -60,6 +76,7 @@ script = ExtResource("7_2xyw1")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ClearScene"]
 stream = ExtResource("4_q8v0o")
 
+[connection signal="pressed" from="QuitToMenuButton" to="QuitToMenuButton" method="_on_pressed"]
 [connection signal="pressed" from="PlayPauseButton" to="PlayPauseButton" method="_on_pressed"]
 [connection signal="pressed" from="Reset" to="Reset" method="_on_pressed"]
 [connection signal="pressed" from="ClearScene" to="ClearScene" method="clear_scene"]
