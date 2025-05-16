@@ -7,14 +7,14 @@ var has_lost = false
 
 # LEVEL METADATA -- To be edited in the level editor
 @export var max_objs = -1
-@export var allowed_objs = ["rectangle", "circle", "triangle", "rhombus", "objective"]
+@export var allowed_objs = ["rectangle", "circle", "triangle", "rhombus", "exit"]
 @export var win_conditions = []
 
 func _ready():
     EventBus.connect("reset", _on_reset)
 
 
-    # print("Loading scene with max_objs: ", max_objs, " and allowed_objs: ", allowed_objs)
+    print("Loading scene with max_objs: ", max_objs, " and allowed_objs: ", allowed_objs)
     EventBus.emit_signal("load_scene", max_objs, allowed_objs)
     
   
