@@ -48,6 +48,7 @@ func _on_reset() -> void:
 func on_collect() -> void:
     player_collected += 1
     sprite.play("collect")
+    sprite.play("bebe")
     print("Collected suns", player_collected)
 
 func _on_body_entered(body) -> void:
