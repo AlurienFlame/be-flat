@@ -57,3 +57,10 @@ func does_next_level_exist() -> bool:
         return false
     var next_level_path = "res://scenes/levels/lvl" + str(current_level + 1) + ".tscn"
     return ResourceLoader.exists(next_level_path)
+
+func return_to_menu():
+    if level_node:
+        level_node.queue_free()
+    menu.show()
+    game_ui.hide()
+    current_level = -1
