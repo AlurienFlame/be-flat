@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="4_cyfus"]
 
 [node name="PuzzleButton" type="AspectRatioContainer"]
-top_level = true
+z_as_relative = false
 offset_right = 72.0
 offset_bottom = 72.0
 script = ExtResource("1_32l5l")
