@@ -30,6 +30,7 @@ alignment = 1
 script = ExtResource("1_2wqxw")
 
 [node name="rectangle" type="Button" parent="."]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_m7g1w")
@@ -42,6 +43,7 @@ vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="triangle" type="Button" parent="."]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_m7g1w")
@@ -53,6 +55,7 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 
 [node name="circle" type="Button" parent="."]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_m7g1w")
@@ -64,6 +67,7 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 
 [node name="rhombus" type="Button" parent="."]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_m7g1w")

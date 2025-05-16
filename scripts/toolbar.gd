@@ -8,6 +8,7 @@ var curObjects = 0
 func _ready() -> void:
     EventBus.connect("pause", _on_pause)
     EventBus.connect("play", _on_play)
+    EventBus.connect("load_scene", _on_load_scene)
 
 func _on_pause():
     $rectangle.disabled = false
@@ -103,3 +104,24 @@ func _on_objective_pressed() -> void:
 
     var objective_scene = load("res://scenes/objective.tscn")
     make_instance(objective_scene)
+
+func _on_load_scene(max_objs: int, allowed_objs: Array) -> void:
+    # Called when the level is loaded
+    # print("Loading scene")
+    maxObjects = max_objs
+    print("Max objects: ", maxObjects)
+    print("Allowed objects: ", allowed_objs)
+    for obj in allowed_objs:
+        match obj:
+            "rectangle":
+                $rectangle.visible = true
+            "circle":
+                $circle.visible = true
+            "triangle":
+                $triangle.visible = true
+            "rhombus":
+                $rhombus.visible = true
+            "objective":
+                $objective.visible = true
+            _:
+                pass

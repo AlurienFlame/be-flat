@@ -44,10 +44,10 @@ func _process(_delta: float) -> void:
 
 func _on_mouse_obstacle_entered(_shape_idx: int) -> void:
     draggable = true
-    print("draggable = true")
+    # print("draggable = true")
 
 func _on_mouse_obstacle_exited(_shape_idx: int) -> void:
     if get_parent().has_node("AudioStreamPlayer2D2"):
         get_parent().get_node("AudioStreamPlayer2D2").play()
     draggable = false
-    print("draggable = false")
+    # print("draggable = false")
