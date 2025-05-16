@@ -31,6 +31,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "tutorial": "res://dialogue/timelines/tutorial.dtl",
 "tutorial-2": "res://dialogue/timelines/tutorial-2.dtl",
+"tutorial-3": "res://dialogue/timelines/tutorial-3.dtl",
 "tutorial-you-lost": "res://dialogue/timelines/tutorial-you-lost.dtl"
 }
 
