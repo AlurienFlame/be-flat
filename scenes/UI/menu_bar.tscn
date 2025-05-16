@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvjo3oey6s8ha"]
+[gd_scene load_steps=18 format=3 uid="uid://bvjo3oey6s8ha"]
 
 [ext_resource type="Texture2D" uid="uid://bvtycy5k0xgg" path="res://images/Icon/Sellect/B_Button61.png" id="1_4wm4j"]
 [ext_resource type="Texture2D" uid="uid://s74b56j83hg6" path="res://images/Icon/Play/B_Button4.png" id="1_ir3oa"]
@@ -12,8 +12,11 @@
 [ext_resource type="Script" uid="uid://capjo23cfyf5y" path="res://scripts/button_reset.gd" id="5_gsc20"]
 [ext_resource type="Texture2D" uid="uid://ceuhdlfj3i0g0" path="res://images/Icon/Restart/B_Button72.png" id="5_q8v0o"]
 [ext_resource type="Script" uid="uid://5tcadlaua4yr" path="res://scripts/clear_scene.gd" id="7_2xyw1"]
+[ext_resource type="Texture2D" uid="uid://dspfspdlnopi5" path="res://images/Icon/Pause/B_Button14.png" id="7_imgbw"]
 [ext_resource type="Texture2D" uid="uid://cf8f5gj1tbmli" path="res://images/Icon/Close/B_Button40.png" id="7_q8v0o"]
 [ext_resource type="Texture2D" uid="uid://c7448y42dqiv6" path="res://images/Icon/Close/B_Button42.png" id="8_e6q6b"]
+[ext_resource type="Texture2D" uid="uid://7jlw3hn8pq03" path="res://images/Icon/Restart/B_Button71.png" id="12_sl1k0"]
+[ext_resource type="Texture2D" uid="uid://bhxvhb0tr2jj7" path="res://images/Icon/Close/B_Button41.png" id="16_up4m2"]
 
 [node name="MenuBar" type="HBoxContainer"]
 anchors_preset = -1
@@ -43,7 +46,7 @@ stream = ExtResource("4_q8v0o")
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = ExtResource("1_ir3oa")
-texture_hover = ExtResource("3_binrv")
+texture_hover = ExtResource("7_imgbw")
 stretch_mode = 5
 script = ExtResource("2_uvnpd")
 texture_play = ExtResource("1_ir3oa")
@@ -57,7 +60,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = ExtResource("5_binrv")
 texture_pressed = ExtResource("5_q8v0o")
-texture_hover = ExtResource("5_q8v0o")
+texture_hover = ExtResource("12_sl1k0")
 stretch_mode = 5
 script = ExtResource("5_gsc20")
 
@@ -69,7 +72,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = ExtResource("7_q8v0o")
 texture_pressed = ExtResource("8_e6q6b")
-texture_hover = ExtResource("8_e6q6b")
+texture_hover = ExtResource("16_up4m2")
 stretch_mode = 5
 script = ExtResource("7_2xyw1")
 
