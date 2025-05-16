@@ -7,6 +7,9 @@ extends Node2D
 var current_level: int = -1
 var level_node: Node2D
 
+func is_current_level(level: int) -> bool:
+    return current_level == level
+
 func _ready():
     EventBus.connect("win", _on_win)
     process_mode = PROCESS_MODE_ALWAYS
