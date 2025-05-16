@@ -16,7 +16,10 @@ func _on_button_next_puzzle_pressed() -> void:
 
 func _on_win():
     # Show or hide the next puzzle button based on whether a next puzzle exists
-    next_puzzle_button.disabled = not scene_manager.does_next_level_exist()
+    if scene_manager.does_next_level_exist():
+        next_puzzle_button.show()
+    else:
+        next_puzzle_button.hide()
     # Show the win modal
     show()
     # Pause the game
