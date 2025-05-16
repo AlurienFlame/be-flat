@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddukyxm04e87o"]
+
+[ext_resource type="PackedScene" uid="uid://bpxjna5l6nvm7" path="res://scenes/base_level.tscn" id="1_0bs03"]
+[ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="2_fayrj"]
+[ext_resource type="PackedScene" uid="uid://b8byhgopp80b3" path="res://scenes/obstacles/rectangleObstacle.tscn" id="4_crv6v"]
+[ext_resource type="PackedScene" uid="uid://d4gmlimjv07li" path="res://scenes/obstacles/minePlanet.tscn" id="4_i8kah"]
+
+[node name="Game" type="Node2D"]
+
+[node name="BaseLevel" parent="." instance=ExtResource("1_0bs03")]
+max_objs = 10
+allowed_objs = ["rectangle", "circle"]
+
+[node name="Objective" parent="." instance=ExtResource("2_fayrj")]
+position = Vector2(835, 1007)
+
+[node name="MinePlanet" parent="." instance=ExtResource("4_i8kah")]
+position = Vector2(562, 1068)
+
+[node name="MinePlanet2" parent="." instance=ExtResource("4_i8kah")]
+position = Vector2(912, 320)
+
+[node name="Obstacle" parent="." instance=ExtResource("4_crv6v")]
+position = Vector2(189, 448)
+isMoving = true
+direction = 2
+
+[node name="Obstacle2" parent="." instance=ExtResource("4_crv6v")]
+position = Vector2(964, 720)
+isMoving = true
+direction = 1
