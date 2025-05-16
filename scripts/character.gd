@@ -1,12 +1,14 @@
 class_name Character extends RigidBody2D
 
 @onready var play_pause_button: TextureButton = $"/root/SceneManager/UI/MenuBar/PlayPauseButton"
-
+@onready var sprite = $AnimatedSprite2D
 @onready var start_position: Vector2 = position
+
 
 # We use this flag to track if, on the next iteration of the physics engine,
 # we should move the character back to the start position and reset the flag
 var should_reset: bool = false
+var player_collected: int = 0
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
     # Runs as part of the physics engine
@@ -31,6 +33,7 @@ func _ready() -> void:
         _on_pause()
 
 func _on_play() -> void:
+    sprite.play("bebe")
     get_tree().paused = false
     collision_mask = 1 # bitmask
 
@@ -42,6 +45,10 @@ func _on_reset() -> void:
     # Move us back to the start
     should_reset = true
     position = start_position # This will only work for one frame before the physics engine takes over
+func on_collect() -> void:
+    player_collected += 1
+    sprite.play("collect")
+    print("Collected suns", player_collected)
 
 func _on_body_entered(body) -> void:
     if not play_pause_button.is_playing:
@@ -51,8 +58,11 @@ func _on_body_entered(body) -> void:
         # We bonked an obstacle
         var isDead = body.get_bonked()
         if isDead:
+            sprite.play("dead")
+            await get_tree().create_timer(0.5).timeout
             # We died
             print("You died")
+            EventBus.emit_signal("lose")
             should_reset = true
     else:
         print("Hit something unknown")

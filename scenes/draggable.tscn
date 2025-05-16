@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://clv8w2cyexoyy"]
+[gd_scene load_steps=4 format=3 uid="uid://clv8w2cyexoyy"]
 
 [ext_resource type="Script" uid="uid://cxdypmejw36qf" path="res://scripts/draggable.gd" id="1_g8jaa"]
+[ext_resource type="AudioStream" uid="uid://dvgjv6sy7te6k" path="res://audio/wav/close2.wav" id="2_15mg1"]
+[ext_resource type="AudioStream" uid="uid://ctqv5ysdg0kc6" path="res://audio/wav/pause.wav" id="3_ahypq"]
 
 [node name="Draggable" type="Node2D"]
 script = ExtResource("1_g8jaa")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_15mg1")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ahypq")

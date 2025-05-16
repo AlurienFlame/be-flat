@@ -1,21 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhx3x10jpio8y"]
+[gd_scene load_steps=4 format=3 uid="uid://dhx3x10jpio8y"]
 
 [ext_resource type="Script" uid="uid://c8kb4s1j3ipgj" path="res://scripts/puzzle_button.gd" id="1_32l5l"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_32l5l"]
-viewport_path = NodePath("SubViewport")
+[ext_resource type="Texture2D" uid="uid://dqw087kd65yqr" path="res://images/Pixel Art Space/Asteroid.png" id="2_32l5l"]
+[ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="4_cyfus"]
 
 [node name="PuzzleButton" type="AspectRatioContainer"]
+top_level = true
+offset_right = 72.0
+offset_bottom = 72.0
 script = ExtResource("1_32l5l")
-
-[node name="SubViewport" type="SubViewport" parent="."]
-disable_3d = true
-gui_disable_input = true
-size = Vector2i(256, 256)
-render_target_update_mode = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
-icon = SubResource("ViewportTexture_32l5l")
+theme_override_fonts/font = ExtResource("4_cyfus")
+theme_override_font_sizes/font_size = 14
+icon = ExtResource("2_32l5l")
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

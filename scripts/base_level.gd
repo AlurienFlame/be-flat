@@ -7,7 +7,7 @@ var has_lost = false
 
 func _ready():
     EventBus.connect("reset", _on_reset)
-    sprite.play("bebe") 
+  
 
 func _process(delta):
     if has_lost:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dggaww4acrsq7"]
+[gd_scene load_steps=5 format=3 uid="uid://dggaww4acrsq7"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_t0vgf"]
 [ext_resource type="AudioStream" uid="uid://bnihgq28miulh" path="res://audio/D4.wav" id="2_ujfji"]
 [ext_resource type="Texture2D" uid="uid://bbty5vfmercp" path="res://images/Pixel Art Space/Planet1.png" id="3_6h4fo"]
+[ext_resource type="AudioStream" uid="uid://dvgjv6sy7te6k" path="res://audio/wav/close2.wav" id="4_6h4fo"]
 
 [node name="triangleobstacle" type="StaticBody2D"]
 rotation = 0.295138
@@ -21,3 +22,6 @@ texture = ExtResource("3_6h4fo")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-122.177, -92.46, -87.6491, -106.093, -63.9441, -93.4407, -51.5134, -73.1804, -40.2079, -46.3069, -34.6886, -4.08677, -52.6676, 29.5993, -84.6999, 44.5637, -122.136, 48.6286, -152.041, 43.0875, -167.296, 10.0984, -172.073, -12.4889, -168.154, -40.8551, -153.88, -66.0987)
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6h4fo")

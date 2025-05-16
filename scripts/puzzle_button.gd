@@ -1,7 +1,7 @@
 class_name PuzzleButton extends AspectRatioContainer
 
 @onready var button = $Button
-@onready var subviewport = $SubViewport
+
 @export var index: int
 @onready var scene_manager = $"/root/SceneManager"
 
@@ -28,3 +28,7 @@ func unlock() -> void:
 
 func is_unlocked() -> bool:
     return !button.disabled
+
+
+func _on_pressed() -> void:
+    pass # Replace with function body.

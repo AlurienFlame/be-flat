@@ -13,6 +13,7 @@ func _ready() -> void:
     EventBus.emit_signal("pause")
 
 func _on_pressed() -> void:
+    $AudioStreamPlayer2D.play()
     if is_playing:
         EventBus.emit_signal("pause")
     else:

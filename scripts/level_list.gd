@@ -1,4 +1,4 @@
-extends HFlowContainer
+extends Control
 
 @onready var puzzle_button: PackedScene = preload("res://scenes/UI/puzzle_button.tscn")
 
@@ -6,15 +6,15 @@ func _ready() -> void:
     var levels = DirAccess.get_files_at("res://scenes/levels")
     var unlocked_first_level = false
     # Create buttons for each level
-    for filename in levels:
-        var button: PuzzleButton = puzzle_button.instantiate()
-        add_child(button)
+    for child in get_children():
+        #var button: PuzzleButton = puzzle_button.instantiate()
+        #add_child(button)
 
         # Set button text and enabledness to defaults (only first unlocked)
         if unlocked_first_level:
-            button.init(filename, false)
+            child.init(child.name, false)
         else:
-            button.init(filename, true)
+            child.init(child.name, true)
             unlocked_first_level = true
 
     # Override with saved progress if applicable
@@ -49,10 +49,11 @@ func load_progress():
     # Apply data to buttons
     for i in saved_unlocking_data.keys():
         var button: PuzzleButton = get_child(i)
+        var innerbutton = button.get_node("Button")
         if button == null:
             print("Error while unlocking level %d: button not found" % i)
         if saved_unlocking_data[i]:
             button.unlock()
         else:
-            button.disabled = true
+            innerbutton.disabled = true
     save_file.close()

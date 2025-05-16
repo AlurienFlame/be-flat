@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvjo3oey6s8ha"]
+[gd_scene load_steps=11 format=3 uid="uid://bvjo3oey6s8ha"]
 
 [ext_resource type="Texture2D" uid="uid://s74b56j83hg6" path="res://images/Icon/Play/B_Button4.png" id="1_ir3oa"]
 [ext_resource type="Script" uid="uid://4v36wnv0fb3h" path="res://scripts/play_pause_button.gd" id="2_uvnpd"]
 [ext_resource type="Texture2D" uid="uid://b7y2vqub10t2x" path="res://images/Icon/Pause/B_Button15.png" id="3_binrv"]
+[ext_resource type="AudioStream" uid="uid://di3tkp1qgkq51" path="res://audio/wav/close1.wav" id="4_q8v0o"]
 [ext_resource type="Texture2D" uid="uid://c74gr8xpnhftt" path="res://images/Icon/Restart/B_Button70.png" id="5_binrv"]
 [ext_resource type="Script" uid="uid://capjo23cfyf5y" path="res://scripts/button_reset.gd" id="5_gsc20"]
 [ext_resource type="Texture2D" uid="uid://ceuhdlfj3i0g0" path="res://images/Icon/Restart/B_Button72.png" id="5_q8v0o"]
@@ -26,10 +27,14 @@ grow_horizontal = 2
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = ExtResource("1_ir3oa")
+texture_hover = ExtResource("3_binrv")
 stretch_mode = 5
 script = ExtResource("2_uvnpd")
 texture_play = ExtResource("1_ir3oa")
 texture_pause = ExtResource("3_binrv")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PlayPauseButton"]
+stream = ExtResource("4_q8v0o")
 
 [node name="Reset" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)
@@ -40,6 +45,9 @@ texture_hover = ExtResource("5_q8v0o")
 stretch_mode = 5
 script = ExtResource("5_gsc20")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Reset"]
+stream = ExtResource("4_q8v0o")
+
 [node name="ClearScene" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -48,6 +56,9 @@ texture_pressed = ExtResource("8_e6q6b")
 texture_hover = ExtResource("8_e6q6b")
 stretch_mode = 5
 script = ExtResource("7_2xyw1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ClearScene"]
+stream = ExtResource("4_q8v0o")
 
 [connection signal="pressed" from="PlayPauseButton" to="PlayPauseButton" method="_on_pressed"]
 [connection signal="pressed" from="Reset" to="Reset" method="_on_pressed"]

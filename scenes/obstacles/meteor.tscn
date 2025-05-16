@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://1ccahy7ekja1"]
+[gd_scene load_steps=5 format=3 uid="uid://1ccahy7ekja1"]
 
 [ext_resource type="Script" uid="uid://b7bsw2vm81dgw" path="res://scripts/obstacle.gd" id="1_cdi5q"]
 [ext_resource type="PackedScene" uid="uid://b8byhgopp80b3" path="res://scenes/obstacles/rectangleObstacle.tscn" id="2_ngp56"]
+[ext_resource type="AudioStream" uid="uid://dvgjv6sy7te6k" path="res://audio/wav/close2.wav" id="3_ngp56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdi5q"]
 size = Vector2(160, 40)
@@ -18,3 +19,6 @@ speed = 500
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, -1)
 shape = SubResource("RectangleShape2D_cdi5q")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ngp56")
