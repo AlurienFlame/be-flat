@@ -14,7 +14,7 @@ func _ready():
     EventBus.connect("reset", _on_reset)
 
 
-    # print("Loading scene with max_objs: ", max_objs, " and allowed_objs: ", allowed_objs)
+    print("Loading scene with max_objs: ", max_objs, " and allowed_objs: ", allowed_objs)
     EventBus.emit_signal("load_scene", max_objs, allowed_objs)
     
   
