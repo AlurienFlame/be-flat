@@ -42,8 +42,6 @@ stretch_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -128,28 +126,24 @@ layout_mode = 2
 script = ExtResource("4_oa1go")
 
 [node name="Level 1" parent="LevelSelect/LevelList" instance=ExtResource("7_5dd4i")]
-layout_mode = 0
-offset_left = 520.0
-offset_top = 486.0
-offset_right = 592.0
-offset_bottom = 558.0
+offset_left = 530.0
+offset_top = 546.0
+offset_right = 602.0
+offset_bottom = 618.0
 
 [node name="Level 2" parent="LevelSelect/LevelList" instance=ExtResource("7_5dd4i")]
-layout_mode = 0
-offset_left = 871.0
-offset_top = 757.0
-offset_right = 943.0
-offset_bottom = 829.0
+offset_left = 863.0
+offset_top = 856.0
+offset_right = 935.0
+offset_bottom = 928.0
 
 [node name="Level 3" parent="LevelSelect/LevelList" instance=ExtResource("7_5dd4i")]
-layout_mode = 0
-offset_left = 651.0
-offset_top = 1278.0
-offset_right = 723.0
-offset_bottom = 1350.0
+offset_left = 625.0
+offset_top = 1312.0
+offset_right = 697.0
+offset_bottom = 1384.0
 
 [node name="Level 4" parent="LevelSelect/LevelList" instance=ExtResource("7_5dd4i")]
-layout_mode = 0
 offset_left = 89.0
 offset_top = 1026.0
 offset_right = 161.0
@@ -175,6 +169,7 @@ theme_override_font_sizes/font_size = 40
 text = "Level Select"
 
 [node name="TextureRect" type="TextureRect" parent="LevelSelect"]
+z_as_relative = false
 clip_contents = true
 custom_minimum_size = Vector2(1080, 1850)
 layout_mode = 2

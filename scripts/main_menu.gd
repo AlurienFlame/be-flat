@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var main_screen = $MainScreen
 @onready var level_select = $LevelSelect
 @onready var scene_manager = $"/root/SceneManager"
+@onready var levelList = $LevelSelect/LevelList
 
 
 # Animation Settings
@@ -17,6 +18,8 @@ func _on_puzzles_pressed() -> void:
     tween.tween_property(main_screen, "anchor_top", 1, duration).from_current()
     tween.tween_property(level_select, "anchor_bottom", 1, duration).from_current()
     tween.tween_property(level_select, "anchor_top", 0, duration).from_current()
+    for child in levelList.get_children():
+        child.top_level = true
 
 func _on_free_play_pressed() -> void:
     # Load into an empty game board
@@ -49,6 +52,8 @@ func _on_back_pressed_from_level_select() -> void:
     tween.tween_property(level_select, "anchor_bottom", 0, duration).from_current()
     tween.tween_property(main_screen, "anchor_top", 0, duration).from_current()
     tween.tween_property(main_screen, "anchor_bottom", 1, duration).from_current()
+    for child in levelList.get_children():
+        child.top_level = false
 
 # Options Screen
 func _on_back_pressed_from_options() -> void:

@@ -48,6 +48,7 @@ func _on_reset() -> void:
 func on_collect() -> void:
     player_collected += 1
     sprite.play("collect")
+    await get_tree().create_timer(0.5).timeout
     sprite.play("bebe")
     print("Collected suns", player_collected)
 
