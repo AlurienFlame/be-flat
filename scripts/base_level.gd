@@ -7,7 +7,7 @@ var has_lost = false
 
 # LEVEL METADATA -- To be edited in the level editor
 @export var max_objs = -1
-@export var allowed_objs = ["rectangle", "circle", "triangle", "rhombus", "objective"]
+@export var allowed_objs = ["rectangle", "circle", "triangle", "rhombus", "exit"]
 @export var win_conditions = []
 
 func _ready():

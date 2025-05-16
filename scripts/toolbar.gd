@@ -124,7 +124,7 @@ func _on_load_scene(max_objs: int, allowed_objs: Array) -> void:
 					$triangle.visible = true
 				"rhombus":
 					$rhombus.visible = true
-				"objective":
-					$objective.visible = true
+				"exit":
+					$exit.visible = true
 				_:
 					pass
