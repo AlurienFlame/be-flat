@@ -7,6 +7,9 @@ extends Node2D
 var current_level: int = -1
 var level_node: Node2D
 
+func is_current_level(level: int) -> bool:
+    return current_level == level
+
 func _ready():
     EventBus.connect("win", _on_win)
     process_mode = PROCESS_MODE_ALWAYS
@@ -62,5 +65,6 @@ func return_to_menu():
     if level_node:
         level_node.queue_free()
     menu.show()
+    EventBus.emit_signal("reset")
     game_ui.hide()
     current_level = -1

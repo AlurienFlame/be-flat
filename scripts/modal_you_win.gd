@@ -5,6 +5,7 @@ extends PanelContainer
 
 func _ready() -> void:
     EventBus.connect("win", _on_win)
+    EventBus.connect("reset", _on_reset)
     # Hide the modal when the game starts
     hide()
 
@@ -12,6 +13,9 @@ func _on_button_next_puzzle_pressed() -> void:
     scene_manager.increment_level()
     EventBus.emit_signal("reset")
     EventBus.emit_signal("clear_scene")
+
+func _on_reset():
+    # Hide the modal when the game is reset
     hide()
 
 func _on_win():
