@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bpxjna5l6nvm7"]
+[gd_scene load_steps=32 format=3 uid="uid://bpxjna5l6nvm7"]
 
 [ext_resource type="Script" uid="uid://4l7115f1bd1q" path="res://scripts/base_level.gd" id="1_3aqo6"]
 [ext_resource type="Script" uid="uid://b86ojyuwmwgip" path="res://scripts/character.gd" id="2_b0lsh"]
@@ -35,6 +35,22 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_i8j8g"]
 atlas = ExtResource("5_fal5o")
 region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvxmy"]
+atlas = ExtResource("6_fal5o")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcnlg"]
+atlas = ExtResource("6_fal5o")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjyes"]
+atlas = ExtResource("6_fal5o")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reqdo"]
+atlas = ExtResource("6_fal5o")
+region = Rect2(128, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dm0v0"]
 atlas = ExtResource("6_fal5o")
@@ -91,6 +107,23 @@ animations = [{
 "loop": true,
 "name": &"bebe",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvxmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcnlg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjyes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reqdo")
+}],
+"loop": false,
+"name": &"bounce",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -160,7 +193,7 @@ script = ExtResource("2_b0lsh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character"]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_bvxmy")
-animation = &"bebe"
+animation = &"collect"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
 position = Vector2(0, 27)

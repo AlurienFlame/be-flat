@@ -57,11 +57,15 @@ func _on_body_entered(body) -> void:
         return
     # We just hit something
     if body is Obstacle:
+        sprite.play("bounce")
+        await get_tree().create_timer(0.2).timeout
+        sprite.play("bebe")
         # We bonked an obstacle
         var isDead = body.get_bonked()
         if isDead:
             sprite.play("dead")
             await get_tree().create_timer(0.5).timeout
+            sprite.play("bebe")
             # We died
             print("You died")
             EventBus.emit_signal("lose")
