@@ -65,5 +65,6 @@ func return_to_menu():
     if level_node:
         level_node.queue_free()
     menu.show()
+    EventBus.emit_signal("reset")
     game_ui.hide()
     current_level = -1

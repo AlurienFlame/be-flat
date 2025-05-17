@@ -126,24 +126,28 @@ layout_mode = 2
 script = ExtResource("4_oa1go")
 
 [node name="Level 1" parent="LevelSelect/LevelList" instance=ExtResource("7_5dd4i")]
+layout_mode = 0
 offset_left = 530.0
 offset_top = 546.0
 offset_right = 602.0
 offset_bottom = 618.0
 
 [node name="Level 2" parent="LevelSelect/LevelList" instance=ExtResource("7_5dd4i")]
+layout_mode = 0
 offset_left = 863.0
 offset_top = 856.0
 offset_right = 935.0
 offset_bottom = 928.0
 
 [node name="Level 3" parent="LevelSelect/LevelList" instance=ExtResource("7_5dd4i")]
+layout_mode = 0
 offset_left = 625.0
 offset_top = 1312.0
 offset_right = 697.0
 offset_bottom = 1384.0
 
 [node name="Level 4" parent="LevelSelect/LevelList" instance=ExtResource("7_5dd4i")]
+layout_mode = 0
 offset_left = 89.0
 offset_top = 1026.0
 offset_right = 161.0
