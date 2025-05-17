@@ -57,13 +57,15 @@ func make_instance(obj: Resource) -> void:
     var scene_tree = get_tree()
     var root = scene_tree.root
     # check if "Generated" node exists
+    
+    var generated = null
+    if not root.has_node("Generated"):
 
-    var generated = root.get_node("Generated")
-    if not generated:
         # create node called "Generated"
         generated = Node2D.new()
         generated.name = "Generated"
         root.add_child(generated)
+    generated = root.get_node("Generated")
     # add instance to "Generated" node
     generated.add_child(instance)
 

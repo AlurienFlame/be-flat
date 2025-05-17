@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bpxjna5l6nvm7" path="res://scenes/base_level.tscn" id="1_tf3eq"]
 [ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="2_6pcyv"]
 [ext_resource type="Script" uid="uid://dw55p6lfpr1op" path="res://scripts/tutorial.gd" id="5_tf3eq"]
-[ext_resource type="Resource" uid="uid://by1vsml3vf3ns" path="res://dialogue/timelines/tutorial-3.dtl" id="6_6pcyv"]
+[ext_resource type="Resource" path="res://dialogue/timelines/tutorial-3.dtl" id="6_6pcyv"]
 [ext_resource type="PackedScene" uid="uid://brmbc57gu8bcl" path="res://scenes/collectible.tscn" id="6_24hxy"]
 [ext_resource type="PackedScene" uid="uid://d4gmlimjv07li" path="res://scenes/obstacles/minePlanet.tscn" id="6_tf3eq"]
 
