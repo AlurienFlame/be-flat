@@ -34,13 +34,14 @@ func _ready() -> void:
         _on_pause()
 
 func _on_play() -> void:
+    sprite.modulate = Color(1, 1, 1)
     sprite.play("bebe")
     get_tree().paused = false
     collision_mask = 1 # bitmask
 
 func _on_pause() -> void:
     if position != start_position:
-        sprite.play("pause")
+        sprite.modulate = Color(0.5, 0.5, 0.5)
     get_tree().paused = true
     
     collision_mask = 0 # bitmask
