@@ -9,6 +9,8 @@
 rotation = 0.295138
 input_pickable = true
 script = ExtResource("1_t0vgf")
+isBouncy = true
+bounciness = 300
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ujfji")
