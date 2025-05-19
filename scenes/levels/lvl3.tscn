@@ -10,6 +10,7 @@
 [node name="Game" type="Node2D"]
 
 [node name="BaseLevel" parent="." instance=ExtResource("1_tf3eq")]
+allowed_objs = ["rectangle", "circle", "triangle", "rhombus"]
 
 [node name="Objective" parent="." instance=ExtResource("2_6pcyv")]
 position = Vector2(835, 1007)

@@ -22,5 +22,5 @@ func _on_lose():
     # Pause the game
     EventBus.emit_signal("pause")
     if not showed_death_tutorial and scene_manager.is_current_level(1):
-        Dialogic.start("tutorial-you-lost").process_mode = Node.PROCESS_MODE_ALWAYS
+        Dialogic.start("timelines/tutorial-you-lost").process_mode = Node.PROCESS_MODE_ALWAYS
         showed_death_tutorial = true
