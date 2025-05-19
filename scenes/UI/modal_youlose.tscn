@@ -57,6 +57,5 @@ script = ExtResource("2_t58j6")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="VBoxContainer/HBoxContainer/Reset"]
 stream = ExtResource("7_mdqxi")
-bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Reset" to="VBoxContainer/HBoxContainer/Reset" method="_on_pressed"]
