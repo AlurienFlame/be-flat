@@ -11,7 +11,7 @@ func _ready():
 
 func increment():
     collected_parts += 1
-    
+    print("collectedparts", collected_parts)
     emit_signal("parts_updated", collected_parts)
     
 

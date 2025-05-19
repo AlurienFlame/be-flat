@@ -6,6 +6,7 @@ signal collected
 var parent : Node
 
 func _ready():
+    add_to_group("collectibles")
     parent = get_parent()
     # print("READY AND PARENT IS: ", parent)
     if not parent:

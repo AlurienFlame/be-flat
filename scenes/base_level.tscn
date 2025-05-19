@@ -194,7 +194,7 @@ script = ExtResource("2_b0lsh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character"]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_bvxmy")
-animation = &"collect"
+animation = &"bebe"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
 position = Vector2(0, 27)
