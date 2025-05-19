@@ -11,6 +11,7 @@ var should_reset: bool = false
 var should_bounce: bool = false
 var player_collected: int = 0
 
+var isDead: bool = false
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
     # Runs as part of the physics engine
@@ -80,10 +81,10 @@ func _on_body_entered(body) -> void:
         linear_velocity += position.direction_to(body.position) * -1 * body.bounciness
 
     # On bounce
+    isDead = body.get_bonked()
     sprite.play("bounce")
     await get_tree().create_timer(0.2).timeout
     sprite.play("bebe")
-    var isDead = body.get_bonked()
 
     # On hit lethal
     if isDead:

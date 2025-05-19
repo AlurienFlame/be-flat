@@ -7,6 +7,8 @@ func _on_body_entered(body:Node2D) -> void:
         return
 
     if body is Character:
+        if body.isDead:
+            return
         # We hit a character
         EventBus.emit_signal("win")
     else:
