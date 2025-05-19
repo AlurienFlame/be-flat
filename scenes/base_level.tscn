@@ -214,12 +214,10 @@ shape = SubResource("CircleShape2D_8cj0n")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Character"]
 stream = ExtResource("7_b0lsh")
-bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_4so06")
 autoplay = true
-bus = &"BGM"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 19.0
