@@ -49,6 +49,7 @@ func _on_reset() -> void:
     # Move us back to the start
     should_reset = true
     position = start_position # This will only work for one frame before the physics engine takes over
+    rotation = 0
     
     # Reset bounciness
     linear_velocity = Vector2.ZERO
