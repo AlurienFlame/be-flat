@@ -83,37 +83,37 @@ var session_id = abs(randi() << 32 | randi())
 @onready var quit_event_timer := $QuitEventTimer
 
 func _ready() -> void:
-	# We attempt to load the saved configuration, if present
-	var err = config.load(config_file_path)
-	if err == OK:
-		player_id = config.get_value("general", "player_id")
-		consent_granted = config.get_value("general", "granted")
-		if player_id and player_id is int:
-			# We use the hash as a basic (but easily bypassable) protection to reduce
-			# the chance that the player ID has been tampered with.
-			var hash = str(player_id).sha256_text()
-			if hash != config.get_value("general", "hash"):
-				DirAccess.remove_absolute(config_file_path)
-				_init_config()
-	else:
-		# If we don't have a config file, we create one now
-		_init_config()
+    # We attempt to load the saved configuration, if present
+    var err = config.load(config_file_path)
+    if err == OK:
+        player_id = config.get_value("general", "player_id")
+        consent_granted = config.get_value("general", "granted")
+        if player_id and player_id is int:
+            # We use the hash as a basic (but easily bypassable) protection to reduce
+            # the chance that the player ID has been tampered with.
+            var hash = str(player_id).sha256_text()
+            if hash != config.get_value("general", "hash"):
+                DirAccess.remove_absolute(config_file_path)
+                _init_config()
+    else:
+        # If we don't have a config file, we create one now
+        _init_config()
 
-	# Check to see if data collection is possible
-	if auth_token and (!consent_required or consent_granted):
-		data_collection_enabled = true
+    # Check to see if data collection is possible
+    if auth_token and (!consent_required or consent_granted):
+        data_collection_enabled = true
 
-	# Let's load any saved events from previous sessions
-	# and start processing them, if available.
-	_load_queue_from_disk()
-	if not request_queue.is_empty():
-		DirAccess.remove_absolute(QUEUE_FILE_NAME)
-		_process_requests()
+    # Let's load any saved events from previous sessions
+    # and start processing them, if available.
+    _load_queue_from_disk()
+    if not request_queue.is_empty():
+        DirAccess.remove_absolute(QUEUE_FILE_NAME)
+        _process_requests()
 
-	if auto_add_event_on_launch:
-		add_event("Launched game")
-	if auto_add_event_on_quit:
-		quit_event_timer.start(quit_event_interval_seconds)
+    if auto_add_event_on_launch:
+        add_event("Launched game")
+    if auto_add_event_on_quit:
+        quit_event_timer.start(quit_event_interval_seconds)
 
 #	if auto_add_event_on_quit:
 #		get_tree().set_auto_accept_quit(false)
@@ -121,191 +121,191 @@ func _ready() -> void:
 
 ## Whether we should be obligated to show the consent dialog to the player
 func should_show_consent_dialog() -> bool:
-	return consent_required and not consent_requested
+    return consent_required and not consent_requested
 
 
 ## Show the consent dialog to the user, using the passed in node as the parent
 func show_consent_dialog(parent: Node) -> void:
-	if not consent_dialog_showing:
-		consent_dialog_showing = true
-		var consent_dialog: ConsentDialog = consent_dialog_scene.instantiate()
-		parent.add_child(consent_dialog)
-		consent_dialog.show_with_animation()
+    if not consent_dialog_showing:
+        consent_dialog_showing = true
+        var consent_dialog: ConsentDialog = consent_dialog_scene.instantiate()
+        parent.add_child(consent_dialog)
+        consent_dialog.show_with_animation()
 
 
 ## Call this when consent has been granted.
 ## The ConsentDialog scene will manage this automatically.
 func approve_data_collection() -> void:
-	consent_requested = true
-	consent_granted = true
-	config.set_value("general", "requested", consent_requested)
-	config.set_value("general", "granted", consent_granted)
-	config.save(config_file_path)
+    consent_requested = true
+    consent_granted = true
+    config.set_value("general", "requested", consent_requested)
+    config.set_value("general", "granted", consent_granted)
+    config.save(config_file_path)
 
 
 ## Call this when consent has been denied.
 ## The ConsentDialog scene will manage this automatically.
 func deny_data_collection() -> void:
-	if consent_granted:
-		consent_requested = true
-		consent_granted = false
-		#if FileAccess.file_exists(CONFIG_FILE_PATH):
-		#	DirAccess.remove_absolute(CONFIG_FILE_PATH)
-		config.set_value("general", "requested", consent_requested)
-		config.set_value("general", "granted", consent_granted)
-		config.save(config_file_path)
+    if consent_granted:
+        consent_requested = true
+        consent_granted = false
+        #if FileAccess.file_exists(CONFIG_FILE_PATH):
+        #	DirAccess.remove_absolute(CONFIG_FILE_PATH)
+        config.set_value("general", "requested", consent_requested)
+        config.set_value("general", "granted", consent_granted)
+        config.save(config_file_path)
 
 
 ## Use this track an event. The name must be 50 characters or less.
 ## You can pass in an arbitrary dictionary of properties.
 func add_event(name: String, properties: Dictionary = {}) -> void:
-	if not data_collection_enabled:
-		_process_requests()
-		return
+    if not data_collection_enabled:
+        _process_requests()
+        return
 
-	if name.length() > MAX_EVENT_NAME_LENGTH:
-		printerr("[Quiver Analytics] Event name '%s' is too long. Must be %d characters or less." % [name, MAX_EVENT_NAME_LENGTH])
-		_process_requests()
-		return
+    if name.length() > MAX_EVENT_NAME_LENGTH:
+        printerr("[Quiver Analytics] Event name '%s' is too long. Must be %d characters or less." % [name, MAX_EVENT_NAME_LENGTH])
+        _process_requests()
+        return
 
-	# We limit big bursts of event tracking to reduce overusage due to buggy code
-	# and to prevent overloading the server.
-	var current_time_msec = Time.get_ticks_msec()
-	if (current_time_msec - time_since_first_request_in_batch) > 60 * 1000:
-		time_since_first_request_in_batch = current_time_msec
-		requests_in_batch_count = 0
-	else:
-		requests_in_batch_count += 1
-	if requests_in_batch_count > MAX_ADD_TO_EVENT_QUEUE_RATE:
-		printerr("[Quiver Analytics] Event tracking was disabled temporarily because max event rate was exceeded.")
-		return
+    # We limit big bursts of event tracking to reduce overusage due to buggy code
+    # and to prevent overloading the server.
+    var current_time_msec = Time.get_ticks_msec()
+    if (current_time_msec - time_since_first_request_in_batch) > 60 * 1000:
+        time_since_first_request_in_batch = current_time_msec
+        requests_in_batch_count = 0
+    else:
+        requests_in_batch_count += 1
+    if requests_in_batch_count > MAX_ADD_TO_EVENT_QUEUE_RATE:
+        printerr("[Quiver Analytics] Event tracking was disabled temporarily because max event rate was exceeded.")
+        return
 
-	# Auto-add default properties
-	properties["$platform"] = OS.get_name()
-	properties["$session_id"] = session_id
-	properties["$debug"] = OS.is_debug_build()
-	properties["$export_template"] = OS.has_feature("template")
+    # Auto-add default properties
+    properties["$platform"] = OS.get_name()
+    properties["$session_id"] = session_id
+    properties["$debug"] = OS.is_debug_build()
+    properties["$export_template"] = OS.has_feature("template")
 
-	# Add the request to the queue and process the queue
-	var request := {
-		"url": SERVER_PATH + ADD_EVENT_PATH,
-		"headers": ["Authorization: Token " + auth_token],
-		"body": {"name": name, "player_id": player_id, "properties": properties, "timestamp": Time.get_unix_time_from_system()},
-	}
-	request_queue.append(request)
-	_process_requests()
+    # Add the request to the queue and process the queue
+    var request := {
+        "url": SERVER_PATH + ADD_EVENT_PATH,
+        "headers": ["Authorization: Token " + auth_token],
+        "body": {"name": name, "player_id": player_id, "properties": properties, "timestamp": Time.get_unix_time_from_system()},
+    }
+    request_queue.append(request)
+    _process_requests()
 
 
 ## Ideally, this should be called when a user exits the game,
 ## although it may be difficult on certain plaforms.
 ## This handles draining the request queue and saving the queue to disk, if necessary.
 func handle_exit():
-	quit_event_timer.stop()
-	should_drain_request_queue = true
-	if auto_add_event_on_quit:
-		add_event("Quit game")
-	else:
-		_process_requests()
-	return exit_handled
+    quit_event_timer.stop()
+    should_drain_request_queue = true
+    if auto_add_event_on_quit:
+        add_event("Quit game")
+    else:
+        _process_requests()
+    return exit_handled
 
 
 func _save_queue_to_disk() -> void:
-	var f = FileAccess.open(QUEUE_FILE_NAME, FileAccess.WRITE)
-	if f:
-		# If the queue is too big, we trim the queue,
-		# favoring more recent events (i.e. the back of the queue).
-		if request_queue.size() > MAX_QUEUE_SIZE_TO_SAVE_TO_DISK:
-			request_queue = request_queue.slice(request_queue.size() - MAX_QUEUE_SIZE_TO_SAVE_TO_DISK)
-			printerr("[Quiver Analytics] Request queue overloaded. Events were dropped.")
-		f.store_var(request_queue, false)
+    var f = FileAccess.open(QUEUE_FILE_NAME, FileAccess.WRITE)
+    if f:
+        # If the queue is too big, we trim the queue,
+        # favoring more recent events (i.e. the back of the queue).
+        if request_queue.size() > MAX_QUEUE_SIZE_TO_SAVE_TO_DISK:
+            request_queue = request_queue.slice(request_queue.size() - MAX_QUEUE_SIZE_TO_SAVE_TO_DISK)
+            printerr("[Quiver Analytics] Request queue overloaded. Events were dropped.")
+        f.store_var(request_queue, false)
 
 
 func _load_queue_from_disk() -> void:
-	var f = FileAccess.open(QUEUE_FILE_NAME, FileAccess.READ)
-	if f:
-		request_queue.assign(f.get_var())
+    var f = FileAccess.open(QUEUE_FILE_NAME, FileAccess.READ)
+    if f:
+        request_queue.assign(f.get_var())
 
 
 func _handle_request_failure(response_code: int):
-	request_in_flight = false
-	# Drop invalid 4xx events
-	# 5xx and transient errors will be presumed to be fixed server-side.
-	if response_code >= 400 and response_code <= 499:
-		request_queue.pop_front()
-		printerr("[Quiver Analytics] Event was dropped because it couldn't be processed by the server. Response code %d." % response_code)
-	# If we are not in draining mode, we retry with exponential backoff
-	if not should_drain_request_queue:
-		retry_timer.start(current_retry_time_seconds)
-		current_retry_time_seconds += min(current_retry_time_seconds * 2.0, max_retry_time_seconds)
-	# If we are in draining mode, we immediately save the existing queue to disk
-	# and use _process_requests() to emit the exit_handled signal.
-	# We do this because we want to hurry up and let the player quit the game.
-	else:
-		_save_queue_to_disk()
-		request_queue = []
-		_process_requests()
+    request_in_flight = false
+    # Drop invalid 4xx events
+    # 5xx and transient errors will be presumed to be fixed server-side.
+    if response_code >= 400 and response_code <= 499:
+        request_queue.pop_front()
+        printerr("[Quiver Analytics] Event was dropped because it couldn't be processed by the server. Response code %d." % response_code)
+    # If we are not in draining mode, we retry with exponential backoff
+    if not should_drain_request_queue:
+        retry_timer.start(current_retry_time_seconds)
+        current_retry_time_seconds += min(current_retry_time_seconds * 2.0, max_retry_time_seconds)
+    # If we are in draining mode, we immediately save the existing queue to disk
+    # and use _process_requests() to emit the exit_handled signal.
+    # We do this because we want to hurry up and let the player quit the game.
+    else:
+        _save_queue_to_disk()
+        request_queue = []
+        _process_requests()
 
 
 func _process_requests() -> void:
-	if not request_queue.is_empty() and not request_in_flight:
-		var request: Dictionary = request_queue.front()
-		request_in_flight = true
-		var error = http_request.request(
-			request["url"],
-			request["headers"],
-			HTTPClient.METHOD_POST,
-			JSON.stringify(request["body"])
-		)
-		if error != OK:
-			_handle_request_failure(error)
-	# If we have successfully drained the queue, emit the exit_handled signal
-	if should_drain_request_queue and request_queue.is_empty():
-		# We only want to emit the exit_handled signal in the next frame,
-		# so that the caller has a chance to receive the signal.
-		await get_tree().process_frame
-		exit_handled.emit()
+    if not request_queue.is_empty() and not request_in_flight:
+        var request: Dictionary = request_queue.front()
+        request_in_flight = true
+        var error = http_request.request(
+            request["url"],
+            request["headers"],
+            HTTPClient.METHOD_POST,
+            JSON.stringify(request["body"])
+        )
+        if error != OK:
+            _handle_request_failure(error)
+    # If we have successfully drained the queue, emit the exit_handled signal
+    if should_drain_request_queue and request_queue.is_empty():
+        # We only want to emit the exit_handled signal in the next frame,
+        # so that the caller has a chance to receive the signal.
+        await get_tree().process_frame
+        exit_handled.emit()
 
 
 func _init_config() -> void:
-	# This should give us a nice randomized player ID with low chance of collision
-	player_id = abs(randi() << 32 | randi())
-	config.set_value("general", "player_id", player_id)
-	# We calculate the hash to prevent the player from arbitrarily changing the player ID
-	# in the file. This is easy to bypass, and players could always manually send events
-	# anyways, but this provides some basic protection.
-	var hash = str(player_id).sha256_text()
-	config.set_value("general", "hash", hash)
-	config.set_value("general", "requested", consent_requested)
-	config.set_value("general", "granted", consent_granted)
-	config.save(config_file_path)
+    # This should give us a nice randomized player ID with low chance of collision
+    player_id = abs(randi() << 32 | randi())
+    config.set_value("general", "player_id", player_id)
+    # We calculate the hash to prevent the player from arbitrarily changing the player ID
+    # in the file. This is easy to bypass, and players could always manually send events
+    # anyways, but this provides some basic protection.
+    var hash = str(player_id).sha256_text()
+    config.set_value("general", "hash", hash)
+    config.set_value("general", "requested", consent_requested)
+    config.set_value("general", "granted", consent_granted)
+    config.save(config_file_path)
 
 
 func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
-	if response_code >= 200 and response_code <= 299:
-	# This line doesn't work, possibly due to a bug in Godot.
-	# Even with a non-2xx response code, the result is shown as a success.
-	#if result == HTTPRequest.RESULT_SUCCESS:
-		request_in_flight = false
-		request_queue.pop_front()
-		current_retry_time_seconds = min_retry_time_seconds
-		# If we are draining the queue, process events as fast as possible
-		if should_drain_request_queue:
-			_process_requests()
-		# Otherwise, take our time so as not to impact the frame rate
-		else:
-			retry_timer.start(current_retry_time_seconds)
-	else:
-		_handle_request_failure(response_code)
+    if response_code >= 200 and response_code <= 299:
+    # This line doesn't work, possibly due to a bug in Godot.
+    # Even with a non-2xx response code, the result is shown as a success.
+    #if result == HTTPRequest.RESULT_SUCCESS:
+        request_in_flight = false
+        request_queue.pop_front()
+        current_retry_time_seconds = min_retry_time_seconds
+        # If we are draining the queue, process events as fast as possible
+        if should_drain_request_queue:
+            _process_requests()
+        # Otherwise, take our time so as not to impact the frame rate
+        else:
+            retry_timer.start(current_retry_time_seconds)
+    else:
+        _handle_request_failure(response_code)
 
 
 func _on_retry_timer_timeout() -> void:
-	_process_requests()
+    _process_requests()
 
 
 func _on_quit_event_timer_timeout() -> void:
-	add_event("Quit game")
-	quit_event_interval_seconds = min(quit_event_interval_seconds + 10, MAX_QUIT_EVENT_INTERVAL_SECONDS)
-	quit_event_timer.start(quit_event_interval_seconds)
+    add_event("Quit game")
+    quit_event_interval_seconds = min(quit_event_interval_seconds + 10, MAX_QUIT_EVENT_INTERVAL_SECONDS)
+    quit_event_timer.start(quit_event_interval_seconds)
 
 
 #func _notification(what):

@@ -32,7 +32,7 @@ func _on_options_pressed():
     tween.tween_property(main_screen, "anchor_right", 0, duration).from_current()
     tween.tween_property(options_screen, "anchor_left", 0, duration).from_current()
     tween.tween_property(options_screen, "anchor_right", 1, duration).from_current()
-    Analytics.add_event("Opened options menu", {"version": 1.0})
+    Analytics.add_event("Opened options menu", {"version": 0})
 
 func _notification(what):
     if what == NOTIFICATION_WM_CLOSE_REQUEST:
