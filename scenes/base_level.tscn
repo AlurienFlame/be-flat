@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bpxjna5l6nvm7"]
+[gd_scene load_steps=34 format=3 uid="uid://bpxjna5l6nvm7"]
 
 [ext_resource type="Script" uid="uid://4l7115f1bd1q" path="res://scripts/base_level.gd" id="1_3aqo6"]
 [ext_resource type="Script" uid="uid://b86ojyuwmwgip" path="res://scripts/character.gd" id="2_b0lsh"]
@@ -89,6 +89,10 @@ region = Rect2(128, 288, 32, 32)
 atlas = ExtResource("6_fal5o")
 region = Rect2(160, 288, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pcxl"]
+atlas = ExtResource("6_fal5o")
+region = Rect2(32, 192, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvxmy"]
 resource_local_to_scene = true
 animations = [{
@@ -162,6 +166,14 @@ animations = [{
 "loop": false,
 "name": &"dead",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pcxl")
+}],
+"loop": true,
+"name": &"pause",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8cj0n"]
@@ -194,7 +206,7 @@ script = ExtResource("2_b0lsh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character"]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_bvxmy")
-animation = &"collect"
+animation = &"bebe"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
 position = Vector2(0, 27)
@@ -210,11 +222,12 @@ autoplay = true
 bus = &"BGM"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 184.0
-offset_bottom = 37.0
+offset_left = 19.0
+offset_top = 48.0
+offset_right = 561.0
+offset_bottom = 83.0
 theme_override_fonts/normal_font = ExtResource("7_u6ue0")
+theme_override_font_sizes/normal_font_size = 30
 script = ExtResource("8_earhg")
 
 [node name="CollectedTracker" type="Node" parent="RichTextLabel"]

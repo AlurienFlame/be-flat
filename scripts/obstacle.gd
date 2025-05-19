@@ -23,6 +23,8 @@ func _ready():
     EventBus.connect("reset", reset_obstacle)
     original_position = position
     # set speed if isMoving
+    if isDeadly:
+        self.modulate = Color(1, 0, 0)
     if isMoving:
         # set direction
         match direction:
@@ -65,7 +67,8 @@ func _on_body_entered(_body) -> void:
 func reset_obstacle() -> void:
     # check if this node has a child Draggable
     if !get_node("Draggable"):
-        self.modulate = Color(0.5, 0.5, 0.5)
+        if !isDeadly:
+            self.modulate = Color(0.5, 0.5, 0.5)
         position = original_position
 
     match direction:
