@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfysg7qr00pvu"
+path="res://.godot/imported/To Be.mp3-2a4ad5af1e9ddd5b8600f0f075691e78.mp3str"
+
+[deps]
+
+source_file="res://audio/To Be.mp3"
+dest_files=["res://.godot/imported/To Be.mp3-2a4ad5af1e9ddd5b8600f0f075691e78.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
