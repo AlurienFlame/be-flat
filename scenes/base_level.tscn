@@ -208,11 +208,12 @@ stream = ExtResource("9_4so06")
 autoplay = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 184.0
-offset_bottom = 37.0
+offset_left = 19.0
+offset_top = 48.0
+offset_right = 561.0
+offset_bottom = 83.0
 theme_override_fonts/normal_font = ExtResource("7_u6ue0")
+theme_override_font_sizes/normal_font_size = 30
 script = ExtResource("8_earhg")
 
 [node name="CollectedTracker" type="Node" parent="RichTextLabel"]
