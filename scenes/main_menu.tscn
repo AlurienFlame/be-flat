@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cgshkgi5sfd58"]
+[gd_scene load_steps=16 format=3 uid="uid://cgshkgi5sfd58"]
 
 [ext_resource type="Script" uid="uid://3laxytqg0cr4" path="res://scripts/main_menu.gd" id="1_dmvif"]
 [ext_resource type="Shader" uid="uid://1p7ttbkpnuvx" path="res://scripts/base_level.gdshader" id="2_rtw2f"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cb8p4jjodwbf8" path="res://images/Parts/Strip And GIF/space6_4-frames.png" id="3_oa1go"]
 [ext_resource type="Script" uid="uid://bbkmd7n2gwmf" path="res://scripts/level_list.gd" id="4_oa1go"]
 [ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="5_tbmy8"]
+[ext_resource type="Script" uid="uid://nfwvqko1ywgf" path="res://scripts/audio_settings.gd" id="6_lgwnu"]
 [ext_resource type="PackedScene" uid="uid://dhx3x10jpio8y" path="res://scenes/UI/puzzle_button.tscn" id="7_5dd4i"]
+[ext_resource type="AudioStream" uid="uid://cny734kyfji7j" path="res://audio/B.wav" id="7_flqon"]
 [ext_resource type="Texture2D" uid="uid://c3anbd0ajraq1" path="res://images/galaxybg.png" id="7_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://camvbujmxvgyw" path="res://images/momo_idle_shadow.png" id="7_oa1go"]
 [ext_resource type="Shader" uid="uid://dogwikcymnh52" path="res://scripts/bebe.gdshader" id="8_tbmy8"]
@@ -16,6 +18,8 @@ shader = ExtResource("2_rtw2f")
 shader_parameter/fps = 6.0
 shader_parameter/frame_count = 4
 shader_parameter/columns = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flqon"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5dd4i"]
 shader = ExtResource("8_tbmy8")
@@ -101,12 +105,29 @@ anchor_left = 1.5
 anchor_top = 0.5
 anchor_right = 1.5
 anchor_bottom = 0.5
-offset_left = -20.0
+offset_left = 88.0
 offset_top = -20.0
-offset_right = 20.0
+offset_right = -88.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="OptionsScreen"]
+layout_mode = 2
+text = "Master volume"
+
+[node name="HSlider" type="HSlider" parent="OptionsScreen"]
+layout_mode = 2
+tick_count = 11
+script = ExtResource("6_lgwnu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="OptionsScreen/HSlider"]
+stream = ExtResource("7_flqon")
+
+[node name="HSeparator" type="HSeparator" parent="OptionsScreen"]
+layout_mode = 2
+theme_override_constants/separation = 35
+theme_override_styles/separator = SubResource("StyleBoxEmpty_flqon")
 
 [node name="Back" type="Button" parent="OptionsScreen"]
 layout_mode = 2
@@ -192,5 +213,6 @@ texture = ExtResource("7_oa1go")
 [connection signal="pressed" from="MainScreen/Buttons/Free Play" to="." method="_on_free_play_pressed"]
 [connection signal="pressed" from="MainScreen/Buttons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MainScreen/Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="drag_ended" from="OptionsScreen/HSlider" to="OptionsScreen/HSlider" method="set_master_volume"]
 [connection signal="pressed" from="OptionsScreen/Back" to="." method="_on_back_pressed_from_options"]
 [connection signal="pressed" from="LevelSelect/HBoxContainer/Back" to="." method="_on_back_pressed_from_level_select"]
