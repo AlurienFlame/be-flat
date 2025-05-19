@@ -197,6 +197,7 @@ texture = ExtResource("3_u6ue0")
 stretch_mode = 1
 
 [node name="Character" type="RigidBody2D" parent="."]
+top_level = true
 position = Vector2(540, 250)
 physics_material_override = SubResource("PhysicsMaterial_8cj0n")
 contact_monitor = true

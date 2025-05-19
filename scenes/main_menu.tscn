@@ -225,6 +225,10 @@ theme_override_fonts/font = ExtResource("5_tbmy8")
 text = "Back
 "
 
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelect/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="LevelSelect/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
@@ -233,7 +237,7 @@ theme_override_constants/margin_left = 16
 layout_mode = 2
 theme = ExtResource("3_bqqt6")
 theme_override_fonts/font = ExtResource("5_tbmy8")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 60
 text = "Level Select"
 
 [node name="TextureRect" type="TextureRect" parent="LevelSelect"]
