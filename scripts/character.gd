@@ -38,7 +38,10 @@ func _on_play() -> void:
     collision_mask = 1 # bitmask
 
 func _on_pause() -> void:
+    if position != start_position:
+        sprite.play("pause")
     get_tree().paused = true
+    
     collision_mask = 0 # bitmask
 
 func _on_reset() -> void:
