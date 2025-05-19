@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://bauksqvev3l3f"]
+
+[ext_resource type="PackedScene" uid="uid://bpxjna5l6nvm7" path="res://scenes/base_level.tscn" id="1_tegdm"]
+[ext_resource type="PackedScene" uid="uid://iagwlbrlf4rh" path="res://scenes/objective.tscn" id="2_i8kah"]
+[ext_resource type="PackedScene" uid="uid://brmbc57gu8bcl" path="res://scenes/collectible.tscn" id="3_5axt1"]
+[ext_resource type="PackedScene" uid="uid://d4gmlimjv07li" path="res://scenes/obstacles/minePlanet.tscn" id="4_vvg6j"]
+[ext_resource type="Script" uid="uid://dw55p6lfpr1op" path="res://scripts/tutorial.gd" id="5_6r67h"]
+[ext_resource type="Resource" uid="uid://by1vsml3vf3ns" path="res://dialogue/timelines/tutorial-3.dtl" id="6_etp8i"]
+[ext_resource type="PackedScene" uid="uid://b8byhgopp80b3" path="res://scenes/obstacles/rectangleObstacle.tscn" id="7_i8kah"]
+
+[node name="Game" type="Node2D"]
+
+[node name="BaseLevel" parent="." instance=ExtResource("1_tegdm")]
+allowed_objs = ["rectangle", "circle", "triangle", "rhombus"]
+
+[node name="Objective" parent="." instance=ExtResource("2_i8kah")]
+position = Vector2(163, 1252)
+
+[node name="Collectible" parent="." instance=ExtResource("3_5axt1")]
+position = Vector2(448, 385)
+
+[node name="Collectible2" parent="." instance=ExtResource("3_5axt1")]
+position = Vector2(250, 676)
+
+[node name="Collectible3" parent="." instance=ExtResource("3_5axt1")]
+position = Vector2(807, 410)
+
+[node name="MinePlanet" parent="." instance=ExtResource("4_vvg6j")]
+position = Vector2(894, 835)
+
+[node name="MinePlanet2" parent="." instance=ExtResource("4_vvg6j")]
+position = Vector2(131, 984)
+
+[node name="TutorialTrigger" type="Node2D" parent="."]
+script = ExtResource("5_6r67h")
+timeline = ExtResource("6_etp8i")
+
+[node name="Obstacle" parent="." instance=ExtResource("7_i8kah")]
+position = Vector2(289, 483)
+isMoving = true
