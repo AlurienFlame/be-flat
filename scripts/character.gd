@@ -63,6 +63,7 @@ func _on_body_entered(body) -> void:
         # We bonked an obstacle
         var isDead = body.get_bonked()
         if isDead:
+            $AudioStreamPlayer2D.play()
             sprite.play("dead")
             await get_tree().create_timer(0.5).timeout
             sprite.play("bebe")
