@@ -22,3 +22,4 @@ shape = SubResource("CircleShape2D_rerlo")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_mimf4")
+bus = &"SFX"
