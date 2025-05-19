@@ -47,12 +47,15 @@ func _on_quit_pressed():
 
 # Level Select Screen
 func _on_back_pressed_from_level_select() -> void:
+    print("level select node: %s" % level_select)
+    print("main screen node: %s" % main_screen)
     var tween = get_tree().create_tween().set_parallel(true)
     tween.tween_property(level_select, "anchor_top", -1, duration).from_current()
     tween.tween_property(level_select, "anchor_bottom", 0, duration).from_current()
     tween.tween_property(main_screen, "anchor_top", 0, duration).from_current()
     tween.tween_property(main_screen, "anchor_bottom", 1, duration).from_current()
     for child in levelList.get_children():
+        print("Setting child %s to top level" % child.name)
         child.top_level = false
 
 # Options Screen
