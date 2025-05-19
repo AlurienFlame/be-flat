@@ -112,17 +112,52 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="OptionsScreen"]
+[node name="Master" type="Label" parent="OptionsScreen"]
 layout_mode = 2
 text = "Master volume"
 
-[node name="HSlider" type="HSlider" parent="OptionsScreen"]
+[node name="MasterSlider" type="HSlider" parent="OptionsScreen"]
 layout_mode = 2
 tick_count = 11
 script = ExtResource("6_lgwnu")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="OptionsScreen/HSlider"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="OptionsScreen/MasterSlider"]
 stream = ExtResource("7_flqon")
+
+[node name="BGM" type="Label" parent="OptionsScreen"]
+layout_mode = 2
+text = "Background music"
+
+[node name="BGMSlider" type="HSlider" parent="OptionsScreen"]
+layout_mode = 2
+tick_count = 11
+script = ExtResource("6_lgwnu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="OptionsScreen/BGMSlider"]
+stream = ExtResource("7_flqon")
+bus = &"BGM"
+
+[node name="SFX" type="Label" parent="OptionsScreen"]
+layout_mode = 2
+text = "Sound effects"
+
+[node name="SFXSlider" type="HSlider" parent="OptionsScreen"]
+layout_mode = 2
+tick_count = 11
+script = ExtResource("6_lgwnu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="OptionsScreen/SFXSlider"]
+stream = ExtResource("7_flqon")
+bus = &"SFX"
+
+[node name="HSeparator2" type="HSeparator" parent="OptionsScreen"]
+layout_mode = 2
+theme_override_constants/separation = 35
+theme_override_styles/separator = SubResource("StyleBoxEmpty_flqon")
+
+[node name="ResetAudio" type="Button" parent="OptionsScreen"]
+layout_mode = 2
+text = "Reset Audio"
 
 [node name="HSeparator" type="HSeparator" parent="OptionsScreen"]
 layout_mode = 2
@@ -213,6 +248,11 @@ texture = ExtResource("7_oa1go")
 [connection signal="pressed" from="MainScreen/Buttons/Free Play" to="." method="_on_free_play_pressed"]
 [connection signal="pressed" from="MainScreen/Buttons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MainScreen/Buttons/Quit" to="." method="_on_quit_pressed"]
-[connection signal="drag_ended" from="OptionsScreen/HSlider" to="OptionsScreen/HSlider" method="set_master_volume"]
+[connection signal="drag_ended" from="OptionsScreen/MasterSlider" to="OptionsScreen/MasterSlider" method="set_master_volume"]
+[connection signal="drag_ended" from="OptionsScreen/BGMSlider" to="OptionsScreen/BGMSlider" method="set_bgm_volume"]
+[connection signal="drag_ended" from="OptionsScreen/SFXSlider" to="OptionsScreen/SFXSlider" method="set_sfx_volume"]
+[connection signal="pressed" from="OptionsScreen/ResetAudio" to="OptionsScreen/BGMSlider" method="reset_audio_settings"]
+[connection signal="pressed" from="OptionsScreen/ResetAudio" to="OptionsScreen/MasterSlider" method="reset_audio_settings"]
+[connection signal="pressed" from="OptionsScreen/ResetAudio" to="OptionsScreen/SFXSlider" method="reset_audio_settings"]
 [connection signal="pressed" from="OptionsScreen/Back" to="." method="_on_back_pressed_from_options"]
 [connection signal="pressed" from="LevelSelect/HBoxContainer/Back" to="." method="_on_back_pressed_from_level_select"]
