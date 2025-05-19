@@ -27,5 +27,5 @@ timeline = ExtResource("5_s5sil")
 [node name="Collectible" parent="." instance=ExtResource("3_hcdpe")]
 position = Vector2(542, 388)
 
-[node name="Collectible" parent="Collectible" instance=ExtResource("3_hcdpe")]
-position = Vector2(113, 407)
+[node name="Collectible2" parent="." instance=ExtResource("3_hcdpe")]
+position = Vector2(655, 795)
