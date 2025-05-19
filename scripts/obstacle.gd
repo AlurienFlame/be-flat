@@ -4,6 +4,8 @@ class_name Obstacle extends StaticBody2D
 @export var isDeadly = false
 @export var isMoving = false
 @export var speed = 100
+@export var isBouncy = false
+@export var bounciness = 0
 
 enum Direction {
     NONE,

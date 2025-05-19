@@ -8,7 +8,9 @@ class_name Character extends RigidBody2D
 # We use this flag to track if, on the next iteration of the physics engine,
 # we should move the character back to the start position and reset the flag
 var should_reset: bool = false
+var should_bounce: bool = false
 var player_collected: int = 0
+
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
     # Runs as part of the physics engine
@@ -50,6 +52,7 @@ func _on_reset() -> void:
     # Move us back to the start
     should_reset = true
     position = start_position # This will only work for one frame before the physics engine takes over
+    rotation = 0
     
     # Reset bounciness
     linear_velocity = Vector2.ZERO
@@ -67,26 +70,35 @@ func _on_body_entered(body) -> void:
     if not play_pause_button.is_playing:
         return
     # We just hit something
-    if body is Obstacle:
-        sprite.play("bounce")
-        await get_tree().create_timer(0.2).timeout
-        sprite.play("bebe")
-        # We bonked an obstacle
-        var isDead = body.get_bonked()
-        if isDead:
-            $AudioStreamPlayer2D.play()
 
-            # Tone down bounciness
-            linear_damp = 1
-            linear_velocity = linear_velocity * 0.5
-            gravity_scale = 3.0
-        
-            sprite.play("dead")
-            await get_tree().create_timer(0.5).timeout
-            sprite.play("bebe")
-            # We died
-            print("You died")
-            EventBus.emit_signal("lose")
-            should_reset = true
-    else:
+    if body is not Obstacle:
         print("Hit something unknown")
+        return
+    
+    # On hit bouncy
+    if body.isBouncy:
+        # Bounce off
+        linear_velocity += position.direction_to(body.position) * -1 * body.bounciness
+
+    # On bounce
+    sprite.play("bounce")
+    await get_tree().create_timer(0.2).timeout
+    sprite.play("bebe")
+    var isDead = body.get_bonked()
+
+    # On hit lethal
+    if isDead:
+        $AudioStreamPlayer2D.play()
+
+        # Tone down bounciness
+        linear_damp = 1
+        linear_velocity = linear_velocity * 0.5
+        gravity_scale = 3.0
+    
+        sprite.play("dead")
+        await get_tree().create_timer(0.5).timeout
+        sprite.play("bebe")
+        # We died
+        print("You died")
+        EventBus.emit_signal("lose")
+        should_reset = true
