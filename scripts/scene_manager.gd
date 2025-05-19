@@ -26,7 +26,7 @@ func load_free_play():
         # print("FREEING LEVEL NODE", level_node)
         level_node.queue_free()
     current_level = -1 # Free play mode
-    Analytics.add_event("Free play", {})
+    Analytics.add_event("Free play", {"version": 1.0})
     var scene = load("res://scenes/free_play.tscn")
     level_node = scene.instantiate()
     level_node.process_mode = PROCESS_MODE_PAUSABLE
@@ -47,7 +47,7 @@ func load_level(level: int):
     add_child(level_node)
 
 func increment_level():
-    Analytics.add_event("Completed level", {"level": current_level})
+    Analytics.add_event("Completed level", {"level": current_level, "version": 1.0})
     print("Added analytic")
     # await Analytics.handle_exit()
     current_level += 1
