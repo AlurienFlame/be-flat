@@ -65,6 +65,7 @@ func _on_body_entered(_body) -> void:
 func reset_obstacle() -> void:
     # check if this node has a child Draggable
     if !get_node("Draggable"):
+        self.modulate = Color(0.5, 0.5, 0.5)
         position = original_position
 
     match direction:

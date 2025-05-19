@@ -47,7 +47,5 @@ func _on_mouse_obstacle_entered(_shape_idx: int) -> void:
     # print("draggable = true")
 
 func _on_mouse_obstacle_exited(_shape_idx: int) -> void:
-    if get_parent().has_node("AudioStreamPlayer2D2"):
-        get_parent().get_node("AudioStreamPlayer2D2").play()
     draggable = false
     # print("draggable = false")
