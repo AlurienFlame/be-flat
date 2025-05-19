@@ -18,6 +18,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
         state.angular_velocity = 0.0
         # TODO: figure out how to reset rotation without breaking everything
 
+
         # Disable the flag so we don't keep resetting
         should_reset = false
 
@@ -45,6 +46,12 @@ func _on_reset() -> void:
     # Move us back to the start
     should_reset = true
     position = start_position # This will only work for one frame before the physics engine takes over
+    
+    # Reset bounciness
+    linear_velocity = Vector2.ZERO
+    gravity_scale = 1
+    linear_damp = 0.0
+
 func on_collect() -> void:
     player_collected += 1
     sprite.play("collect")
@@ -64,6 +71,12 @@ func _on_body_entered(body) -> void:
         var isDead = body.get_bonked()
         if isDead:
             $AudioStreamPlayer2D.play()
+
+            # Tone down bounciness
+            linear_damp = 1
+            linear_velocity = linear_velocity * 0.5
+            gravity_scale = 3.0
+        
             sprite.play("dead")
             await get_tree().create_timer(0.5).timeout
             sprite.play("bebe")
