@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var level_select = $LevelSelect
 @onready var scene_manager = $"/root/SceneManager"
 @onready var levelList = $LevelSelect/LevelList
+@onready var audio = $AudioStreamPlayer
 
 
 # Animation Settings
@@ -22,6 +23,7 @@ func _on_puzzles_pressed() -> void:
         child.top_level = true
 
 func _on_free_play_pressed() -> void:
+    audio.stop()
     # Load into an empty game board
     scene_manager.load_free_play()
 
