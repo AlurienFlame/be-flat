@@ -4,6 +4,7 @@ class_name PuzzleButton extends AspectRatioContainer
 
 @export var index: int
 @onready var scene_manager = $"/root/SceneManager"
+@onready var menuaudio = $"root/SceneManager/MainMenu/AudioStreamPlayer"
 
 func _ready() -> void:
     # Thumbnails don't work because the instantiated scene UI breaks the menu UI
@@ -21,6 +22,7 @@ func init(filename, enabled) -> void:
     button.disabled = !enabled
 
 func _on_button_pressed() -> void:
+    menuaudio.stop()
     scene_manager.load_level(index)
 
 func unlock() -> void:
