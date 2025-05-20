@@ -22,7 +22,7 @@ func init(filename, enabled) -> void:
     button.disabled = !enabled
 
 func _on_button_pressed() -> void:
-    menuaudio.stop()
+
     scene_manager.load_level(index)
 
 func unlock() -> void:
