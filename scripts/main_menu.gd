@@ -12,6 +12,8 @@ extends CanvasLayer
 const duration = 0.2
 
 
+
+
 # Main Screen
 func _on_puzzles_pressed() -> void:
     var tween = get_tree().create_tween().set_parallel(true)
@@ -34,7 +36,7 @@ func _on_options_pressed():
     tween.tween_property(main_screen, "anchor_right", 0, duration).from_current()
     tween.tween_property(options_screen, "anchor_left", 0, duration).from_current()
     tween.tween_property(options_screen, "anchor_right", 1, duration).from_current()
-    Analytics.add_event("Opened options menu", {"version": 2})
+    Analytics.add_event("Opened options menu", {"version": 2.0})
 
 func _notification(what):
     if what == NOTIFICATION_WM_CLOSE_REQUEST:

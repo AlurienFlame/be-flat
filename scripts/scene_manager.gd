@@ -3,6 +3,7 @@ extends Node2D
 @onready var menu = $MainMenu
 @onready var game_ui = $UI
 @onready var level_list = $"MainMenu/LevelSelect/LevelList"
+@onready var audio = $"MainMenu/AudioStreamPlayer"
 
 var current_level: int = -1
 var level_node: Node2D
@@ -11,6 +12,7 @@ func is_current_level(level: int) -> bool:
     return current_level == level
 
 func _ready():
+    audio.play()
     EventBus.connect("win", _on_win)
     process_mode = PROCESS_MODE_ALWAYS
 
@@ -26,7 +28,7 @@ func load_free_play():
         # print("FREEING LEVEL NODE", level_node)
         level_node.queue_free()
     current_level = -1 # Free play mode
-    Analytics.add_event("Free play", {"version": 2})
+    Analytics.add_event("Free play", {"version": 2.0})
     var scene = load("res://scenes/free_play.tscn")
     level_node = scene.instantiate()
     level_node.process_mode = PROCESS_MODE_PAUSABLE
@@ -47,7 +49,7 @@ func load_level(level: int):
     add_child(level_node)
 
 func increment_level():
-    Analytics.add_event("Completed level", {"level": current_level, "version": 2})
+    Analytics.add_event("Completed level", {"level": current_level, "version": 2.0})
     print("Added analytic")
     # await Analytics.handle_exit()
     current_level += 1
@@ -62,6 +64,7 @@ func does_next_level_exist() -> bool:
     return ResourceLoader.exists(next_level_path)
 
 func return_to_menu():
+    audio.play()
     if level_node:
         level_node.queue_free()
     menu.show()
