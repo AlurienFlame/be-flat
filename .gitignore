@@ -2,5 +2,8 @@
 .godot/
 /android/
 
+#build
+builds/**
+
 # vscode
 .vscode/
