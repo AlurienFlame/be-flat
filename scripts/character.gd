@@ -98,8 +98,9 @@ func _on_body_entered(body) -> void:
     
         sprite.play("dead")
         await get_tree().create_timer(0.5).timeout
-        sprite.play("bebe")
-        # We died
         print("You died")
         EventBus.emit_signal("lose")
+        sprite.play("bebe")
+        # We died
+        
         should_reset = true
