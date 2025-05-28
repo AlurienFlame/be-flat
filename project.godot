@@ -72,7 +72,7 @@ project/assembly_name="be-flat"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/quiver_analytics/plugin.cfg")
 
 [input]
 

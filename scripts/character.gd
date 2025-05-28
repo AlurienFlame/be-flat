@@ -90,6 +90,7 @@ func _on_body_entered(body) -> void:
     # On hit lethal
     if isDead:
         $AudioStreamPlayer2D.play()
+        var scene_manager = get_tree().root.get_node("SceneManager")
 
         # Tone down bounciness
         linear_damp = 1
@@ -102,5 +103,7 @@ func _on_body_entered(body) -> void:
         EventBus.emit_signal("lose")
         sprite.play("bebe")
         # We died
+
+        
         
         should_reset = true

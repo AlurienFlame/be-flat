@@ -74,6 +74,10 @@ func make_instance(obj: Resource) -> void:
 func remove_instance() -> void:
     # Called from draggable.gd when the object is deleted
     curObjects -= 1
+
+func get_cur_objects() -> int:
+    # Returns the current number of objects
+    return curObjects
     
 
 func _on_rectangle_pressed() -> void:

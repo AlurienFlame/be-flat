@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cb8p4jjodwbf8" path="res://images/Parts/Strip And GIF/space6_4-frames.png" id="3_oa1go"]
 [ext_resource type="Script" uid="uid://bbkmd7n2gwmf" path="res://scripts/level_list.gd" id="4_oa1go"]
 [ext_resource type="FontFile" uid="uid://uxtngjma04cm" path="res://audio/BMSPA___.TTF" id="5_tbmy8"]
-[ext_resource type="Script" path="res://scripts/audio_settings.gd" id="6_lgwnu"]
+[ext_resource type="Script" uid="uid://nfwvqko1ywgf" path="res://scripts/audio_settings.gd" id="6_lgwnu"]
 [ext_resource type="PackedScene" uid="uid://dhx3x10jpio8y" path="res://scenes/UI/puzzle_button.tscn" id="7_5dd4i"]
 [ext_resource type="AudioStream" uid="uid://cny734kyfji7j" path="res://audio/B.wav" id="7_flqon"]
 [ext_resource type="Texture2D" uid="uid://c3anbd0ajraq1" path="res://images/galaxybg.png" id="7_jk1qb"]
