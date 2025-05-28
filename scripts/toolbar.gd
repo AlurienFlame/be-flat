@@ -116,6 +116,11 @@ func _on_load_scene(max_objs: int, allowed_objs: Array) -> void:
     print("Max objects: ", maxObjects)
     print("Allowed objects: ", allowed_objs)
     if allowed_objs != null:
+        $rectangle.visible = false
+        $circle.visible = false
+        $triangle.visible = false
+        $rhombus.visible = false
+        $exit.visible = false
         for obj in allowed_objs:
             match obj:
                 "rectangle":
