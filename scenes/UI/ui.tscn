@@ -1,12 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://0ywc8gr0xq54"]
+[gd_scene load_steps=6 format=3 uid="uid://0ywc8gr0xq54"]
 
 [ext_resource type="PackedScene" uid="uid://bvjo3oey6s8ha" path="res://scenes/UI/menu_bar.tscn" id="1_41gti"]
 [ext_resource type="PackedScene" uid="uid://colyiopisvoji" path="res://scenes/UI/modal_youlose.tscn" id="2_f54a5"]
 [ext_resource type="PackedScene" uid="uid://dw7v33nwd2jte" path="res://scenes/UI/toolbar.tscn" id="3_7e3k0"]
+[ext_resource type="Script" uid="uid://ee2g6vyciotw" path="res://scripts/drag.gd" id="5_7e3k0"]
 [ext_resource type="PackedScene" uid="uid://cextd8651pp7j" path="res://scenes/UI/modal_you_win.tscn" id="5_35jxk"]
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
+
+[node name="Drag" type="Control" parent="."]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("5_7e3k0")
 
 [node name="MenuBar" parent="." instance=ExtResource("1_41gti")]
 
@@ -15,3 +27,5 @@ process_mode = 3
 [node name="ToolBar" parent="." instance=ExtResource("3_7e3k0")]
 
 [node name="ModalYouWin" parent="." instance=ExtResource("5_35jxk")]
+
+[connection signal="gui_input" from="Drag" to="Drag" method="_on_gui_input"]
