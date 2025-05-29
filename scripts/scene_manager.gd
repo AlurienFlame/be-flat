@@ -10,81 +10,81 @@ var level_node: Node2D
 const CURRENT_VERSION: float = 0.0
 
 func is_current_level(level: int) -> bool:
-	return current_level == level
+    return current_level == level
 
 func get_level() -> int:
-	return current_level
+    return current_level
 
 func get_level_info() -> Dictionary:
-	if level_node:
-		print("Getting level info for level node: ", level_node)
-		return level_node.get_node("BaseLevel").get_level_info()
-	else:
-		return {}
+    if level_node:
+        print("Getting level info for level node: ", level_node)
+        return level_node.get_node("BaseLevel").get_level_info()
+    else:
+        return {}
 
 func get_version() -> float:
-	return CURRENT_VERSION
+    return CURRENT_VERSION
 
 func _ready():
-	audio.play()
-	EventBus.connect("win", _on_win)
-	process_mode = PROCESS_MODE_ALWAYS
+    audio.play()
+    EventBus.connect("win", _on_win)
+    process_mode = PROCESS_MODE_ALWAYS
 
 func _on_win():
-	# Unlock the next level
-	if does_next_level_exist():
-		level_list.unlock_level(current_level + 1)
+    # Unlock the next level
+    if does_next_level_exist():
+        level_list.unlock_level(current_level + 1)
 
 func load_free_play():
-	menu.hide()
-	game_ui.show()
-	if level_node:
-		# print("FREEING LEVEL NODE", level_node)
-		level_node.queue_free()
-	current_level = -1 # Free play mode
-	Analytics.add_event("Free play", {"version" : get_version()})
-	var scene = load("res://scenes/free_play.tscn")
-	level_node = scene.instantiate()
-	level_node.process_mode = PROCESS_MODE_PAUSABLE
-	add_child(level_node)
+    menu.hide()
+    game_ui.show()
+    if level_node:
+        # print("FREEING LEVEL NODE", level_node)
+        level_node.queue_free()
+    current_level = -1 # Free play mode
+    Analytics.add_event("Free play", {"version" : get_version()})
+    var scene = load("res://scenes/free_play.tscn")
+    level_node = scene.instantiate()
+    level_node.process_mode = PROCESS_MODE_PAUSABLE
+    add_child(level_node)
 
 func load_level(level: int):
-	menu.hide()
-	game_ui.show()
-	if level_node:
-		print("FREEING LEVEL NODE", level_node)
-		level_node.queue_free()
-		
-	current_level = level
+    menu.hide()
+    game_ui.show()
+    if level_node:
+        print("FREEING LEVEL NODE", level_node)
+        level_node.queue_free()
+        
+    current_level = level
 
-	var scene = load("res://scenes/levels/lvl" + str(level) + ".tscn")
-	level_node = scene.instantiate()
-	level_node.process_mode = PROCESS_MODE_PAUSABLE
-	add_child(level_node)
+    var scene = load("res://scenes/levels/lvl" + str(level) + ".tscn")
+    level_node = scene.instantiate()
+    level_node.process_mode = PROCESS_MODE_PAUSABLE
+    add_child(level_node)
 
 func increment_level():
     var toolbar = get_node("UI/ToolBar")
-	Analytics.add_event("Completed level", {
+    Analytics.add_event("Completed level", {
         "level": current_level, 
         "version": get_version(),
         "cur_objs": toolbar.get_cur_objects()})
-	print("Added completed level event for level: ", current_level)
-	current_level += 1
-	
-	load_level(current_level)
+    print("Added completed level event for level: ", current_level)
+    current_level += 1
+    
+    load_level(current_level)
 
 func does_next_level_exist() -> bool:
-	print(current_level)
-	if current_level == -1:
-		return false
-	var next_level_path = "res://scenes/levels/lvl" + str(current_level + 1) + ".tscn"
-	return ResourceLoader.exists(next_level_path)
+    print(current_level)
+    if current_level == -1:
+        return false
+    var next_level_path = "res://scenes/levels/lvl" + str(current_level + 1) + ".tscn"
+    return ResourceLoader.exists(next_level_path)
 
 func return_to_menu():
-	audio.play()
-	if level_node:
-		level_node.queue_free()
-	menu.show()
-	EventBus.emit_signal("reset")
-	game_ui.hide()
-	current_level = -1
+    audio.play()
+    if level_node:
+        level_node.queue_free()
+    menu.show()
+    EventBus.emit_signal("reset")
+    game_ui.hide()
+    current_level = -1
