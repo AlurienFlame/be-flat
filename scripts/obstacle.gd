@@ -66,9 +66,13 @@ func _on_body_entered(_body) -> void:
         # reverse the direction
         move_vector = -move_vector
 
+func is_draggable() -> bool:
+    # check if we're on collision layer 2
+    return self.get_collision_layer_value(2) == true
+
 func reset_obstacle() -> void:
     # check if this node has a child Draggable
-    if !has_node("Draggable"):
+    if not is_draggable():
         if !isDeadly:
             self.modulate = Color(0.5, 0.5, 0.5)
         position = original_position
