@@ -5,6 +5,7 @@ extends Control
 
 var dragging = false  # Are we currently dragging?
 var cur_object = null  # The object currently being dragged
+var offset: Vector2 # Offset of the mouse from the object being dragged
 static var DRAGGABLE_LAYER = 2  # Collision layer for draggable objects
 static var MAX_DRAG_AT_ONCE = 1  # Number of objects that can be dragged at once
 
@@ -33,11 +34,12 @@ func start_drag(pos: Vector2):
     if not cur_object:
         return
     dragging = true
+    offset = pos - cur_object.global_position
     trashcan.visible = true
 
 func do_drag(pos: Vector2):
     # move the object we're dragging on top of the mouse
-    cur_object.global_position = pos
+    cur_object.global_position = pos - offset
 
 func end_drag(_pos: Vector2):
     # trash stuff
