@@ -22,6 +22,7 @@ func _on_gui_input(event:InputEvent):
 func get_item_under_mouse(pos: Vector2):
     var query = PhysicsPointQueryParameters2D.new()
     query.position = pos
+    query.collide_with_areas = true # make sure we can get objectives as well as obstacles
     query.collision_mask = DRAGGABLE_LAYER
     var items = get_world_2d().direct_space_state.intersect_point(query, MAX_DRAG_AT_ONCE)
     if items.size():
