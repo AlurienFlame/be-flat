@@ -3,7 +3,6 @@ extends Control
 # Haven note: I do like having this as an export because we can vary per puzzle?
 @export var maxObjects = -1 # No limit by default
 var curObjects = 0
-@onready var draggable_script = preload("res://scripts/draggable.gd")
 
 func _ready() -> void:
     EventBus.connect("pause", _on_pause)
@@ -33,19 +32,12 @@ func make_instance(obj: Resource) -> void:
 
     var instance = obj.instantiate()
 
-    # Make the object draggable
-    var drag = Node2D.new()
-    drag.name = "Draggable"
-    drag.set_script(draggable_script)
-    instance.connect("mouse_shape_entered", drag._on_mouse_obstacle_entered)
-    instance.connect("mouse_shape_exited", drag._on_mouse_obstacle_exited)
-    print("Connected mouse shape entered and exited signals")
     # Make node not pausable
     instance.process_mode = PROCESS_MODE_ALWAYS
-    drag.process_mode = PROCESS_MODE_WHEN_PAUSED
-    
-    instance.add_child(drag)
 
+    # Make the object draggable
+    instance.set_collision_layer_value(2, 1) # to be picked up by the drag select
+    
     # Spawn in the center of the viewport
     var viewport = get_viewport()
     var center = viewport.get_visible_rect().size / 2
@@ -68,7 +60,7 @@ func make_instance(obj: Resource) -> void:
     generated = root.get_node("Generated")
     # add instance to "Generated" node
     generated.add_child(instance)
-
+    
     curObjects += 1
 
 func remove_instance() -> void:
