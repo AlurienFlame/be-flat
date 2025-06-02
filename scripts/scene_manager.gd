@@ -7,7 +7,7 @@ extends Node2D
 
 var current_level: int = -1
 var level_node: Node2D
-const CURRENT_VERSION: float = 0.0
+const CURRENT_VERSION: float = 2
 
 func is_current_level(level: int) -> bool:
     return current_level == level
