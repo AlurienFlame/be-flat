@@ -16,7 +16,7 @@ const duration = 0.2
 
 # Main Screen
 func _on_puzzles_pressed() -> void:
-    var tween = get_tree().create_tween().set_parallel(true)
+    var tween = create_tween().set_parallel(true)
     tween.tween_property(main_screen, "anchor_bottom", 2, duration).from_current()
     tween.tween_property(main_screen, "anchor_top", 1, duration).from_current()
     tween.tween_property(level_select, "anchor_bottom", 1, duration).from_current()
@@ -31,7 +31,7 @@ func _on_free_play_pressed() -> void:
 
 func _on_options_pressed():
     # Slide to options
-    var tween = get_tree().create_tween().set_parallel(true)
+    var tween = create_tween().set_parallel(true)
     var scene_manager = get_tree().root.get_node("SceneManager")
     print("Found scene manager:", scene_manager)
     if not scene_manager:
@@ -59,18 +59,22 @@ func _on_quit_pressed():
 func _on_back_pressed_from_level_select() -> void:
     print("level select node: %s" % level_select)
     print("main screen node: %s" % main_screen)
-    var tween = get_tree().create_tween().set_parallel(true)
+    var tween = create_tween().set_parallel(true)
     tween.tween_property(level_select, "anchor_top", -1, duration).from_current()
     tween.tween_property(level_select, "anchor_bottom", 0, duration).from_current()
     tween.tween_property(main_screen, "anchor_top", 0, duration).from_current()
     tween.tween_property(main_screen, "anchor_bottom", 1, duration).from_current()
+    tween.connect("finished", func():
+        print("Back tween finished")
+       
+    )
     for child in levelList.get_children():
         print("Setting child %s to top level" % child.name)
         child.top_level = false
 
 # Options Screen
 func _on_back_pressed_from_options() -> void:
-    var tween = get_tree().create_tween().set_parallel(true)
+    var tween = create_tween().set_parallel(true)
     tween.tween_property(options_screen, "anchor_right", 2, duration).from_current()
     tween.tween_property(options_screen, "anchor_left", 1, duration).from_current()
     tween.tween_property(main_screen, "anchor_right", 1, duration).from_current()

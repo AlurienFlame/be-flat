@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cadlxyy3twsql"]
+[gd_scene load_steps=4 format=3 uid="uid://clv8w2cyexoyy"]
 
 [ext_resource type="AudioStream" uid="uid://dvgjv6sy7te6k" path="res://audio/wav/close2.wav" id="2_15mg1"]
 [ext_resource type="AudioStream" uid="uid://ctqv5ysdg0kc6" path="res://audio/wav/pause.wav" id="3_ahypq"]
